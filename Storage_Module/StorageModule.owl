@@ -7,7 +7,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/StorageModule">
-		<owl:imports rdf:resource="https://raw.githubusercontent.com/aljoshakoecher/machine-skill-model/v3.0.0/Machine-Capability-Model.owl"/>
+		<owl:imports rdf:resource="https://raw.githubusercontent.com/aljoshakoecher/machine-skill-model/v3.0.1/Machine-Capability-Model.owl"/>
 	</owl:Ontology>
 </rdf:RDF>
 
