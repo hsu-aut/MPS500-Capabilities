@@ -14,12 +14,12 @@
             ],
             "isDecomposedProcessOperator": null,
             "consistsOfStates": [
-                "61a43b63-8c1a-48fc-acb3-3f92e9b96b7a",
-                "e8e6b3d0-f306-4819-83d3-3bbd666b4edb",
                 "fa604921-294a-4e94-b530-a7af26942c1f",
+                "e8e6b3d0-f306-4819-83d3-3bbd666b4edb",
                 "0695114b-cabb-40b9-b0df-a93dc648477e",
-                "66e85629-fa45-4dbf-8117-5b6fee3142e1",
-                "c0e9a093-a9c3-4e7b-a7d8-2fb3f3b5eda2"
+                "61a43b63-8c1a-48fc-acb3-3f92e9b96b7a",
+                "c0e9a093-a9c3-4e7b-a7d8-2fb3f3b5eda2",
+                "66e85629-fa45-4dbf-8117-5b6fee3142e1"
             ],
             "consistsOfSystemLimit": "8c9fa3d3-b279-4d56-ad88-9f8ff197111e",
             "consistsOfProcesses": [
@@ -114,8 +114,8 @@
                     "23430428-7086-4c96-9e0b-52b16b7c8c1e"
                 ],
                 "name": "AssembleCylinder",
-                "decomposedView": "58fafcb0-ff57-4484-a767-9eb73d4e9da0",
-                "characteristics": []
+                "characteristics": [],
+                "decomposedView": "58fafcb0-ff57-4484-a767-9eb73d4e9da0"
             },
             {
                 "$type": "fpb:Product",
@@ -164,7 +164,7 @@
                     "$type": "fpb:Identification",
                     "uniqueIdent": "0695114b-cabb-40b9-b0df-a93dc648477e",
                     "longName": "",
-                    "shortName": "AssembledCylinder",
+                    "shortName": "AssembledCylinderOnCarrier",
                     "versionNumber": "",
                     "revisionNumber": ""
                 },
@@ -175,7 +175,7 @@
                     "23430428-7086-4c96-9e0b-52b16b7c8c1e"
                 ],
                 "outgoing": [],
-                "name": "AssembledCylinder"
+                "name": "AssembledCylinderOnCarrier"
             },
             {
                 "$type": "fpb:Product",
@@ -216,8 +216,8 @@
                 "outgoing": [
                     "4fb45013-068c-46b4-b3ea-cd260277e1f8"
                 ],
-                "characteristics": [],
-                "name": "RequiredCarrierSlot"
+                "name": "RequiredCarrierSlot",
+                "characteristics": []
             },
             {
                 "$type": "fpb:Information",
@@ -237,8 +237,8 @@
                 "outgoing": [
                     "a44b4a8c-9f61-429e-9dd6-2cfb0a63f65f"
                 ],
-                "characteristics": [],
-                "name": "RequiredCarrierId"
+                "name": "RequiredCarrierId",
+                "characteristics": []
             }
         ],
         "elementVisualInformation": [
@@ -490,15 +490,15 @@
             "isDecomposedProcessOperator": "58fafcb0-ff57-4484-a767-9eb73d4e9da0",
             "consistsOfStates": [
                 "61a43b63-8c1a-48fc-acb3-3f92e9b96b7a",
-                "e8e6b3d0-f306-4819-83d3-3bbd666b4edb",
-                "fa604921-294a-4e94-b530-a7af26942c1f",
-                "0695114b-cabb-40b9-b0df-a93dc648477e",
                 "da40b19d-6a56-487a-8c8c-cadb6cfc4de2",
                 "3036185a-3a23-45b2-b9a4-776e56f6deeb",
+                "fa604921-294a-4e94-b530-a7af26942c1f",
+                "e8e6b3d0-f306-4819-83d3-3bbd666b4edb",
                 "78a738e0-6d94-4d81-831b-c31fa60e87f2",
                 "da9f519c-151a-4a9b-a804-9a350c58231c",
                 "8198300d-3220-47cb-9fb8-625127d5ac74",
-                "4022bf63-7a60-4498-851a-c302ccd9569f"
+                "4022bf63-7a60-4498-851a-c302ccd9569f",
+                "0695114b-cabb-40b9-b0df-a93dc648477e"
             ],
             "consistsOfSystemLimit": "ad00c413-f8d5-4178-8fe4-76c41625762e",
             "consistsOfProcesses": [],
@@ -527,24 +527,24 @@
                     "2cc73109-8edb-4949-a274-98cac4240652",
                     "21173234-e682-4657-a197-8d61aae0aa05",
                     "71e03be8-cffe-4b3e-9bcc-a98eec0035a9",
-                    "ee9e0a2d-18c9-4af0-9a4b-1028740053da",
                     "6130d516-779c-415f-9cb3-7c46e929ef12",
                     "3c5addc2-725a-4bb1-9524-25d8fc7ee784",
+                    "190b6431-afdb-40b8-a0bd-f99be31ceac8",
                     "61a43b63-8c1a-48fc-acb3-3f92e9b96b7a",
-                    "0d7cac11-215a-4273-b478-429f07dc725f",
-                    "de701ed0-796e-41c4-b5c3-0e23eb3eb02f",
-                    "da40b19d-6a56-487a-8c8c-cadb6cfc4de2",
-                    "3036185a-3a23-45b2-b9a4-776e56f6deeb",
-                    "80ccca15-429e-483b-a6dd-6c0382e616fe",
                     "fa604921-294a-4e94-b530-a7af26942c1f",
                     "e8e6b3d0-f306-4819-83d3-3bbd666b4edb",
+                    "0d7cac11-215a-4273-b478-429f07dc725f",
+                    "de701ed0-796e-41c4-b5c3-0e23eb3eb02f",
+                    "3036185a-3a23-45b2-b9a4-776e56f6deeb",
+                    "80ccca15-429e-483b-a6dd-6c0382e616fe",
                     "ab99a10c-3196-4ee6-b100-4f9a4956d98f",
                     "78a738e0-6d94-4d81-831b-c31fa60e87f2",
-                    "0695114b-cabb-40b9-b0df-a93dc648477e",
                     "da9f519c-151a-4a9b-a804-9a350c58231c",
                     "cd3b6dc0-fd91-44b9-beb5-cde915d68eda",
                     "8198300d-3220-47cb-9fb8-625127d5ac74",
-                    "4022bf63-7a60-4498-851a-c302ccd9569f"
+                    "4022bf63-7a60-4498-851a-c302ccd9569f",
+                    "0695114b-cabb-40b9-b0df-a93dc648477e",
+                    "da40b19d-6a56-487a-8c8c-cadb6cfc4de2"
                 ],
                 "name": "AssembleCylinderSystemLimit"
             },
@@ -617,12 +617,6 @@
                 "targetRef": "cd3b6dc0-fd91-44b9-beb5-cde915d68eda"
             },
             {
-                "$type": "fpb:Flow",
-                "id": "ee9e0a2d-18c9-4af0-9a4b-1028740053da",
-                "sourceRef": "cd3b6dc0-fd91-44b9-beb5-cde915d68eda",
-                "targetRef": "0695114b-cabb-40b9-b0df-a93dc648477e"
-            },
-            {
                 "$type": "fpb:ParallelFlow",
                 "id": "6130d516-779c-415f-9cb3-7c46e929ef12",
                 "inTandemWith": [],
@@ -635,6 +629,12 @@
                 "inTandemWith": [],
                 "sourceRef": "4022bf63-7a60-4498-851a-c302ccd9569f",
                 "targetRef": "cd3b6dc0-fd91-44b9-beb5-cde915d68eda"
+            },
+            {
+                "$type": "fpb:Flow",
+                "id": "190b6431-afdb-40b8-a0bd-f99be31ceac8",
+                "sourceRef": "cd3b6dc0-fd91-44b9-beb5-cde915d68eda",
+                "targetRef": "0695114b-cabb-40b9-b0df-a93dc648477e"
             },
             {
                 "$type": "fpb:Product",
@@ -655,6 +655,46 @@
                     "e38eaeba-8370-4ff4-9cd9-b1ff3feaa14a"
                 ],
                 "name": "DrilledCylinder"
+            },
+            {
+                "$type": "fpb:Product",
+                "id": "fa604921-294a-4e94-b530-a7af26942c1f",
+                "identification": {
+                    "$type": "fpb:Identification",
+                    "uniqueIdent": "fa604921-294a-4e94-b530-a7af26942c1f",
+                    "longName": "",
+                    "shortName": "SpringStack",
+                    "versionNumber": "",
+                    "revisionNumber": ""
+                },
+                "isAssignedTo": [
+                    "de701ed0-796e-41c4-b5c3-0e23eb3eb02f"
+                ],
+                "incoming": [],
+                "outgoing": [
+                    "79c995b4-515a-43b8-83f0-b81ed38f777c"
+                ],
+                "name": "SpringStack"
+            },
+            {
+                "$type": "fpb:Product",
+                "id": "e8e6b3d0-f306-4819-83d3-3bbd666b4edb",
+                "identification": {
+                    "$type": "fpb:Identification",
+                    "uniqueIdent": "e8e6b3d0-f306-4819-83d3-3bbd666b4edb",
+                    "longName": "",
+                    "shortName": "CapStack",
+                    "versionNumber": "",
+                    "revisionNumber": ""
+                },
+                "isAssignedTo": [
+                    "ab99a10c-3196-4ee6-b100-4f9a4956d98f"
+                ],
+                "incoming": [],
+                "outgoing": [
+                    "06bfe727-9f15-40f7-a925-125492d62810"
+                ],
+                "name": "CapStack"
             },
             {
                 "$type": "fpb:ProcessOperator",
@@ -696,30 +736,6 @@
                     "f218a7a8-727e-4462-b8db-c34893bf37d8"
                 ],
                 "name": "InsertSpring"
-            },
-            {
-                "$type": "fpb:Product",
-                "id": "da40b19d-6a56-487a-8c8c-cadb6cfc4de2",
-                "identification": {
-                    "$type": "fpb:Identification",
-                    "uniqueIdent": "da40b19d-6a56-487a-8c8c-cadb6cfc4de2",
-                    "longName": "",
-                    "shortName": "CylinderInAssemblyFixture",
-                    "versionNumber": "",
-                    "revisionNumber": ""
-                },
-                "isAssignedTo": [
-                    "0d7cac11-215a-4273-b478-429f07dc725f",
-                    "de701ed0-796e-41c4-b5c3-0e23eb3eb02f"
-                ],
-                "incoming": [
-                    "41bdb864-1f2f-4055-a392-646d49f5cebd"
-                ],
-                "outgoing": [
-                    "9095d807-2450-404b-bb93-b4628ade6c4a"
-                ],
-                "name": "CylinderInAssemblyFixture",
-                "characteristics": []
             },
             {
                 "$type": "fpb:Product",
@@ -767,46 +783,6 @@
                 "characteristics": []
             },
             {
-                "$type": "fpb:Product",
-                "id": "fa604921-294a-4e94-b530-a7af26942c1f",
-                "identification": {
-                    "$type": "fpb:Identification",
-                    "uniqueIdent": "fa604921-294a-4e94-b530-a7af26942c1f",
-                    "longName": "",
-                    "shortName": "SpringStack",
-                    "versionNumber": "",
-                    "revisionNumber": ""
-                },
-                "isAssignedTo": [
-                    "de701ed0-796e-41c4-b5c3-0e23eb3eb02f"
-                ],
-                "incoming": [],
-                "outgoing": [
-                    "79c995b4-515a-43b8-83f0-b81ed38f777c"
-                ],
-                "name": "SpringStack"
-            },
-            {
-                "$type": "fpb:Product",
-                "id": "e8e6b3d0-f306-4819-83d3-3bbd666b4edb",
-                "identification": {
-                    "$type": "fpb:Identification",
-                    "uniqueIdent": "e8e6b3d0-f306-4819-83d3-3bbd666b4edb",
-                    "longName": "",
-                    "shortName": "CapStack",
-                    "versionNumber": "",
-                    "revisionNumber": ""
-                },
-                "isAssignedTo": [
-                    "ab99a10c-3196-4ee6-b100-4f9a4956d98f"
-                ],
-                "incoming": [],
-                "outgoing": [
-                    "06bfe727-9f15-40f7-a925-125492d62810"
-                ],
-                "name": "CapStack"
-            },
-            {
                 "$type": "fpb:ProcessOperator",
                 "id": "ab99a10c-3196-4ee6-b100-4f9a4956d98f",
                 "identification": {
@@ -851,33 +827,12 @@
             },
             {
                 "$type": "fpb:Product",
-                "id": "0695114b-cabb-40b9-b0df-a93dc648477e",
-                "identification": {
-                    "$type": "fpb:Identification",
-                    "uniqueIdent": "0695114b-cabb-40b9-b0df-a93dc648477e",
-                    "longName": "",
-                    "shortName": "AssembledCylinder",
-                    "versionNumber": "",
-                    "revisionNumber": ""
-                },
-                "isAssignedTo": [
-                    "cd3b6dc0-fd91-44b9-beb5-cde915d68eda"
-                ],
-                "incoming": [
-                    "ee9e0a2d-18c9-4af0-9a4b-1028740053da"
-                ],
-                "outgoing": [],
-                "name": "AssembledCylinderOnCarrier",
-                "characteristics": []
-            },
-            {
-                "$type": "fpb:Product",
                 "id": "da9f519c-151a-4a9b-a804-9a350c58231c",
                 "identification": {
                     "$type": "fpb:Identification",
                     "uniqueIdent": "da9f519c-151a-4a9b-a804-9a350c58231c",
                     "longName": "",
-                    "shortName": "AssembledCarrier",
+                    "shortName": "AssembledCylinder",
                     "versionNumber": "",
                     "revisionNumber": ""
                 },
@@ -891,8 +846,8 @@
                 "outgoing": [
                     "71e03be8-cffe-4b3e-9bcc-a98eec0035a9"
                 ],
-                "characteristics": [],
-                "name": "AssembledCarrier"
+                "name": "AssembledCylinder",
+                "characteristics": []
             },
             {
                 "$type": "fpb:ProcessOperator",
@@ -912,10 +867,10 @@
                     "3c5addc2-725a-4bb1-9524-25d8fc7ee784"
                 ],
                 "outgoing": [
-                    "ee9e0a2d-18c9-4af0-9a4b-1028740053da"
+                    "190b6431-afdb-40b8-a0bd-f99be31ceac8"
                 ],
-                "characteristics": [],
-                "name": "PutOnCarrier"
+                "name": "PutOnCarrier",
+                "characteristics": []
             },
             {
                 "$type": "fpb:Information",
@@ -935,8 +890,8 @@
                 "outgoing": [
                     "6130d516-779c-415f-9cb3-7c46e929ef12"
                 ],
-                "characteristics": [],
-                "name": "RequiredCarrierId"
+                "name": "RequiredCarrierId",
+                "characteristics": []
             },
             {
                 "$type": "fpb:Information",
@@ -956,8 +911,52 @@
                 "outgoing": [
                     "3c5addc2-725a-4bb1-9524-25d8fc7ee784"
                 ],
-                "characteristics": [],
-                "name": "RequiredCarrierSlot"
+                "name": "RequiredCarrierSlot",
+                "characteristics": []
+            },
+            {
+                "$type": "fpb:Product",
+                "id": "0695114b-cabb-40b9-b0df-a93dc648477e",
+                "identification": {
+                    "$type": "fpb:Identification",
+                    "uniqueIdent": "0695114b-cabb-40b9-b0df-a93dc648477e",
+                    "longName": "",
+                    "shortName": "AssembledCylinderOnCarrier",
+                    "versionNumber": "",
+                    "revisionNumber": ""
+                },
+                "isAssignedTo": [
+                    "cd3b6dc0-fd91-44b9-beb5-cde915d68eda"
+                ],
+                "incoming": [
+                    "190b6431-afdb-40b8-a0bd-f99be31ceac8"
+                ],
+                "outgoing": [],
+                "name": "AssembledCylinderOnCarrier"
+            },
+            {
+                "$type": "fpb:Product",
+                "id": "da40b19d-6a56-487a-8c8c-cadb6cfc4de2",
+                "identification": {
+                    "$type": "fpb:Identification",
+                    "uniqueIdent": "da40b19d-6a56-487a-8c8c-cadb6cfc4de2",
+                    "longName": "",
+                    "shortName": "CylinderInAssemblyFixture",
+                    "versionNumber": "",
+                    "revisionNumber": ""
+                },
+                "isAssignedTo": [
+                    "0d7cac11-215a-4273-b478-429f07dc725f",
+                    "de701ed0-796e-41c4-b5c3-0e23eb3eb02f"
+                ],
+                "incoming": [
+                    "41bdb864-1f2f-4055-a392-646d49f5cebd"
+                ],
+                "outgoing": [
+                    "9095d807-2450-404b-bb93-b4628ade6c4a"
+                ],
+                "name": "CylinderInAssemblyFixture",
+                "characteristics": []
             }
         ],
         "elementVisualInformation": [
@@ -975,14 +974,14 @@
                 "waypoints": [
                     {
                         "original": {
-                            "x": 513,
+                            "x": 458,
                             "y": 75
                         },
-                        "x": 513,
+                        "x": 458,
                         "y": 75
                     },
                     {
-                        "x": 513,
+                        "x": 458,
                         "y": 135
                     },
                     {
@@ -1016,16 +1015,16 @@
                         "y": 298
                     },
                     {
-                        "x": 587,
+                        "x": 524,
                         "y": 298
                     },
                     {
                         "original": {
-                            "x": 587,
-                            "y": 322
+                            "x": 524,
+                            "y": 329
                         },
-                        "x": 587,
-                        "y": 322
+                        "x": 524,
+                        "y": 329
                     }
                 ]
             },
@@ -1035,14 +1034,14 @@
                 "waypoints": [
                     {
                         "original": {
-                            "x": 587,
-                            "y": 372
+                            "x": 524,
+                            "y": 379
                         },
-                        "x": 587,
-                        "y": 372
+                        "x": 524,
+                        "y": 379
                     },
                     {
-                        "x": 587,
+                        "x": 524,
                         "y": 399
                     },
                     {
@@ -1065,19 +1064,19 @@
                 "waypoints": [
                     {
                         "original": {
-                            "x": 676,
-                            "y": 76
+                            "x": 567,
+                            "y": 75
                         },
-                        "x": 676,
-                        "y": 76
+                        "x": 567,
+                        "y": 75
                     },
                     {
-                        "x": 676,
-                        "y": 251
+                        "x": 567,
+                        "y": 103
                     },
                     {
                         "x": 612,
-                        "y": 251
+                        "y": 103
                     },
                     {
                         "original": {
@@ -1147,14 +1146,14 @@
                 "waypoints": [
                     {
                         "original": {
-                            "x": 780,
-                            "y": 71
+                            "x": 675,
+                            "y": 75
                         },
-                        "x": 780,
-                        "y": 71
+                        "x": 675,
+                        "y": 75
                     },
                     {
-                        "x": 780,
+                        "x": 675,
                         "y": 205
                     },
                     {
@@ -1292,36 +1291,6 @@
                 ]
             },
             {
-                "id": "ee9e0a2d-18c9-4af0-9a4b-1028740053da",
-                "type": "fpb:Flow",
-                "waypoints": [
-                    {
-                        "original": {
-                            "x": 622,
-                            "y": 986
-                        },
-                        "x": 622,
-                        "y": 986
-                    },
-                    {
-                        "x": 622,
-                        "y": 1012
-                    },
-                    {
-                        "x": 620,
-                        "y": 1012
-                    },
-                    {
-                        "original": {
-                            "x": 620,
-                            "y": 1037
-                        },
-                        "x": 620,
-                        "y": 1037
-                    }
-                ]
-            },
-            {
                 "id": "6130d516-779c-415f-9cb3-7c46e929ef12",
                 "type": "fpb:ParallelFlow",
                 "waypoints": [
@@ -1390,11 +1359,49 @@
                 ]
             },
             {
+                "id": "190b6431-afdb-40b8-a0bd-f99be31ceac8",
+                "type": "fpb:Flow",
+                "waypoints": [
+                    {
+                        "original": {
+                            "x": 622,
+                            "y": 986
+                        },
+                        "x": 622,
+                        "y": 986
+                    },
+                    {
+                        "original": {
+                            "x": 622,
+                            "y": 1036
+                        },
+                        "x": 622,
+                        "y": 1036
+                    }
+                ]
+            },
+            {
                 "id": "61a43b63-8c1a-48fc-acb3-3f92e9b96b7a",
                 "width": 50,
                 "height": 50,
                 "type": "fpb:Product",
-                "x": 487.5,
+                "x": 433.3333333333333,
+                "y": 25
+            },
+            {
+                "id": "fa604921-294a-4e94-b530-a7af26942c1f",
+                "width": 50,
+                "height": 50,
+                "type": "fpb:Product",
+                "x": 541.6666666666666,
+                "y": 25
+            },
+            {
+                "id": "e8e6b3d0-f306-4819-83d3-3bbd666b4edb",
+                "width": 50,
+                "height": 50,
+                "type": "fpb:Product",
+                "x": 650,
                 "y": 25
             },
             {
@@ -1414,14 +1421,6 @@
                 "y": 426
             },
             {
-                "id": "da40b19d-6a56-487a-8c8c-cadb6cfc4de2",
-                "width": 50,
-                "height": 50,
-                "type": "fpb:Product",
-                "x": 562,
-                "y": 322
-            },
-            {
                 "id": "3036185a-3a23-45b2-b9a4-776e56f6deeb",
                 "width": 50,
                 "height": 50,
@@ -1438,22 +1437,6 @@
                 "y": 672
             },
             {
-                "id": "fa604921-294a-4e94-b530-a7af26942c1f",
-                "width": 50,
-                "height": 50,
-                "type": "fpb:Product",
-                "x": 650.5,
-                "y": 26
-            },
-            {
-                "id": "e8e6b3d0-f306-4819-83d3-3bbd666b4edb",
-                "width": 50,
-                "height": 50,
-                "type": "fpb:Product",
-                "x": 755,
-                "y": 21
-            },
-            {
                 "id": "ab99a10c-3196-4ee6-b100-4f9a4956d98f",
                 "width": 150,
                 "height": 80,
@@ -1468,14 +1451,6 @@
                 "type": "fpb:Product",
                 "x": 770,
                 "y": 531
-            },
-            {
-                "id": "0695114b-cabb-40b9-b0df-a93dc648477e",
-                "width": 50,
-                "height": 50,
-                "type": "fpb:Product",
-                "x": 595,
-                "y": 1037
             },
             {
                 "id": "da9f519c-151a-4a9b-a804-9a350c58231c",
@@ -1508,6 +1483,22 @@
                 "type": "fpb:Information",
                 "x": 326,
                 "y": 701
+            },
+            {
+                "id": "0695114b-cabb-40b9-b0df-a93dc648477e",
+                "width": 50,
+                "height": 50,
+                "type": "fpb:Product",
+                "x": 597,
+                "y": 1036
+            },
+            {
+                "id": "da40b19d-6a56-487a-8c8c-cadb6cfc4de2",
+                "width": 50,
+                "height": 50,
+                "type": "fpb:Product",
+                "x": 499,
+                "y": 329
             }
         ]
     }
