@@ -85,6 +85,17 @@
         <DINEN61360:Code>lotSize</DINEN61360:Code>
         <DINEN61360:Definition>The amount of a good produced at the one time / in one batch.</DINEN61360:Definition>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
+        <DINEN61360:Code>stationId</DINEN61360:Code>
+        <DINEN61360:Definition>The integer ID of every station at the tranport system.</DINEN61360:Definition>
+        <DINEN61360:Note>These are not some module numbers. These IDs refer to the fixed stations at the transport systen that the modules may be docked to.</DINEN61360:Note>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
