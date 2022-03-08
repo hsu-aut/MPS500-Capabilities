@@ -67,6 +67,17 @@
     
 
 
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Length_TD -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Length_TD">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
+        <DINEN61360:Code>length</DINEN61360:Code>
+        <DINEN61360:Definition>A measure of the most extended dimension of an object.</DINEN61360:Definition>
+        <DINEN61360:Unit_of_Measure>mm</DINEN61360:Unit_of_Measure>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD -->
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD">
