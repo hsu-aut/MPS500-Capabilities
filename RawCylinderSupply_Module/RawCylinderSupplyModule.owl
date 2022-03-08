@@ -12,6 +12,7 @@
      xmlns:VDI3682="http://www.hsu-ifa.de/ontologies/VDI3682#"
      xmlns:DINEN61360="http://www.hsu-ifa.de/ontologies/DINEN61360#">
     <owl:Ontology rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule">
+        <owl:imports rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types"/>
         <owl:imports rdf:resource="https://raw.githubusercontent.com/aljoshakoecher/machine-skill-model/v3.0.1/Machine-Capability-Model.owl"/>
     </owl:Ontology>
     
@@ -25,57 +26,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500#CarrierId_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#CarrierId_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>carrierId</DINEN61360:Code>
-        <DINEN61360:Definition>The unique ID of a carrier, given as an integer number.</DINEN61360:Definition>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500#CarrierSlot_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#CarrierSlot_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>carrierSlot</DINEN61360:Code>
-        <DINEN61360:Definition>Defines the slot of a carrier on which a workpiece is placed.</DINEN61360:Definition>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Color_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Color_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>requiredColor</DINEN61360:Code>
-        <DINEN61360:Definition>The color of a cylinder.</DINEN61360:Definition>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Diameter_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Diameter_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>diameter</DINEN61360:Code>
-        <DINEN61360:Definition>Defines the diameter of a cylindrical body</DINEN61360:Definition>
-        <DINEN61360:Unit_of_Measure>mm</DINEN61360:Unit_of_Measure>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500#LotSize_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#LotSize_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>lotSize</DINEN61360:Code>
-        <DINEN61360:Definition>The amount of a good produced at the one time / in one batch.</DINEN61360:Definition>
-    </owl:NamedIndividual>
     
 
 
@@ -113,7 +63,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PreparedRawPartColor_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PreparedRawPartColor_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Color_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
     </owl:NamedIndividual>
     
 
@@ -133,7 +83,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PreparedRawPartInnerDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PreparedRawPartInnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Diameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -153,7 +103,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PreparedRawPartLotSize_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PreparedRawPartLotSize_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#LotSize_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
     </owl:NamedIndividual>
     
 
@@ -173,7 +123,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PreparedRawPartOuterDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PreparedRawPartOuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Diameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -205,7 +155,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentColor_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentColor_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Color_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
     </owl:NamedIndividual>
     
 
@@ -225,7 +175,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentInnerDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentInnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Diameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -245,7 +195,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentOuterDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentOuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Diameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -265,7 +215,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentStackSize_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentStackSize_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#LotSize_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
     </owl:NamedIndividual>
     
 
@@ -297,7 +247,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentColor_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentColor_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Color_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
     </owl:NamedIndividual>
     
 
@@ -317,7 +267,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentInnerDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentInnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Diameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -337,7 +287,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentOuterDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentOuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Diameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -357,7 +307,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentStackSize_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentStackSize_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#LotSize_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
     </owl:NamedIndividual>
     
 
@@ -389,7 +339,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentColor_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentColor_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Color_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
     </owl:NamedIndividual>
     
 
@@ -409,7 +359,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentInnerDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentInnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Diameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -429,7 +379,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentOuterDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentInnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Diameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -449,7 +399,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentStackSize_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentStackSize_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#LotSize_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
     </owl:NamedIndividual>
     
 
@@ -496,7 +446,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderCarrierId_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderCarrierId_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#CarrierId_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD"/>
     </owl:NamedIndividual>
     
 
@@ -516,7 +466,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderCarrierSlot_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderCarrierSlot_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#CarrierSlot_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD"/>
     </owl:NamedIndividual>
     
 
@@ -536,7 +486,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderColor_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderColor_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Color_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
     </owl:NamedIndividual>
     
 
@@ -556,7 +506,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderInnerDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderInnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Diameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -576,7 +526,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderLotSize_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderLotSize_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#LotSize_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
     </owl:NamedIndividual>
     
 
@@ -596,7 +546,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderOuterDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderOuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Diameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -655,7 +605,7 @@
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredCarrierId_ID1"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredCarrierSlot_ID2"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#CarrierId_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD"/>
     </owl:NamedIndividual>
     
 
@@ -697,7 +647,7 @@
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredCarrierSlot_ID1"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredCarrierSlot_ID2"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#CarrierSlot_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD"/>
     </owl:NamedIndividual>
     
 
@@ -738,7 +688,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredColor_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredColor_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Color_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
     </owl:NamedIndividual>
     
 
@@ -769,7 +719,7 @@
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredInnerDiameter_ID1"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredInnerDiameter_ID2"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Diameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -810,7 +760,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredLotSize_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredLotSize_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#LotSize_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
     </owl:NamedIndividual>
     
 
@@ -841,6 +791,7 @@
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredOuterDiameter_ID1"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredOuterDiameter_ID2"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
