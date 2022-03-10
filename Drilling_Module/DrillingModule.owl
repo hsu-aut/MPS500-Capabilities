@@ -11,6 +11,7 @@
      xmlns:VDI3682="http://www.hsu-ifa.de/ontologies/VDI3682#"
      xmlns:DINEN61360="http://www.hsu-ifa.de/ontologies/DINEN61360#">
     <owl:Ontology rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule">
+        <owl:imports rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types"/>
         <owl:imports rdf:resource="https://raw.githubusercontent.com/aljoshakoecher/machine-skill-model/v3.0.1/Machine-Capability-Model.owl"/>
         <owl:imports rdf:resource="https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-VDI3682/v2.0.1/VDI3682.owl"/>
     </owl:Ontology>
@@ -58,7 +59,6 @@
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#ProductAtDrilling"/>
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredDrillingDepth"/>
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredDrillingDiameter"/>
-        <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredNumberOfDrills"/>
         <VDI3682:hasOutput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#DrilledProduct"/>
         <VDI3682:isComposedOf rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#CheckDepth"/>
         <VDI3682:isComposedOf rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#Drilling"/>
@@ -111,7 +111,6 @@
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredCarrierSlot"/>
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredDrillingDepth"/>
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredDrillingDiameter"/>
-        <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredNumberOfDrills"/>
         <VDI3682:hasOutput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#DrilledProductOnCarrier"/>
         <VDI3682:isComposedOf rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#CheckAndDrilling"/>
         <VDI3682:isComposedOf rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#MoveToDrilling"/>
@@ -145,7 +144,7 @@
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_DrillingDepth_DE"/>
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_DrillingDiameter_DE"/>
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_InnerDiameter_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_NumberOfDrills_DE"/>
+        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_LotSize_DE"/>
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_OuterDiameter_DE"/>
     </owl:NamedIndividual>
     
@@ -159,7 +158,7 @@
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_DrillingDepth_DE"/>
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_DrillingDiameter_DE"/>
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_InnerDiameter_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_NumberOfDrills_DE"/>
+        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_LotSize_DE"/>
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_OuterDiameter_DE"/>
     </owl:NamedIndividual>
     
@@ -172,7 +171,6 @@
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#ProductAtDrillingChecked"/>
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredDrillingDepth"/>
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredDrillingDiameter"/>
-        <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredNumberOfDrills"/>
         <VDI3682:hasOutput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#DrilledProduct"/>
     </owl:NamedIndividual>
     
@@ -212,6 +210,7 @@
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_Color_DE"/>
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_InnerDiameter_DE"/>
+        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_LotSize_DE"/>
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_OuterDiameter_DE"/>
     </owl:NamedIndividual>
     
@@ -223,6 +222,7 @@
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_Color_DE"/>
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_InnerDiameter_DE"/>
+        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_LotSize_DE"/>
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_OuterDiameter_DE"/>
     </owl:NamedIndividual>
     
@@ -236,7 +236,7 @@
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_DrillingDepth_DE"/>
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_DrillingDiameter_DE"/>
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_InnerDiameter_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_NumberOfDrills_DE"/>
+        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_LotSize_DE"/>
         <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_OuterDiameter_DE"/>
     </owl:NamedIndividual>
     
@@ -299,93 +299,12 @@
     
 
 
-    <!-- file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredNumberOfDrills -->
-
-    <owl:NamedIndividual rdf:about="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredNumberOfDrills">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Information"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredNumberOfDrills_DE"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500#CarrierID_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#CarrierID_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500#CarrierSlot_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#CarrierSlot_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Color_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Color_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500#DrillingDepth_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#DrillingDepth_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500#DrillingDiameter_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#DrillingDiameter_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500#InnerDiameter_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#InnerDiameter_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500#NumberOfDrills_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#NumberOfDrills_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500#OuterDiameter_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#OuterDiameter_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500#StackSize_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#StackSize_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_Color_DE -->
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_Color_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_Color_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Color_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
     </owl:NamedIndividual>
     
 
@@ -394,6 +313,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_Color_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -403,7 +324,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_DrillingDepth_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_DrillingDepth_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#DrillingDepth_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Depth_TD"/>
     </owl:NamedIndividual>
     
 
@@ -412,6 +333,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_DrillingDepth_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -421,7 +344,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_DrillingDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_DrillingDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#DrillingDiameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -430,6 +353,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_DrillingDiameter_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -439,7 +364,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_InnerDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_InnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#InnerDiameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -448,24 +373,28 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_InnerDiameter_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_NumberOfDrills_DE -->
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_LotSize_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_NumberOfDrills_DE">
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_LotSize_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_NumberOfDrills_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#NumberOfDrills_TD"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_LotSize_ID"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_NumberOfDrills_ID -->
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_LotSize_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_NumberOfDrills_ID">
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_LotSize_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -475,7 +404,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_OuterDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_OuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#OuterDiameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -484,6 +413,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_OuterDiameter_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -493,7 +424,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_Color_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_Color_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Color_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
     </owl:NamedIndividual>
     
 
@@ -502,6 +433,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_Color_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -511,7 +444,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_DrillingDepth_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_DrillingDepth_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#DrillingDepth_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Depth_TD"/>
     </owl:NamedIndividual>
     
 
@@ -520,6 +453,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_DrillingDepth_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -529,7 +464,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_DrillingDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_DrillingDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#DrillingDiameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -538,6 +473,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_DrillingDiameter_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -547,7 +484,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_InnerDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_InnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#InnerDiameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -556,24 +493,28 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_InnerDiameter_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_NumberOfDrills_DE -->
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_LotSize_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_NumberOfDrills_DE">
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_LotSize_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_NumberOfDrills_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#NumberOfDrills_TD"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_LotSize_ID"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_NumberOfDrills_ID -->
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_LotSize_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_NumberOfDrills_ID">
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_LotSize_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -583,7 +524,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_OuterDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_OuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#OuterDiameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -592,6 +533,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProduct_OuterDiameter_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -601,7 +544,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_Color_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_Color_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Color_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
     </owl:NamedIndividual>
     
 
@@ -610,6 +553,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_Color_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -619,7 +564,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_DrillingDepth_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_DrillingDepth_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#DrillingDepth_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Depth_TD"/>
     </owl:NamedIndividual>
     
 
@@ -628,6 +573,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_DrillingDepth_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -637,7 +584,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_DrillingDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_DrillingDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#DrillingDiameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -646,6 +593,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_DrillingDiameter_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -655,7 +604,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_InnerDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_InnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#InnerDiameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -664,24 +613,28 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_InnerDiameter_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_NumberOfDrills_DE -->
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_LotSize_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_NumberOfDrills_DE">
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_LotSize_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_NumberOfDrills_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#NumberOfDrills_TD"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_LotSize_ID"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_NumberOfDrills_ID -->
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_LotSize_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_NumberOfDrills_ID">
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_LotSize_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -691,7 +644,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_OuterDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_OuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#OuterDiameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -700,6 +653,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrillingChecked_OuterDiameter_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -709,7 +664,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_Color_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_Color_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Color_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
     </owl:NamedIndividual>
     
 
@@ -718,6 +673,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_Color_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -727,7 +684,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_InnerDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_InnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#InnerDiameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -736,6 +693,28 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_InnerDiameter_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_LotSize_DE -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_LotSize_DE">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_LotSize_ID"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_LotSize_ID -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_LotSize_ID">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -745,7 +724,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_OuterDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_OuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#OuterDiameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -754,6 +733,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#ProductAtDrilling_OuterDiameter_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -763,7 +744,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_Color_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_Color_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#Color_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
     </owl:NamedIndividual>
     
 
@@ -772,6 +753,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_Color_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -781,7 +764,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_InnerDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_InnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#InnerDiameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -790,6 +773,28 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_InnerDiameter_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_LotSize_DE -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_LotSize_DE">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_LotSize_ID"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_LotSize_ID -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_LotSize_ID">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
     </owl:NamedIndividual>
     
 
@@ -799,7 +804,7 @@
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_OuterDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
         <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_OuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#OuterDiameter_TD"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -808,6 +813,30 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#Product_OuterDiameter_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierID1_ID -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierID1_ID">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>&gt;=</DINEN61360:Logic_Interpretation>
+        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</DINEN61360:Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierID2_ID -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierID2_ID">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>&lt;=</DINEN61360:Logic_Interpretation>
+        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</DINEN61360:Value>
     </owl:NamedIndividual>
     
 
@@ -816,16 +845,31 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierID_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierID_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#CarrierID_TD"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierID1_ID"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierID2_ID"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierID_ID -->
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierSlot1_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierID_ID">
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierSlot1_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>&gt;=</DINEN61360:Logic_Interpretation>
+        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</DINEN61360:Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierSlot2_ID -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierSlot2_ID">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>&lt;=</DINEN61360:Logic_Interpretation>
+        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</DINEN61360:Value>
     </owl:NamedIndividual>
     
 
@@ -834,16 +878,31 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierSlot_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierSlot_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#CarrierSlot_TD"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierSlot1_ID"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierSlot2_ID"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierSlot_ID -->
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDepth1_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierSlot_ID">
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDepth1_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>&gt;=</DINEN61360:Logic_Interpretation>
+        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</DINEN61360:Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDepth2_ID -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDepth2_ID">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>&lt;=</DINEN61360:Logic_Interpretation>
+        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</DINEN61360:Value>
     </owl:NamedIndividual>
     
 
@@ -852,16 +911,31 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDepth_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDepth_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#DrillingDepth_TD"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDepth1_ID"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDepth2_ID"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Depth_TD"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDepth_ID -->
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDiameter1_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDepth_ID">
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDiameter1_ID">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>&gt;=</DINEN61360:Logic_Interpretation>
+        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</DINEN61360:Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDiameter2_ID -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDiameter2_ID">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>&lt;=</DINEN61360:Logic_Interpretation>
+        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</DINEN61360:Value>
     </owl:NamedIndividual>
     
 
@@ -870,34 +944,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDiameter_DE">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#DrillingDiameter_TD"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDiameter_ID -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredNumberOfDrills_DE -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredNumberOfDrills_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredNumberOfDrills_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500#NumberOfDrills_TD"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredNumberOfDrills_ID -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredNumberOfDrills_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDiameter1_ID"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDiameter2_ID"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
     </owl:NamedIndividual>
     
 
@@ -923,7 +972,6 @@
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredCarrierSlot"/>
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredDrillingDepth"/>
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredDrillingDiameter"/>
-        <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredNumberOfDrills"/>
         <VDI3682:hasOutput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#DrilledProductOnCarrier"/>
     </owl:NamedIndividual>
     
@@ -939,7 +987,6 @@
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#ProductAtDrilling"/>
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredDrillingDepth"/>
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredDrillingDiameter"/>
-        <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredNumberOfDrills"/>
         <VDI3682:hasOutput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#DrilledProduct"/>
     </owl:NamedIndividual>
     
@@ -956,7 +1003,6 @@
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredCarrierSlot"/>
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredDrillingDepth"/>
         <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredDrillingDiameter"/>
-        <VDI3682:hasInput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#RequiredNumberOfDrills"/>
         <VDI3682:hasOutput rdf:resource="file:/C:/Users/Vieira/Documents/www.hsu-hh.de/aut/ontologies/MPS500/DrillingModule#DrilledProductOnCarrier"/>
     </owl:NamedIndividual>
 </rdf:RDF>
