@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/StorageModule#"
+     xml:base="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/StorageModule"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:OpcUa="http://www.hsu-ifa.de/ontologies/OpcUa#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:VDI3682="http://www.hsu-ifa.de/ontologies/VDI3682#"
+     xmlns:DINEN61360="http://www.hsu-ifa.de/ontologies/DINEN61360#">
+    <owl:Ontology rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage">
+        <owl:imports rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/aljoshakoecher/machine-skill-model/v3.0.1/Machine-Capability-Model.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Information -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Information"/>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
+        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage_OuterDiameter_DE"/>
+        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage_StorageID_DE"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage_OuterDiameter_DE -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage_OuterDiameter_DE">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage_OuterDiameter_ID"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage_OuterDiameter_ID -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage_OuterDiameter_ID">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage_StorageID_DE -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage_StorageID_DE">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage_StorageID_ID"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StorageID_TD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage_StorageID_ID -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage_StorageID_ID">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
+        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier_OuterDiameter_DE"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier_OuterDiameter_DE -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier_OuterDiameter_DE">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier_OuterDiameter_ID1"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier_OuterDiameter_ID2"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier_OuterDiameter_ID1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier_OuterDiameter_ID1">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>&lt;=</DINEN61360:Logic_Interpretation>
+        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</DINEN61360:Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier_OuterDiameter_ID2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier_OuterDiameter_ID2">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>&gt;=</DINEN61360:Logic_Interpretation>
+        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</DINEN61360:Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier_OuterDiameter_ID3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier_OuterDiameter_ID3">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#PutInStorage -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#PutInStorage">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/capability-model#ProvidedCapability"/>
+        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier"/>
+        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId"/>
+        <VDI3682:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#PutInStorageProcess -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#PutInStorageProcess">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
+        <VDI3682:consistsOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#PutInStorage"/>
+        <VDI3682:consistsOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#PutInStorageSL"/>
+        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier"/>
+        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId"/>
+        <VDI3682:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#PutInStorageSL -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#PutInStorageSL">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Information"/>
+        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId_DE"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId_DE -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId_DE">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId_ID1"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId_ID2"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId_ID3"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StorageID_TD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId_ID1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId_ID1">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>&gt;=</DINEN61360:Logic_Interpretation>
+        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</DINEN61360:Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId_ID2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId_ID2">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>&lt;=</DINEN61360:Logic_Interpretation>
+        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</DINEN61360:Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId_ID3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId_ID3">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
