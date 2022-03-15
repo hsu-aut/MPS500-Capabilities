@@ -18,10 +18,10 @@
             "consistsOfStates": [
                 "5cc2931a-cc25-4210-a409-45ce95e5c139",
                 "9c9639c2-2ecf-41ce-bbd5-f31e7547cf48",
-                "0366ba23-e4aa-425f-86c1-7177cd0f91d1",
-                "45e902d0-43d8-4595-adbc-d41a8ac118ff",
                 "c4191768-d53f-4e67-94fc-84a0781beb3f",
-                "b515150e-fdf3-4157-8404-36e9eaaade8a"
+                "b515150e-fdf3-4157-8404-36e9eaaade8a",
+                "45e902d0-43d8-4595-adbc-d41a8ac118ff",
+                "0366ba23-e4aa-425f-86c1-7177cd0f91d1"
             ],
             "consistsOfSystemLimit": "d7288265-55dc-43f5-a088-a7234a3fdea0",
             "consistsOfProcesses": [
@@ -55,7 +55,8 @@
                     "45e902d0-43d8-4595-adbc-d41a8ac118ff",
                     "0366ba23-e4aa-425f-86c1-7177cd0f91d1",
                     "430947dd-3f67-4d47-b171-eb1f8ae60f86"
-                ]
+                ],
+                "name": "CompleteDrilling_SL"
             },
             {
                 "$type": "fpb:TechnicalResource",
@@ -120,7 +121,7 @@
                     "$type": "fpb:Identification",
                     "uniqueIdent": "5cc2931a-cc25-4210-a409-45ce95e5c139",
                     "longName": "",
-                    "shortName": "Product",
+                    "shortName": "InputProduct",
                     "versionNumber": "",
                     "revisionNumber": ""
                 },
@@ -131,7 +132,7 @@
                 "outgoing": [
                     "a47c13cf-d250-424d-b39d-e9f5f48595e5"
                 ],
-                "name": "Product"
+                "name": "InputProduct"
             },
             {
                 "$type": "fpb:Information",
@@ -261,8 +262,8 @@
                     "7871d77d-84bd-4523-b5e2-b5d300e8364a"
                 ],
                 "name": "CompleteDrilling",
-                "decomposedView": "430947dd-3f67-4d47-b171-eb1f8ae60f86",
-                "characteristics": []
+                "characteristics": [],
+                "decomposedView": "430947dd-3f67-4d47-b171-eb1f8ae60f86"
             }
         ],
         "elementVisualInformation": [
@@ -557,14 +558,14 @@
             ],
             "isDecomposedProcessOperator": "430947dd-3f67-4d47-b171-eb1f8ae60f86",
             "consistsOfStates": [
-                "5cc2931a-cc25-4210-a409-45ce95e5c139",
-                "45e902d0-43d8-4595-adbc-d41a8ac118ff",
                 "c4191768-d53f-4e67-94fc-84a0781beb3f",
                 "0366ba23-e4aa-425f-86c1-7177cd0f91d1",
                 "9c9639c2-2ecf-41ce-bbd5-f31e7547cf48",
                 "01dd7391-ebf9-470a-b2eb-11d30541d3ba",
                 "c14000cd-b35a-49c7-a296-0322d734d97d",
-                "5fea3c14-e5e0-455c-8b47-6ac7c5f27a00"
+                "45e902d0-43d8-4595-adbc-d41a8ac118ff",
+                "5cc2931a-cc25-4210-a409-45ce95e5c139",
+                "b515150e-fdf3-4157-8404-36e9eaaade8a"
             ],
             "consistsOfSystemLimit": "366ee453-4a2f-44de-8de4-ba6e5eb75b1e",
             "consistsOfProcesses": [
@@ -608,7 +609,6 @@
                     "6a972bcf-8e6f-4e5e-a404-99a8b9471f97",
                     "613f9c81-eef6-4db9-b798-a6598ed9735c",
                     "db302870-b4b2-4f8d-ae89-8671bc9b852d",
-                    "7112b3da-1188-4be2-bbf8-05b5e1f79cb1",
                     "cac35cfd-ebbe-40c1-9017-701a3e733040",
                     "4f465115-f275-41f6-971b-7999663490b6",
                     "02ac7b15-834e-45d2-ae2a-982f7bf5a189",
@@ -620,9 +620,10 @@
                     "c14000cd-b35a-49c7-a296-0322d734d97d",
                     "45e902d0-43d8-4595-adbc-d41a8ac118ff",
                     "5cc2931a-cc25-4210-a409-45ce95e5c139",
-                    "5fea3c14-e5e0-455c-8b47-6ac7c5f27a00"
+                    "6ac89dcb-2ad0-408e-bf99-7f3f5e95ae50",
+                    "b515150e-fdf3-4157-8404-36e9eaaade8a"
                 ],
-                "name": "CompleteDrilling"
+                "name": "CompleteDrilling_Subprocess_SL"
             },
             {
                 "$type": "fpb:TechnicalResource",
@@ -735,12 +736,6 @@
             },
             {
                 "$type": "fpb:Flow",
-                "id": "7112b3da-1188-4be2-bbf8-05b5e1f79cb1",
-                "sourceRef": "4f465115-f275-41f6-971b-7999663490b6",
-                "targetRef": "5fea3c14-e5e0-455c-8b47-6ac7c5f27a00"
-            },
-            {
-                "$type": "fpb:Flow",
                 "id": "cac35cfd-ebbe-40c1-9017-701a3e733040",
                 "sourceRef": "8c8814d5-a964-4b09-971b-06d9447e30b0",
                 "targetRef": "01dd7391-ebf9-470a-b2eb-11d30541d3ba"
@@ -766,7 +761,7 @@
                     "db302870-b4b2-4f8d-ae89-8671bc9b852d"
                 ],
                 "outgoing": [
-                    "7112b3da-1188-4be2-bbf8-05b5e1f79cb1"
+                    "6ac89dcb-2ad0-408e-bf99-7f3f5e95ae50"
                 ],
                 "name": "PutOnCarrier",
                 "characteristics": []
@@ -819,8 +814,8 @@
                     "cac35cfd-ebbe-40c1-9017-701a3e733040"
                 ],
                 "name": "CheckAndDrilling",
-                "decomposedView": "8c8814d5-a964-4b09-971b-06d9447e30b0",
-                "characteristics": []
+                "characteristics": [],
+                "decomposedView": "8c8814d5-a964-4b09-971b-06d9447e30b0"
             },
             {
                 "$type": "fpb:Information",
@@ -957,7 +952,7 @@
                     "$type": "fpb:Identification",
                     "uniqueIdent": "5cc2931a-cc25-4210-a409-45ce95e5c139",
                     "longName": "",
-                    "shortName": "Product",
+                    "shortName": "InputProduct",
                     "versionNumber": "",
                     "revisionNumber": ""
                 },
@@ -968,15 +963,21 @@
                 "outgoing": [
                     "8175afc0-3478-4276-8426-efd8f237baf1"
                 ],
-                "name": "Product",
+                "name": "InputProduct",
                 "characteristics": []
             },
             {
+                "$type": "fpb:Flow",
+                "id": "6ac89dcb-2ad0-408e-bf99-7f3f5e95ae50",
+                "sourceRef": "4f465115-f275-41f6-971b-7999663490b6",
+                "targetRef": "b515150e-fdf3-4157-8404-36e9eaaade8a"
+            },
+            {
                 "$type": "fpb:Product",
-                "id": "5fea3c14-e5e0-455c-8b47-6ac7c5f27a00",
+                "id": "b515150e-fdf3-4157-8404-36e9eaaade8a",
                 "identification": {
                     "$type": "fpb:Identification",
-                    "uniqueIdent": "5fea3c14-e5e0-455c-8b47-6ac7c5f27a00",
+                    "uniqueIdent": "b515150e-fdf3-4157-8404-36e9eaaade8a",
                     "longName": "",
                     "shortName": "DrilledProductOnCarrier",
                     "versionNumber": "",
@@ -986,11 +987,10 @@
                     "4f465115-f275-41f6-971b-7999663490b6"
                 ],
                 "incoming": [
-                    "7112b3da-1188-4be2-bbf8-05b5e1f79cb1"
+                    "6ac89dcb-2ad0-408e-bf99-7f3f5e95ae50"
                 ],
                 "outgoing": [],
-                "name": "DrilledProductOnCarrier",
-                "characteristics": []
+                "name": "DrilledProductOnCarrier"
             }
         ],
         "elementVisualInformation": [
@@ -1122,19 +1122,19 @@
                 "waypoints": [
                     {
                         "original": {
-                            "x": 691,
-                            "y": 29
+                            "x": 688,
+                            "y": 31
                         },
-                        "x": 691,
-                        "y": 29
+                        "x": 688,
+                        "y": 31
                     },
                     {
-                        "x": 691,
-                        "y": 63
+                        "x": 688,
+                        "y": 64
                     },
                     {
                         "x": 690,
-                        "y": 63
+                        "y": 64
                     },
                     {
                         "original": {
@@ -1345,36 +1345,6 @@
                 ]
             },
             {
-                "id": "7112b3da-1188-4be2-bbf8-05b5e1f79cb1",
-                "type": "fpb:Flow",
-                "waypoints": [
-                    {
-                        "original": {
-                            "x": 689,
-                            "y": 704
-                        },
-                        "x": 689,
-                        "y": 704
-                    },
-                    {
-                        "x": 689,
-                        "y": 738
-                    },
-                    {
-                        "x": 686,
-                        "y": 738
-                    },
-                    {
-                        "original": {
-                            "x": 686,
-                            "y": 772
-                        },
-                        "x": 686,
-                        "y": 772
-                    }
-                ]
-            },
-            {
                 "id": "cac35cfd-ebbe-40c1-9017-701a3e733040",
                 "type": "fpb:Flow",
                 "waypoints": [
@@ -1481,16 +1451,46 @@
                 "width": 50,
                 "height": 50,
                 "type": "fpb:Product",
-                "x": 666.1666666666667,
-                "y": -21
+                "x": 663.1666666666667,
+                "y": -19
             },
             {
-                "id": "5fea3c14-e5e0-455c-8b47-6ac7c5f27a00",
+                "id": "6ac89dcb-2ad0-408e-bf99-7f3f5e95ae50",
+                "type": "fpb:Flow",
+                "waypoints": [
+                    {
+                        "original": {
+                            "x": 689,
+                            "y": 704
+                        },
+                        "x": 689,
+                        "y": 704
+                    },
+                    {
+                        "x": 689,
+                        "y": 737
+                    },
+                    {
+                        "x": 693,
+                        "y": 737
+                    },
+                    {
+                        "original": {
+                            "x": 693,
+                            "y": 770
+                        },
+                        "x": 693,
+                        "y": 770
+                    }
+                ]
+            },
+            {
+                "id": "b515150e-fdf3-4157-8404-36e9eaaade8a",
                 "width": 50,
                 "height": 50,
                 "type": "fpb:Product",
-                "x": 660.5,
-                "y": 772
+                "x": 668,
+                "y": 770
             }
         ]
     },
@@ -1508,9 +1508,9 @@
             "isDecomposedProcessOperator": "8c8814d5-a964-4b09-971b-06d9447e30b0",
             "consistsOfStates": [
                 "45e902d0-43d8-4595-adbc-d41a8ac118ff",
-                "c14000cd-b35a-49c7-a296-0322d734d97d",
                 "c83fcab8-9724-4f2e-8362-86590da590bf",
                 "c4191768-d53f-4e67-94fc-84a0781beb3f",
+                "c14000cd-b35a-49c7-a296-0322d734d97d",
                 "d3e36959-c719-45b8-82fe-0dd2f87f7cfc"
             ],
             "consistsOfSystemLimit": "97d7ea27-5aa5-483a-931d-b85f10e5ba78",
@@ -1552,7 +1552,7 @@
                     "c14000cd-b35a-49c7-a296-0322d734d97d",
                     "d3e36959-c719-45b8-82fe-0dd2f87f7cfc"
                 ],
-                "name": "CheckAndDrilling"
+                "name": "CheckAndDrilling_SL"
             },
             {
                 "$type": "fpb:TechnicalResource",

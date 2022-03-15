@@ -10,8 +10,8 @@
             "$type": "fpb:Process",
             "id": "8789d9a2-795c-4a08-8ed6-92291b5d7d9d",
             "elementsContainer": [
-                "297d72ba-9975-4718-9eee-bb73d0337109",
                 "a3c48c1f-45a1-4996-af01-edc67a2c70dc",
+                "297d72ba-9975-4718-9eee-bb73d0337109",
                 "5605dbbb-0e4a-4fdd-9aed-a2a7f99f973c"
             ],
             "isDecomposedProcessOperator": null,
@@ -28,23 +28,23 @@
         },
         "elementDataInformation": [
             {
-                "$type": "fpb:SystemLimit",
-                "id": "297d72ba-9975-4718-9eee-bb73d0337109",
-                "elementsContainer": [
-                    "3554fec0-3a6a-49f4-80d7-482de89862b6",
-                    "eea1b593-4dc1-4385-ac6c-9d73224846f0",
-                    "98e1f7f9-a47e-4c30-b219-7995fabbf7e7",
-                    "12ec01b1-98fb-448a-9c1a-6f11f95da4d8",
-                    "d4cd534c-367b-4222-89bb-1d5f4333093a",
-                    "f9b3ca44-6894-4de0-a49b-e9a087735511",
-                    "cb121a9a-0f6f-4d5c-9f78-857ce64b4cec"
-                ]
-            },
-            {
                 "$type": "fpb:Usage",
                 "id": "a3c48c1f-45a1-4996-af01-edc67a2c70dc",
                 "sourceRef": "5605dbbb-0e4a-4fdd-9aed-a2a7f99f973c",
                 "targetRef": "98e1f7f9-a47e-4c30-b219-7995fabbf7e7"
+            },
+            {
+                "$type": "fpb:SystemLimit",
+                "id": "297d72ba-9975-4718-9eee-bb73d0337109",
+                "elementsContainer": [
+                    "12ec01b1-98fb-448a-9c1a-6f11f95da4d8",
+                    "d4cd534c-367b-4222-89bb-1d5f4333093a",
+                    "f9b3ca44-6894-4de0-a49b-e9a087735511",
+                    "3554fec0-3a6a-49f4-80d7-482de89862b6",
+                    "eea1b593-4dc1-4385-ac6c-9d73224846f0",
+                    "98e1f7f9-a47e-4c30-b219-7995fabbf7e7",
+                    "cb121a9a-0f6f-4d5c-9f78-857ce64b4cec"
+                ]
             },
             {
                 "$type": "fpb:TechnicalResource",
@@ -67,13 +67,31 @@
                 "name": "CameraModule"
             },
             {
+                "$type": "fpb:Flow",
+                "id": "12ec01b1-98fb-448a-9c1a-6f11f95da4d8",
+                "sourceRef": "3554fec0-3a6a-49f4-80d7-482de89862b6",
+                "targetRef": "98e1f7f9-a47e-4c30-b219-7995fabbf7e7"
+            },
+            {
+                "$type": "fpb:Flow",
+                "id": "d4cd534c-367b-4222-89bb-1d5f4333093a",
+                "sourceRef": "eea1b593-4dc1-4385-ac6c-9d73224846f0",
+                "targetRef": "98e1f7f9-a47e-4c30-b219-7995fabbf7e7"
+            },
+            {
+                "$type": "fpb:Flow",
+                "id": "f9b3ca44-6894-4de0-a49b-e9a087735511",
+                "sourceRef": "98e1f7f9-a47e-4c30-b219-7995fabbf7e7",
+                "targetRef": "cb121a9a-0f6f-4d5c-9f78-857ce64b4cec"
+            },
+            {
                 "$type": "fpb:Product",
                 "id": "3554fec0-3a6a-49f4-80d7-482de89862b6",
                 "identification": {
                     "$type": "fpb:Identification",
                     "uniqueIdent": "3554fec0-3a6a-49f4-80d7-482de89862b6",
                     "longName": "",
-                    "shortName": "Product",
+                    "shortName": "InputProduct",
                     "versionNumber": "",
                     "revisionNumber": ""
                 },
@@ -84,7 +102,7 @@
                 "outgoing": [
                     "12ec01b1-98fb-448a-9c1a-6f11f95da4d8"
                 ],
-                "name": "Product"
+                "name": "InputProduct"
             },
             {
                 "$type": "fpb:Information",
@@ -121,32 +139,14 @@
                     "5605dbbb-0e4a-4fdd-9aed-a2a7f99f973c"
                 ],
                 "incoming": [
-                    "a3c48c1f-45a1-4996-af01-edc67a2c70dc",
                     "12ec01b1-98fb-448a-9c1a-6f11f95da4d8",
-                    "d4cd534c-367b-4222-89bb-1d5f4333093a"
+                    "d4cd534c-367b-4222-89bb-1d5f4333093a",
+                    "a3c48c1f-45a1-4996-af01-edc67a2c70dc"
                 ],
                 "outgoing": [
                     "f9b3ca44-6894-4de0-a49b-e9a087735511"
                 ],
                 "name": "CameraCheck"
-            },
-            {
-                "$type": "fpb:Flow",
-                "id": "12ec01b1-98fb-448a-9c1a-6f11f95da4d8",
-                "sourceRef": "3554fec0-3a6a-49f4-80d7-482de89862b6",
-                "targetRef": "98e1f7f9-a47e-4c30-b219-7995fabbf7e7"
-            },
-            {
-                "$type": "fpb:Flow",
-                "id": "d4cd534c-367b-4222-89bb-1d5f4333093a",
-                "sourceRef": "eea1b593-4dc1-4385-ac6c-9d73224846f0",
-                "targetRef": "98e1f7f9-a47e-4c30-b219-7995fabbf7e7"
-            },
-            {
-                "$type": "fpb:Flow",
-                "id": "f9b3ca44-6894-4de0-a49b-e9a087735511",
-                "sourceRef": "98e1f7f9-a47e-4c30-b219-7995fabbf7e7",
-                "targetRef": "cb121a9a-0f6f-4d5c-9f78-857ce64b4cec"
             },
             {
                 "$type": "fpb:Product",
@@ -170,14 +170,6 @@
             }
         ],
         "elementVisualInformation": [
-            {
-                "id": "297d72ba-9975-4718-9eee-bb73d0337109",
-                "width": 648,
-                "height": 390,
-                "type": "fpb:SystemLimit",
-                "x": 557,
-                "y": 502
-            },
             {
                 "id": "a3c48c1f-45a1-4996-af01-edc67a2c70dc",
                 "type": "fpb:Usage",
@@ -209,36 +201,20 @@
                 ]
             },
             {
+                "id": "297d72ba-9975-4718-9eee-bb73d0337109",
+                "width": 648,
+                "height": 390,
+                "type": "fpb:SystemLimit",
+                "x": 557,
+                "y": 502
+            },
+            {
                 "id": "5605dbbb-0e4a-4fdd-9aed-a2a7f99f973c",
                 "width": 150,
                 "height": 80,
                 "type": "fpb:TechnicalResource",
                 "x": 1270,
                 "y": 665
-            },
-            {
-                "id": "3554fec0-3a6a-49f4-80d7-482de89862b6",
-                "width": 50,
-                "height": 50,
-                "type": "fpb:Product",
-                "x": 778,
-                "y": 477
-            },
-            {
-                "id": "eea1b593-4dc1-4385-ac6c-9d73224846f0",
-                "width": 50,
-                "height": 50,
-                "type": "fpb:Information",
-                "x": 935,
-                "y": 479
-            },
-            {
-                "id": "98e1f7f9-a47e-4c30-b219-7995fabbf7e7",
-                "width": 150,
-                "height": 80,
-                "type": "fpb:ProcessOperator",
-                "x": 811,
-                "y": 664
             },
             {
                 "id": "12ec01b1-98fb-448a-9c1a-6f11f95da4d8",
@@ -314,11 +290,11 @@
                     },
                     {
                         "x": 886,
-                        "y": 806
+                        "y": 807
                     },
                     {
                         "x": 890,
-                        "y": 806
+                        "y": 807
                     },
                     {
                         "original": {
@@ -329,6 +305,30 @@
                         "y": 870
                     }
                 ]
+            },
+            {
+                "id": "3554fec0-3a6a-49f4-80d7-482de89862b6",
+                "width": 50,
+                "height": 50,
+                "type": "fpb:Product",
+                "x": 778,
+                "y": 477
+            },
+            {
+                "id": "eea1b593-4dc1-4385-ac6c-9d73224846f0",
+                "width": 50,
+                "height": 50,
+                "type": "fpb:Information",
+                "x": 935,
+                "y": 479
+            },
+            {
+                "id": "98e1f7f9-a47e-4c30-b219-7995fabbf7e7",
+                "width": 150,
+                "height": 80,
+                "type": "fpb:ProcessOperator",
+                "x": 811,
+                "y": 664
             },
             {
                 "id": "cb121a9a-0f6f-4d5c-9f78-857ce64b4cec",
