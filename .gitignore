@@ -1,2 +1,5 @@
 **/catalog-*.xml
 **/*.owl.bak
+
+# Just to ignore the mapping script when it gets dropped into a folder
+*.js

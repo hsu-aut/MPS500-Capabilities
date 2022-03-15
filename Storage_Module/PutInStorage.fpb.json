@@ -1,0 +1,277 @@
+[
+    {
+        "$type": "fpb:Project",
+        "name": "FPBJS_Project",
+        "targetNamespace": "http://www.hsu-ifa.de/fpbjs",
+        "entryPoint": "a38c8caa-d2b7-4700-935e-e8052f5bd19c"
+    },
+    {
+        "process": {
+            "$type": "fpb:Process",
+            "id": "a38c8caa-d2b7-4700-935e-e8052f5bd19c",
+            "elementsContainer": [
+                "b0ad04f0-bbb5-48ec-8b8d-c3ccd2f3167a"
+            ],
+            "isDecomposedProcessOperator": null,
+            "consistsOfStates": [
+                "e3a1210c-a8dc-40b5-9de6-722ce261d2fb",
+                "2268366b-26b4-465c-94a5-460e46a1b4d4",
+                "9f3d934b-5b69-4b8a-8c79-4d0b130ff49c"
+            ],
+            "consistsOfSystemLimit": "b0ad04f0-bbb5-48ec-8b8d-c3ccd2f3167a",
+            "consistsOfProcesses": [],
+            "consistsOfProcessOperator": [
+                "c3bba851-2e6a-4159-93bd-54eb5f687068"
+            ]
+        },
+        "elementDataInformation": [
+            {
+                "$type": "fpb:SystemLimit",
+                "id": "b0ad04f0-bbb5-48ec-8b8d-c3ccd2f3167a",
+                "elementsContainer": [
+                    "c7dbcf86-4e47-4aa0-b6b3-441116db3b3b",
+                    "64dbae1a-5cec-461f-bac7-2ffd47b4256c",
+                    "10aa63a7-1957-4bbc-adb1-d2199858df89",
+                    "2268366b-26b4-465c-94a5-460e46a1b4d4",
+                    "e3a1210c-a8dc-40b5-9de6-722ce261d2fb",
+                    "c3bba851-2e6a-4159-93bd-54eb5f687068",
+                    "9f3d934b-5b69-4b8a-8c79-4d0b130ff49c"
+                ],
+                "name": "PutInStorageSL"
+            },
+            {
+                "$type": "fpb:ParallelFlow",
+                "id": "c7dbcf86-4e47-4aa0-b6b3-441116db3b3b",
+                "inTandemWith": [],
+                "sourceRef": "2268366b-26b4-465c-94a5-460e46a1b4d4",
+                "targetRef": "c3bba851-2e6a-4159-93bd-54eb5f687068"
+            },
+            {
+                "$type": "fpb:ParallelFlow",
+                "id": "64dbae1a-5cec-461f-bac7-2ffd47b4256c",
+                "inTandemWith": [],
+                "sourceRef": "e3a1210c-a8dc-40b5-9de6-722ce261d2fb",
+                "targetRef": "c3bba851-2e6a-4159-93bd-54eb5f687068"
+            },
+            {
+                "$type": "fpb:Flow",
+                "id": "10aa63a7-1957-4bbc-adb1-d2199858df89",
+                "sourceRef": "c3bba851-2e6a-4159-93bd-54eb5f687068",
+                "targetRef": "9f3d934b-5b69-4b8a-8c79-4d0b130ff49c"
+            },
+            {
+                "$type": "fpb:Information",
+                "id": "2268366b-26b4-465c-94a5-460e46a1b4d4",
+                "identification": {
+                    "$type": "fpb:Identification",
+                    "uniqueIdent": "2268366b-26b4-465c-94a5-460e46a1b4d4",
+                    "longName": "",
+                    "shortName": "RequiredStorageId",
+                    "versionNumber": "",
+                    "revisionNumber": ""
+                },
+                "isAssignedTo": [
+                    "c3bba851-2e6a-4159-93bd-54eb5f687068"
+                ],
+                "incoming": [],
+                "outgoing": [
+                    "c7dbcf86-4e47-4aa0-b6b3-441116db3b3b"
+                ],
+                "name": "RequiredStorageId"
+            },
+            {
+                "$type": "fpb:Product",
+                "id": "e3a1210c-a8dc-40b5-9de6-722ce261d2fb",
+                "identification": {
+                    "$type": "fpb:Identification",
+                    "uniqueIdent": "e3a1210c-a8dc-40b5-9de6-722ce261d2fb",
+                    "longName": "",
+                    "shortName": "ProductOnCarrier",
+                    "versionNumber": "",
+                    "revisionNumber": ""
+                },
+                "isAssignedTo": [
+                    "c3bba851-2e6a-4159-93bd-54eb5f687068"
+                ],
+                "incoming": [],
+                "outgoing": [
+                    "64dbae1a-5cec-461f-bac7-2ffd47b4256c"
+                ],
+                "name": "ProductOnCarrier"
+            },
+            {
+                "$type": "fpb:ProcessOperator",
+                "id": "c3bba851-2e6a-4159-93bd-54eb5f687068",
+                "identification": {
+                    "$type": "fpb:Identification",
+                    "uniqueIdent": "c3bba851-2e6a-4159-93bd-54eb5f687068",
+                    "longName": "",
+                    "shortName": "PutInStorage",
+                    "versionNumber": "",
+                    "revisionNumber": ""
+                },
+                "isAssignedTo": [],
+                "incoming": [
+                    "c7dbcf86-4e47-4aa0-b6b3-441116db3b3b",
+                    "64dbae1a-5cec-461f-bac7-2ffd47b4256c"
+                ],
+                "outgoing": [
+                    "10aa63a7-1957-4bbc-adb1-d2199858df89"
+                ],
+                "name": "PutInStorage"
+            },
+            {
+                "$type": "fpb:Product",
+                "id": "9f3d934b-5b69-4b8a-8c79-4d0b130ff49c",
+                "identification": {
+                    "$type": "fpb:Identification",
+                    "uniqueIdent": "9f3d934b-5b69-4b8a-8c79-4d0b130ff49c",
+                    "longName": "",
+                    "shortName": "ProductInStorage",
+                    "versionNumber": "",
+                    "revisionNumber": ""
+                },
+                "isAssignedTo": [
+                    "c3bba851-2e6a-4159-93bd-54eb5f687068"
+                ],
+                "incoming": [
+                    "10aa63a7-1957-4bbc-adb1-d2199858df89"
+                ],
+                "outgoing": [],
+                "name": "ProductInStorage"
+            }
+        ],
+        "elementVisualInformation": [
+            {
+                "id": "b0ad04f0-bbb5-48ec-8b8d-c3ccd2f3167a",
+                "width": 441,
+                "height": 388,
+                "type": "fpb:SystemLimit",
+                "x": 264,
+                "y": 85
+            },
+            {
+                "id": "c7dbcf86-4e47-4aa0-b6b3-441116db3b3b",
+                "type": "fpb:ParallelFlow",
+                "waypoints": [
+                    {
+                        "original": {
+                            "x": 327,
+                            "y": 108
+                        },
+                        "x": 327,
+                        "y": 108
+                    },
+                    {
+                        "x": 327,
+                        "y": 176
+                    },
+                    {
+                        "x": 434,
+                        "y": 176
+                    },
+                    {
+                        "original": {
+                            "x": 434,
+                            "y": 242
+                        },
+                        "x": 434,
+                        "y": 242
+                    }
+                ]
+            },
+            {
+                "id": "64dbae1a-5cec-461f-bac7-2ffd47b4256c",
+                "type": "fpb:ParallelFlow",
+                "waypoints": [
+                    {
+                        "original": {
+                            "x": 522,
+                            "y": 108
+                        },
+                        "x": 522,
+                        "y": 108
+                    },
+                    {
+                        "x": 522,
+                        "y": 177
+                    },
+                    {
+                        "x": 434,
+                        "y": 177
+                    },
+                    {
+                        "original": {
+                            "x": 434,
+                            "y": 242
+                        },
+                        "x": 434,
+                        "y": 242
+                    }
+                ]
+            },
+            {
+                "id": "10aa63a7-1957-4bbc-adb1-d2199858df89",
+                "type": "fpb:Flow",
+                "waypoints": [
+                    {
+                        "original": {
+                            "x": 434,
+                            "y": 322
+                        },
+                        "x": 434,
+                        "y": 322
+                    },
+                    {
+                        "x": 434,
+                        "y": 383
+                    },
+                    {
+                        "x": 433,
+                        "y": 383
+                    },
+                    {
+                        "original": {
+                            "x": 433,
+                            "y": 444
+                        },
+                        "x": 433,
+                        "y": 444
+                    }
+                ]
+            },
+            {
+                "id": "2268366b-26b4-465c-94a5-460e46a1b4d4",
+                "width": 50,
+                "height": 50,
+                "type": "fpb:Information",
+                "x": 302,
+                "y": 58
+            },
+            {
+                "id": "e3a1210c-a8dc-40b5-9de6-722ce261d2fb",
+                "width": 50,
+                "height": 50,
+                "type": "fpb:Product",
+                "x": 497,
+                "y": 58
+            },
+            {
+                "id": "c3bba851-2e6a-4159-93bd-54eb5f687068",
+                "width": 150,
+                "height": 80,
+                "type": "fpb:ProcessOperator",
+                "x": 359,
+                "y": 242
+            },
+            {
+                "id": "9f3d934b-5b69-4b8a-8c79-4d0b130ff49c",
+                "width": 50,
+                "height": 50,
+                "type": "fpb:Product",
+                "x": 408,
+                "y": 444
+            }
+        ]
+    }
+]

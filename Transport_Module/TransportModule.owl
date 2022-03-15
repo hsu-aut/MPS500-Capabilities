@@ -5,10 +5,190 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:OpcUa="http://www.hsu-ifa.de/ontologies/OpcUa#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:VDI3682="http://www.hsu-ifa.de/ontologies/VDI3682#"
+     xmlns:DINEN61360="http://www.hsu-ifa.de/ontologies/DINEN61360#">
     <owl:Ontology rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule">
-		<owl:imports rdf:resource="https://raw.githubusercontent.com/aljoshakoecher/machine-skill-model/v3.0.1/Machine-Capability-Model.owl"/>
-	</owl:Ontology>
+        <owl:imports rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/aljoshakoecher/machine-skill-model/v3.0.1/Machine-Capability-Model.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Information -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Information"/>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#ProductAtStartStation -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#ProductAtStartStation">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
+        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#ProductAtStartStation_StationID_DE"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#ProductAtTargetStation -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#ProductAtTargetStation">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
+        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#ProductAtTargetStation_StationID_DE"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#TargetStation -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#TargetStation">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Information"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#Transport -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#Transport">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
+        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#ProductAtStartStation"/>
+        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#TargetStation"/>
+        <VDI3682:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#ProductAtTargetStation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#TransportProcessContainer -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#TransportProcessContainer">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
+        <VDI3682:consistsOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#Transport"/>
+        <VDI3682:consistsOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#TransportSystemLimit"/>
+        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#ProductAtStartStation"/>
+        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#TargetStation"/>
+        <VDI3682:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#ProductAtTargetStation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#TransportSystemLimit -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Transport#TransportSystemLimit">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#ProductAtStartStation_StationID_DE -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#ProductAtStartStation_StationID_DE">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#ProductAtStartStation_StationID_ID"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#ProductAtStartStation_StationID_ID -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#ProductAtStartStation_StationID_ID">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#ProductAtTargetStation_StationID_DE -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#ProductAtTargetStation_StationID_DE">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#ProductAtTargetStation_StationID_ID"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#ProductAtTargetStation_StationID_ID -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#ProductAtTargetStation_StationID_ID">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#TargetStation_DE -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#TargetStation_DE">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#TargetStation_ID1"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#TargetStation_ID2"/>
+        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#TargetStation_ID3"/>
+        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#TargetStation_ID1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#TargetStation_ID1">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>&gt;=</DINEN61360:Logic_Interpretation>
+        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</DINEN61360:Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#TargetStation_ID2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#TargetStation_ID2">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>&lt;=</DINEN61360:Logic_Interpretation>
+        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</DINEN61360:Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#TargetStation_ID3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/TransportModule#TargetStation_ID3">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
+        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
+        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
