@@ -56,6 +56,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinder">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/capability-model#ProvidedCapability"/>
         <VDI2206:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier"/>
         <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStack"/>
         <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinder"/>
