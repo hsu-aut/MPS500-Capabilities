@@ -1,981 +1,717 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssemblyModule#"
-     xml:base="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssemblyModule"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:OpcUa="http://www.hsu-ifa.de/ontologies/OpcUa#"
-     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
-     xmlns:VDI2206="http://www.hsu-ifa.de/ontologies/VDI2206#"
-     xmlns:VDI3682="http://www.hsu-ifa.de/ontologies/VDI3682#"
-     xmlns:DINEN61360="http://www.hsu-ifa.de/ontologies/DINEN61360#">
-    <owl:Ontology rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder">
-        <owl:imports rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types"/>
-        <owl:imports rdf:resource="https://raw.githubusercontent.com/aljoshakoecher/machine-skill-model/v3.0.1/Machine-Capability-Model.owl"/>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Information -->
-
-    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Information"/>
-    
-
-
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product -->
-
-    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinder -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinder">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/capability-model#ProvidedCapability"/>
-        <VDI2206:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStack"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinder"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStack"/>
-        <VDI3682:isComposedOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#EjectCap"/>
-        <VDI3682:isComposedOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#InsertSpring"/>
-        <VDI3682:isComposedOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#PlaceCylinderInFixture"/>
-        <VDI3682:isComposedOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#PutOnCarrier"/>
-        <VDI3682:isComposedOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#ScrewOnCap"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinderProcess -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinderProcess">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
-        <VDI3682:consistsOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinder"/>
-        <VDI3682:consistsOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssemblySystemLimit"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinder"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot"/>
-        <VDI3682:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder"/>
-    </owl:NamedIndividual>
-    
-
+@prefix : <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix VDI2206: <http://www.w3id.org/hsu-aut/VDI2206#> .
+@prefix VDI3682: <http://www.w3id.org/hsu-aut/VDI3682#> .
+@prefix DINEN61360: <http://www.w3id.org/hsu-aut/DINEN61360#> .
+@base <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#> .
+
+<http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder> rdf:type owl:Ontology ;
+                                                                   owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
+                                                                               <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinder
+:AssembleCylinder rdf:type owl:NamedIndividual ,
+                           VDI3682:ProcessOperator ,
+                           <http://www.w3id.org/hsu-aut/cask#ProvidedCapability> ;
+                  VDI2206:hasOutput :AssembledCylinderOnCarrier ;
+                  VDI3682:hasInput :CapStack ,
+                                   :DrilledCylinder ,
+                                   :RequiredCarrierId ,
+                                   :RequiredCarrierSlot ,
+                                   :SpringStack ;
+                  VDI3682:isComposedOf :EjectCap ,
+                                       :InsertSpring ,
+                                       :PlaceCylinderInFixture ,
+                                       :PutOnCarrier ,
+                                       :ScrewOnCap .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinderProcess
+:AssembleCylinderProcess rdf:type owl:NamedIndividual ,
+                                  VDI3682:Process ;
+                         VDI3682:consistsOf :AssembleCylinder ,
+                                            :AssemblySystemLimit ;
+                         VDI3682:hasInput :DrilledCylinder ,
+                                          :RequiredCarrierId ,
+                                          :RequiredCarrierSlot ;
+                         VDI3682:hasOutput :AssembledCylinder .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinderSubProcess
+:AssembleCylinderSubProcess rdf:type owl:NamedIndividual ,
+                                     VDI3682:Process ;
+                            VDI3682:consistsOf :AssembleCylinderSystemLimit ,
+                                               :EjectCap ,
+                                               :InsertSpring ,
+                                               :PlaceCylinderInFixture ,
+                                               :PutOnCarrier ,
+                                               :ScrewOnCap ;
+                            VDI3682:hasInput :CapStack ,
+                                             :DrilledCylinder ,
+                                             :RequiredCarrierId ,
+                                             :RequiredCarrierSlot ,
+                                             :SpringStack ;
+                            VDI3682:hasOutput :AssembledCylinderOnCarrier .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinderSystemLimit
+:AssembleCylinderSystemLimit rdf:type owl:NamedIndividual ,
+                                      VDI3682:SystemLimit .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder
+:AssembledCylinder rdf:type owl:NamedIndividual ,
+                            VDI3682:Product .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier
+:AssembledCylinderOnCarrier rdf:type owl:NamedIndividual ,
+                                     VDI3682:Product ;
+                            DINEN61360:has_Data_Element :AssembledCylinderOnCarrier_CarrierID_DE ,
+                                                        :AssembledCylinderOnCarrier_CarrierSlot_DE ,
+                                                        :AssembledCylinderOnCarrier_CylinderColor_DE ,
+                                                        :AssembledCylinderOnCarrier_CylinderInnerDiameter_DE ,
+                                                        :AssembledCylinderOnCarrier_CylinderOuterDiameter_DE ,
+                                                        :AssembledCylinderOnCarrier_LotSize_DE .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierID_DE
+:AssembledCylinderOnCarrier_CarrierID_DE rdf:type owl:NamedIndividual ,
+                                                  DINEN61360:Data_Element ;
+                                         DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD> .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierID_ID
+:AssembledCylinderOnCarrier_CarrierID_ID rdf:type owl:NamedIndividual ,
+                                                  DINEN61360:Instance_Description ;
+                                         DINEN61360:Expression_Goal "Assurance" ;
+                                         DINEN61360:Logic_Interpretation "=" .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierSlot_DE
+:AssembledCylinderOnCarrier_CarrierSlot_DE rdf:type owl:NamedIndividual ,
+                                                    DINEN61360:Data_Element ;
+                                           DINEN61360:has_Instance_Description :AssembledCylinderOnCarrier_CarrierSlot_ID ;
+                                           DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinderSubProcess -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinderSubProcess">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
-        <VDI3682:consistsOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinderSystemLimit"/>
-        <VDI3682:consistsOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#EjectCap"/>
-        <VDI3682:consistsOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#InsertSpring"/>
-        <VDI3682:consistsOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#PlaceCylinderInFixture"/>
-        <VDI3682:consistsOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#PutOnCarrier"/>
-        <VDI3682:consistsOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#ScrewOnCap"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStack"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinder"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStack"/>
-        <VDI3682:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierSlot_ID
+:AssembledCylinderOnCarrier_CarrierSlot_ID rdf:type owl:NamedIndividual ,
+                                                    DINEN61360:Instance_Description ;
+                                           DINEN61360:Expression_Goal "Assurance" ;
+                                           DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinderSystemLimit -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderColor_DE
+:AssembledCylinderOnCarrier_CylinderColor_DE rdf:type owl:NamedIndividual ,
+                                                      DINEN61360:Data_Element ;
+                                             DINEN61360:has_Instance_Description :AssembledCylinderOnCarrier_CylinderColor_ID ;
+                                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinderSystemLimit">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderColor_ID
+:AssembledCylinderOnCarrier_CylinderColor_ID rdf:type owl:NamedIndividual ,
+                                                      DINEN61360:Instance_Description ;
+                                             DINEN61360:Expression_Goal "Assurance" ;
+                                             DINEN61360:Logic_Interpretation "=" .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderInnerDiameter_DE
+:AssembledCylinderOnCarrier_CylinderInnerDiameter_DE rdf:type owl:NamedIndividual ,
+                                                              DINEN61360:Data_Element ;
+                                                     DINEN61360:has_Instance_Description :AssembledCylinderOnCarrier_CylinderInnerDiameter_ID ;
+                                                     DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderInnerDiameter_ID
+:AssembledCylinderOnCarrier_CylinderInnerDiameter_ID rdf:type owl:NamedIndividual ,
+                                                              DINEN61360:Instance_Description ;
+                                                     DINEN61360:Expression_Goal "Assurance" ;
+                                                     DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierID_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierSlot_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderColor_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderInnerDiameter_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderOuterDiameter_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_LotSize_DE"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderOuterDiameter_DE
+:AssembledCylinderOnCarrier_CylinderOuterDiameter_DE rdf:type owl:NamedIndividual ,
+                                                              DINEN61360:Data_Element ;
+                                                     DINEN61360:has_Instance_Description :AssembledCylinderOnCarrier_CylinderOuterDiameter_ID ;
+                                                     DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierID_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierID_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderOuterDiameter_ID
+:AssembledCylinderOnCarrier_CylinderOuterDiameter_ID rdf:type owl:NamedIndividual ,
+                                                              DINEN61360:Instance_Description ;
+                                                     DINEN61360:Expression_Goal "Assurance" ;
+                                                     DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierID_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_LotSize_DE
+:AssembledCylinderOnCarrier_LotSize_DE rdf:type owl:NamedIndividual ,
+                                                DINEN61360:Data_Element ;
+                                       DINEN61360:has_Instance_Description :AssembledCylinderOnCarrier_LotSize_ID ;
+                                       DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierID_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_LotSize_ID
+:AssembledCylinderOnCarrier_LotSize_ID rdf:type owl:NamedIndividual ,
+                                                DINEN61360:Instance_Description ;
+                                       DINEN61360:Expression_Goal "Assurance" ;
+                                       DINEN61360:Logic_Interpretation "=" .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierSlot_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierSlot_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierSlot_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderColor_DE
+:AssembledCylinder_CylinderColor_DE rdf:type owl:NamedIndividual ,
+                                             DINEN61360:Data_Element ;
+                                    DINEN61360:has_Instance_Description :AssembledCylinder_CylinderColor_ID ;
+                                    DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierSlot_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderColor_ID
+:AssembledCylinder_CylinderColor_ID rdf:type owl:NamedIndividual ,
+                                             DINEN61360:Instance_Description ;
+                                    DINEN61360:Expression_Goal "Assurance" ;
+                                    DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierSlot_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderInnerDiameter_DE
+:AssembledCylinder_CylinderInnerDiameter_DE rdf:type owl:NamedIndividual ,
+                                                     DINEN61360:Data_Element ;
+                                            DINEN61360:has_Instance_Description :AssembledCylinder_CylinderInnerDiameter_ID ;
+                                            DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderColor_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderColor_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderColor_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderInnerDiameter_ID
+:AssembledCylinder_CylinderInnerDiameter_ID rdf:type owl:NamedIndividual ,
+                                                     DINEN61360:Instance_Description ;
+                                            DINEN61360:Expression_Goal "Assurance" ;
+                                            DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderColor_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderOuterDiameter_DE
+:AssembledCylinder_CylinderOuterDiameter_DE rdf:type owl:NamedIndividual ,
+                                                     DINEN61360:Data_Element ;
+                                            DINEN61360:has_Instance_Description :AssembledCylinder_CylinderOuterDiameter_ID ;
+                                            DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderColor_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderOuterDiameter_ID
+:AssembledCylinder_CylinderOuterDiameter_ID rdf:type owl:NamedIndividual ,
+                                                     DINEN61360:Instance_Description ;
+                                            DINEN61360:Expression_Goal "Assurance" ;
+                                            DINEN61360:Logic_Interpretation "=" .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderInnerDiameter_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderInnerDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderInnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_LotSize_DE
+:AssembledCylinder_LotSize_DE rdf:type owl:NamedIndividual ,
+                                       DINEN61360:Data_Element ;
+                              DINEN61360:has_Instance_Description :AssembledCylinder_LotSize_ID ;
+                              DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderInnerDiameter_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_LotSize_ID
+:AssembledCylinder_LotSize_ID rdf:type owl:NamedIndividual ,
+                                       DINEN61360:Instance_Description ;
+                              DINEN61360:Expression_Goal "Assurance" ;
+                              DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderInnerDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssemblySystemLimit
+:AssemblySystemLimit rdf:type owl:NamedIndividual ,
+                              VDI3682:SystemLimit .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderOuterDiameter_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderOuterDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderOuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#Cap
+:Cap rdf:type owl:NamedIndividual ,
+              VDI3682:Product .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderOuterDiameter_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapColor_DE
+:CapColor_DE rdf:type owl:NamedIndividual ,
+                      DINEN61360:Data_Element ;
+             DINEN61360:has_Instance_Description :CapColor_ID ;
+             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderOuterDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapColor_ID
+:CapColor_ID rdf:type owl:NamedIndividual ,
+                      DINEN61360:Instance_Description ;
+             DINEN61360:Expression_Goal "Assurance" ;
+             DINEN61360:Logic_Interpretation "=" .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_LotSize_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_LotSize_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_LotSize_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapDiameter_DE
+:CapDiameter_DE rdf:type owl:NamedIndividual ,
+                         DINEN61360:Data_Element ;
+                DINEN61360:has_Instance_Description :CapDiameter_ID ;
+                DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_LotSize_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapDiameter_ID
+:CapDiameter_ID rdf:type owl:NamedIndividual ,
+                         DINEN61360:Instance_Description ;
+                DINEN61360:Expression_Goal "Assurance" ;
+                DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_LotSize_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapLotSize_DE
+:CapLotSize_DE rdf:type owl:NamedIndividual ,
+                        DINEN61360:Data_Element ;
+               DINEN61360:has_Instance_Description :CapLotSize_ID ;
+               DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderColor_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderColor_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderColor_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapLotSize_ID
+:CapLotSize_ID rdf:type owl:NamedIndividual ,
+                        DINEN61360:Instance_Description ;
+               DINEN61360:Expression_Goal "Assurance" ;
+               DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderColor_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStack
+:CapStack rdf:type owl:NamedIndividual ,
+                   VDI3682:Product .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderColor_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapColor_DE
+:CapStackCapColor_DE rdf:type owl:NamedIndividual ,
+                              DINEN61360:Data_Element ;
+                     DINEN61360:has_Instance_Description :CapStackCapColor_ID ;
+                     DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderInnerDiameter_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderInnerDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderInnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapColor_ID
+:CapStackCapColor_ID rdf:type owl:NamedIndividual ,
+                              DINEN61360:Instance_Description ;
+                     DINEN61360:Expression_Goal "Actual_Value" ;
+                     DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderInnerDiameter_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapDiameter_DE
+:CapStackCapDiameter_DE rdf:type owl:NamedIndividual ,
+                                 DINEN61360:Data_Element ;
+                        DINEN61360:has_Instance_Description :CapStackCapDiameter_ID ;
+                        DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderInnerDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapDiameter_ID
+:CapStackCapDiameter_ID rdf:type owl:NamedIndividual ,
+                                 DINEN61360:Instance_Description ;
+                        DINEN61360:Expression_Goal "Actual_Value" ;
+                        DINEN61360:Logic_Interpretation "=" .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderOuterDiameter_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderOuterDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderOuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackStackSize_DE
+:CapStackStackSize_DE rdf:type owl:NamedIndividual ,
+                               DINEN61360:Data_Element ;
+                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderOuterDiameter_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackStackSize_ID
+:CapStackStackSize_ID rdf:type owl:NamedIndividual ,
+                               DINEN61360:Instance_Description ;
+                      DINEN61360:Expression_Goal "Actual_Value" ;
+                      DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderOuterDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture
+:CylinderInAssemblyFixture rdf:type owl:NamedIndividual ,
+                                    VDI3682:Product .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_LotSize_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_LotSize_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_LotSize_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderColor_DE
+:CylinderInAssemblyFixture_CylinderColor_DE rdf:type owl:NamedIndividual ,
+                                                     DINEN61360:Data_Element ;
+                                            DINEN61360:has_Instance_Description :CylinderInAssemblyFixture_CylinderColor_ID ;
+                                            DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_LotSize_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderColor_ID
+:CylinderInAssemblyFixture_CylinderColor_ID rdf:type owl:NamedIndividual ,
+                                                     DINEN61360:Instance_Description ;
+                                            DINEN61360:Expression_Goal "Assurance" ;
+                                            DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_LotSize_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderInnerDiameter_DE
+:CylinderInAssemblyFixture_CylinderInnerDiameter_DE rdf:type owl:NamedIndividual ,
+                                                             DINEN61360:Data_Element ;
+                                                    DINEN61360:has_Instance_Description :CylinderInAssemblyFixture_CylinderInnerDiameter_ID ;
+                                                    DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssemblySystemLimit -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssemblySystemLimit">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderInnerDiameter_ID
+:CylinderInAssemblyFixture_CylinderInnerDiameter_ID rdf:type owl:NamedIndividual ,
+                                                             DINEN61360:Instance_Description ;
+                                                    DINEN61360:Expression_Goal "Assurance" ;
+                                                    DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#Cap -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderOuterDiameter_DE
+:CylinderInAssemblyFixture_CylinderOuterDiameter_DE rdf:type owl:NamedIndividual ,
+                                                             DINEN61360:Data_Element ;
+                                                    DINEN61360:has_Instance_Description :CylinderInAssemblyFixture_CylinderOuterDiameter_ID ;
+                                                    DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#Cap">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderOuterDiameter_ID
+:CylinderInAssemblyFixture_CylinderOuterDiameter_ID rdf:type owl:NamedIndividual ,
+                                                             DINEN61360:Instance_Description ;
+                                                    DINEN61360:Expression_Goal "Assurance" ;
+                                                    DINEN61360:Logic_Interpretation "=" .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapColor_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapColor_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapColor_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_LotSize_DE
+:CylinderInAssemblyFixture_LotSize_DE rdf:type owl:NamedIndividual ,
+                                               DINEN61360:Data_Element ;
+                                      DINEN61360:has_Instance_Description :CylinderInAssemblyFixture_LotSize_ID ;
+                                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapColor_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_LotSize_ID
+:CylinderInAssemblyFixture_LotSize_ID rdf:type owl:NamedIndividual ,
+                                               DINEN61360:Instance_Description ;
+                                      DINEN61360:Expression_Goal "Assurance" ;
+                                      DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapColor_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring
+:CylinderWithSpring rdf:type owl:NamedIndividual ,
+                             VDI3682:Product .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapDiameter_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderColor_DE
+:CylinderWithSpring_CylinderColor_DE rdf:type owl:NamedIndividual ,
+                                              DINEN61360:Data_Element ;
+                                     DINEN61360:has_Instance_Description :CylinderWithSpring_CylinderColor_ID ;
+                                     DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapDiameter_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderColor_ID
+:CylinderWithSpring_CylinderColor_ID rdf:type owl:NamedIndividual ,
+                                              DINEN61360:Instance_Description ;
+                                     DINEN61360:Expression_Goal "Assurance" ;
+                                     DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderInnerDiameter_DE
+:CylinderWithSpring_CylinderInnerDiameter_DE rdf:type owl:NamedIndividual ,
+                                                      DINEN61360:Data_Element ;
+                                             DINEN61360:has_Instance_Description :CylinderWithSpring_CylinderInnerDiameter_ID ;
+                                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapLotSize_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapLotSize_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapLotSize_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderInnerDiameter_ID
+:CylinderWithSpring_CylinderInnerDiameter_ID rdf:type owl:NamedIndividual ,
+                                                      DINEN61360:Instance_Description ;
+                                             DINEN61360:Expression_Goal "Assurance" ;
+                                             DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapLotSize_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderOuterDiameter_DE
+:CylinderWithSpring_CylinderOuterDiameter_DE rdf:type owl:NamedIndividual ,
+                                                      DINEN61360:Data_Element ;
+                                             DINEN61360:has_Instance_Description :CylinderWithSpring_CylinderOuterDiameter_ID ;
+                                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapLotSize_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderOuterDiameter_ID
+:CylinderWithSpring_CylinderOuterDiameter_ID rdf:type owl:NamedIndividual ,
+                                                      DINEN61360:Instance_Description ;
+                                             DINEN61360:Expression_Goal "Assurance" ;
+                                             DINEN61360:Logic_Interpretation "=" .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStack -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStack">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_LotSize_DE
+:CylinderWithSpring_LotSize_DE rdf:type owl:NamedIndividual ,
+                                        DINEN61360:Data_Element ;
+                               DINEN61360:has_Instance_Description :CylinderWithSpring_LotSize_ID ;
+                               DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapColor_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_LotSize_ID
+:CylinderWithSpring_LotSize_ID rdf:type owl:NamedIndividual ,
+                                        DINEN61360:Instance_Description ;
+                               DINEN61360:Expression_Goal "Assurance" ;
+                               DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapColor_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapColor_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinder
+:DrilledCylinder rdf:type owl:NamedIndividual ,
+                          VDI3682:Product .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapColor_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapColor_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierID_DE
+:DrilledCylinderCarrierID_DE rdf:type owl:NamedIndividual ,
+                                      DINEN61360:Data_Element ;
+                             DINEN61360:has_Instance_Description :DrilledCylinderCarrierID_ID ;
+                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapDiameter_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierID_ID
+:DrilledCylinderCarrierID_ID rdf:type owl:NamedIndividual ,
+                                      DINEN61360:Instance_Description ;
+                             DINEN61360:Expression_Goal "Actual_Value" ;
+                             DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierSlot_DE
+:DrilledCylinderCarrierSlot_DE rdf:type owl:NamedIndividual ,
+                                        DINEN61360:Data_Element ;
+                               DINEN61360:has_Instance_Description :DrilledCylinderCarrierSlot_ID ;
+                               DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapDiameter_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierSlot_ID
+:DrilledCylinderCarrierSlot_ID rdf:type owl:NamedIndividual ,
+                                        DINEN61360:Instance_Description ;
+                               DINEN61360:Expression_Goal "Actual_Value" ;
+                               DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackStackSize_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderColor_DE
+:DrilledCylinderColor_DE rdf:type owl:NamedIndividual ,
+                                  DINEN61360:Data_Element ;
+                         DINEN61360:has_Instance_Description :DrilledCylinderColor_ID ;
+                         DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackStackSize_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderColor_ID
+:DrilledCylinderColor_ID rdf:type owl:NamedIndividual ,
+                                  DINEN61360:Instance_Description ;
+                         DINEN61360:Expression_Goal "Actual_Value" ;
+                         DINEN61360:Logic_Interpretation "=" .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackStackSize_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackStackSize_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderInnerDiameter_DE
+:DrilledCylinderInnerDiameter_DE rdf:type owl:NamedIndividual ,
+                                          DINEN61360:Data_Element ;
+                                 DINEN61360:has_Instance_Description :DrilledCylinderInnerDiameter_ID ;
+                                 DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderInnerDiameter_ID
+:DrilledCylinderInnerDiameter_ID rdf:type owl:NamedIndividual ,
+                                          DINEN61360:Instance_Description ;
+                                 DINEN61360:Expression_Goal "Actual_Value" ;
+                                 DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderLotSize_DE
+:DrilledCylinderLotSize_DE rdf:type owl:NamedIndividual ,
+                                    DINEN61360:Data_Element ;
+                           DINEN61360:has_Instance_Description :DrilledCylinderLotSize_ID1 ;
+						   DINEN61360:has_Instance_Description :DrilledCylinderLotSize_ID2 ;
+                           DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderColor_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderColor_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderColor_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderLotSize_ID1
+:DrilledCylinderLotSize_ID1 rdf:type owl:NamedIndividual ,
+                                    DINEN61360:Instance_Description ;
+                           DINEN61360:Expression_Goal "Actual_Value" ;
+                           DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderColor_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderLotSize_ID2
+:DrilledCylinderLotSize_ID2 rdf:type owl:NamedIndividual ,
+                                    DINEN61360:Instance_Description ;
+                           DINEN61360:Expression_Goal "Requirement" ;
+                           DINEN61360:Logic_Interpretation "<=" ;
+						   DINEN61360:Value 4 .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderColor_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderOuterDiameter_DE
+:DrilledCylinderOuterDiameter_DE rdf:type owl:NamedIndividual ,
+                                          DINEN61360:Data_Element ;
+                                 DINEN61360:has_Instance_Description :DrilledCylinderOuterDiameter_ID ;
+                                 DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderInnerDiameter_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderInnerDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderInnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderOuterDiameter_ID
+:DrilledCylinderOuterDiameter_ID rdf:type owl:NamedIndividual ,
+                                          DINEN61360:Instance_Description ;
+                                 DINEN61360:Expression_Goal "Actual_Value" ;
+                                 DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderInnerDiameter_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#EjectCap
+:EjectCap rdf:type owl:NamedIndividual ,
+                   VDI3682:ProcessOperator ;
+          VDI3682:hasInput :CapStack ;
+          VDI3682:hasOutput :Cap .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderInnerDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#InsertSpring
+:InsertSpring rdf:type owl:NamedIndividual ,
+                       VDI3682:ProcessOperator ;
+              VDI3682:hasInput :CylinderInAssemblyFixture ,
+                               :SpringStack ;
+              VDI3682:hasOutput :CylinderWithSpring .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderOuterDiameter_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderOuterDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderOuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#PlaceCylinderInFixture
+:PlaceCylinderInFixture rdf:type owl:NamedIndividual ,
+                                 VDI3682:ProcessOperator ;
+                        VDI3682:hasInput :DrilledCylinder ;
+                        VDI3682:hasOutput :CylinderInAssemblyFixture .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderOuterDiameter_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#PutOnCarrier
+:PutOnCarrier rdf:type owl:NamedIndividual ,
+                       VDI3682:ProcessOperator ;
+              VDI2206:hasInput :AssembledCylinder ;
+              VDI3682:hasInput :RequiredCarrierId ,
+                               :RequiredCarrierSlot ;
+              VDI3682:hasOutput :AssembledCylinderOnCarrier .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderOuterDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId
+:RequiredCarrierId rdf:type owl:NamedIndividual ,
+                            VDI3682:Information ;
+                   DINEN61360:has_Data_Element :RequiredCarrierId_DE .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_LotSize_DE -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_LotSize_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_LotSize_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId_DE
+:RequiredCarrierId_DE rdf:type owl:NamedIndividual ,
+                               DINEN61360:Data_Element ;
+                      DINEN61360:has_Instance_Description :RequiredCarrierId_ID1 ,
+                                                          :RequiredCarrierId_ID2 ;
+                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_LotSize_ID -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId_ID1
+:RequiredCarrierId_ID1 rdf:type owl:NamedIndividual ,
+                                DINEN61360:Instance_Description ;
+                       DINEN61360:Expression_Goal "Requirement" ;
+                       DINEN61360:Logic_Interpretation ">=" ;
+                       DINEN61360:Value 1 .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_LotSize_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId_ID2
+:RequiredCarrierId_ID2 rdf:type owl:NamedIndividual ,
+                                DINEN61360:Instance_Description ;
+                       DINEN61360:Expression_Goal "Requirement" ;
+                       DINEN61360:Logic_Interpretation "<=" ;
+                       DINEN61360:Value 8 .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot
+:RequiredCarrierSlot rdf:type owl:NamedIndividual ,
+                              VDI3682:Information ;
+                     DINEN61360:has_Data_Element :RequiredCarrierSlot_DE .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderColor_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot_DE
+:RequiredCarrierSlot_DE rdf:type owl:NamedIndividual ,
+                                 DINEN61360:Data_Element ;
+                        DINEN61360:has_Instance_Description :RequiredCarrierSlot_ID1 ,
+                                                            :RequiredCarrierSlot_ID2 ;
+                        DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD> .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderColor_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderColor_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot_ID1
+:RequiredCarrierSlot_ID1 rdf:type owl:NamedIndividual ,
+                                  DINEN61360:Instance_Description ;
+                         DINEN61360:Expression_Goal "Requirement" ;
+                         DINEN61360:Logic_Interpretation ">=" ;
+                         DINEN61360:Value 1 .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderColor_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderColor_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot_ID2
+:RequiredCarrierSlot_ID2 rdf:type owl:NamedIndividual ,
+                                  DINEN61360:Instance_Description ;
+                         DINEN61360:Expression_Goal "Requirement" ;
+                         DINEN61360:Logic_Interpretation "<=" ;
+                         DINEN61360:Value 4 .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderInnerDiameter_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#ScrewOnCap
+:ScrewOnCap rdf:type owl:NamedIndividual ,
+                     VDI3682:ProcessOperator ;
+            VDI2206:hasOutput :AssembledCylinder ;
+            VDI3682:hasInput :Cap ,
+                             :CylinderWithSpring .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderInnerDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderInnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStack
+:SpringStack rdf:type owl:NamedIndividual ,
+                      VDI3682:Product .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderInnerDiameter_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderInnerDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackSpringLength_DE
+:SpringStackSpringLength_DE rdf:type owl:NamedIndividual ,
+                                     DINEN61360:Data_Element ;
+                            DINEN61360:has_Instance_Description :SpringStackSpringLength_ID ;
+                            DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Length_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderOuterDiameter_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackSpringLength_ID
+:SpringStackSpringLength_ID rdf:type owl:NamedIndividual ,
+                                     DINEN61360:Instance_Description ;
+                            DINEN61360:Expression_Goal "Actual_Value" ;
+                            DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderOuterDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderOuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackStackSize_DE
+:SpringStackStackSize_DE rdf:type owl:NamedIndividual ,
+                                  DINEN61360:Data_Element ;
+                         DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderOuterDiameter_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderOuterDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackStackSize_ID
+:SpringStackStackSize_ID rdf:type owl:NamedIndividual ,
+                                  DINEN61360:Instance_Description ;
+                         DINEN61360:Expression_Goal "Actual_Value" ;
+                         DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_LotSize_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD
+<http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> DINEN61360:has_Instance_Description :SpringStackStackSize_ID ;
+                                                                           DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_LotSize_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_LotSize_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
-    </owl:NamedIndividual>
-    
 
+#################################################################
+#    Constraints
+#################################################################
+###  Color stays the same
+:OverallColorConstraint rdf:type owl:NamedIndividual ,
+                                                openmath:Application ,
+                                                CSS:CapabilityConstraint ;
+                                       openmath:arguments (:DrilledCylinderColor_ID :AssembledCylinderOnCarrier_CylinderColor_ID);
+                                       openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
+                                       CSS:references :DrilledCylinderColor_ID ,
+                                                      :AssembledCylinderOnCarrier_CylinderColor_ID  .
+													  
+###  Lot size stays the same
+:OverallLotSizeConstraint rdf:type owl:NamedIndividual ,
+                                                openmath:Application ,
+                                                CSS:CapabilityConstraint ;
+                                       openmath:arguments (:DrilledCylinderLotSize_ID1 :AssembledCylinderOnCarrier_LotSize_ID);
+                                       openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
+                                       CSS:references :DrilledCylinderLotSize_ID1 ,
+                                                      :AssembledCylinderOnCarrier_LotSize_ID  .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_LotSize_ID -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_LotSize_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Assurance</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinder -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinder">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierID_DE -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierID_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierID_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierID_ID -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierID_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierSlot_DE -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierSlot_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierSlot_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierSlot_ID -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierSlot_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderColor_DE -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderColor_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderColor_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderColor_ID -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderColor_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderInnerDiameter_DE -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderInnerDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderInnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderInnerDiameter_ID -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderInnerDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderLotSize_DE -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderLotSize_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderLotSize_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderLotSize_ID -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderLotSize_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderOuterDiameter_DE -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderOuterDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderOuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderOuterDiameter_ID -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderOuterDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#EjectCap -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#EjectCap">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStack"/>
-        <VDI3682:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#Cap"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#InsertSpring -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#InsertSpring">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStack"/>
-        <VDI3682:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#PlaceCylinderInFixture -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#PlaceCylinderInFixture">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinder"/>
-        <VDI3682:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#PutOnCarrier -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#PutOnCarrier">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-        <VDI2206:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot"/>
-        <VDI3682:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Information"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId_DE"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId_DE -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId_ID1"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId_ID2"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId_ID1 -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId_ID1">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>&gt;=</DINEN61360:Logic_Interpretation>
-        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</DINEN61360:Value>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId_ID2 -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId_ID2">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>&lt;=</DINEN61360:Logic_Interpretation>
-        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</DINEN61360:Value>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Information"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot_DE"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot_DE -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot_ID1"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot_ID2"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot_ID1 -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot_ID1">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>&gt;=</DINEN61360:Logic_Interpretation>
-        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</DINEN61360:Value>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot_ID2 -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot_ID2">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>&lt;=</DINEN61360:Logic_Interpretation>
-        <DINEN61360:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</DINEN61360:Value>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#ScrewOnCap -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#ScrewOnCap">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-        <VDI2206:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#Cap"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStack -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStack">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#VDI3682:Product"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackSpringLength_DE -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackSpringLength_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackSpringLength_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Length_TD"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackSpringLength_ID -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackSpringLength_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackStackSize_DE -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackStackSize_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackStackSize_ID -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackStackSize_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD -->
-
-    <rdf:Description rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD">
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackStackSize_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
-    </rdf:Description>
-</rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
-
+###  Cap stack size must be greater than or equal to lot size
+:CapStackSizeConstraint rdf:type owl:NamedIndividual ,
+                                                openmath:Application ,
+                                                CSS:CapabilityConstraint ;
+                                       openmath:arguments (:CapStackStackSize_ID :DrilledCylinderLotSize_ID ) ;
+                                       openmath:operator <http://www.openmath.org/cd/relation1#geq> ;
+                                       CSS:references :CapStackStackSize_ID ,
+                                                      :DrilledCylinderLotSize_ID  .
+													  
+													  
+###  Spring stack size must be greater than or equal to lot size
+:SpringStackSizeConstraint rdf:type owl:NamedIndividual ,
+                                                openmath:Application ,
+                                                CSS:CapabilityConstraint ;
+                                       openmath:arguments (:SpringStackStackSize_ID :DrilledCylinderLotSize_ID ) ;
+                                       openmath:operator <http://www.openmath.org/cd/relation1#geq> ;
+                                       CSS:references :SpringStackStackSize_ID ,
+                                                      :DrilledCylinderLotSize_ID  .
