@@ -1,407 +1,294 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#"
-     xml:base="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:OpcUa="http://www.hsu-ifa.de/ontologies/OpcUa#"
-     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
-     xmlns:VDI3682="http://www.hsu-ifa.de/ontologies/VDI3682#"
-     xmlns:DINEN61360="http://www.hsu-ifa.de/ontologies/DINEN61360#">
-    <owl:Ontology rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule">
-        <owl:imports rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types"/>
-        <owl:imports rdf:resource="https://raw.githubusercontent.com/aljoshakoecher/machine-skill-model/v3.0.1/Machine-Capability-Model.owl"/>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#CameraCheck -->
+@prefix : <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix OpcUa: <http://www.hsu-ifa.de/ontologies/OpcUa#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix VDI3682: <http://www.w3id.org/hsu-aut/VDI3682#> .
+@prefix DINEN61360: <http://www.w3id.org/hsu-aut/DINEN61360#> .
+@base <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#> .
+
+<http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule> rdf:type owl:Ontology ;
+                                                               owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
+                                                                           <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#CameraCheck
+:CameraCheck rdf:type owl:NamedIndividual ,
+                      VDI3682:ProcessOperator ,
+                      <http://www.w3id.org/hsu-aut/cask#ProvidedCapability> ;
+             VDI3682:hasInput :InputProduct ,
+                              :RequiredTargetImage ;
+             VDI3682:hasOutput :ProductChecked .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#CameraCheck_Process
+:CameraCheck_Process rdf:type owl:NamedIndividual ,
+                              VDI3682:Process ;
+                     VDI3682:consistsOf :CameraCheck ,
+                                        :CameraCheck_SL ;
+                     VDI3682:hasInput :InputProduct ,
+                                      :RequiredTargetImage ;
+                     VDI3682:hasOutput :ProductChecked .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#CameraCheck_SL
+:CameraCheck_SL rdf:type owl:NamedIndividual ,
+                         VDI3682:SystemLimit .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#CameraCheck">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#InputProduct"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#RequiredTargetImage"/>
-        <VDI3682:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#CameraModule
+:CameraModule rdf:type owl:NamedIndividual ,
+                       VDI3682:TechnicalResource ;
+              VDI3682:isAssignedTo :CameraCheck .
+
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#CameraCheck_Process -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#InputProduct
+:InputProduct rdf:type owl:NamedIndividual ,
+                       VDI3682:Product ;
+              DINEN61360:has_Data_Element :Product_CarrierID_DE ,
+                                          :Product_CarrierSlot_DE ,
+                                          :Product_Color_DE ,
+                                          :Product_InnerDiameter_DE ,
+                                          :Product_LotSize_DE ,
+                                          :Product_OuterDiameter_DE .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#CameraCheck_Process">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
-        <VDI3682:consistsOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#CameraCheck"/>
-        <VDI3682:consistsOf rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#CameraCheck_SL"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#InputProduct"/>
-        <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#RequiredTargetImage"/>
-        <VDI3682:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked"/>
-    </owl:NamedIndividual>
-    
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked
+:ProductChecked rdf:type owl:NamedIndividual ,
+                         VDI3682:Product ;
+                DINEN61360:has_Data_Element :ProductChecked_CarrierID_DE ,
+                                            :ProductChecked_CarrierSlot_DE ,
+                                            :ProductChecked_Color_DE ,
+                                            :ProductChecked_InnerDiameter_DE ,
+                                            :ProductChecked_LotSize_DE ,
+                                            :ProductChecked_OuterDiameter_DE .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#CameraCheck_SL -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierID_DE
+:ProductChecked_CarrierID_DE rdf:type owl:NamedIndividual ,
+                                      DINEN61360:Data_Element ;
+                             DINEN61360:has_Instance_Description :ProductChecked_CarrierID_ID ;
+                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD> .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#CameraCheck_SL">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierID_ID
+:ProductChecked_CarrierID_ID rdf:type owl:NamedIndividual ,
+                                      DINEN61360:Instance_Description ;
+                             DINEN61360:Expression_Goal "Actual_Value" ;
+                             DINEN61360:Logic_Interpretation "=" .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#CameraModule -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#CameraModule">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource"/>
-        <VDI3682:isAssignedTo rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#CameraCheck"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierSlot_DE
+:ProductChecked_CarrierSlot_DE rdf:type owl:NamedIndividual ,
+                                        DINEN61360:Data_Element ;
+                               DINEN61360:has_Instance_Description :ProductChecked_CarrierSlot_ID ;
+                               DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#InputProduct -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierSlot_ID
+:ProductChecked_CarrierSlot_ID rdf:type owl:NamedIndividual ,
+                                        DINEN61360:Instance_Description ;
+                               DINEN61360:Expression_Goal "Actual_Value" ;
+                               DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#InputProduct">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#Product"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierID_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierSlot_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_Color_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_InnerDiameter_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_LotSize_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_OuterDiameter_DE"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_Color_DE
+:ProductChecked_Color_DE rdf:type owl:NamedIndividual ,
+                                  DINEN61360:Data_Element ;
+                         DINEN61360:has_Instance_Description :ProductChecked_Color_ID ;
+                         DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#Product"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierID_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierSlot_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_Color_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_InnerDiameter_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_LotSize_DE"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_OuterDiameter_DE"/>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_Color_ID
+:ProductChecked_Color_ID rdf:type owl:NamedIndividual ,
+                                  DINEN61360:Instance_Description ;
+                         DINEN61360:Expression_Goal "Actual_Value" ;
+                         DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierID_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_InnerDiameter_DE
+:ProductChecked_InnerDiameter_DE rdf:type owl:NamedIndividual ,
+                                          DINEN61360:Data_Element ;
+                                 DINEN61360:has_Instance_Description :ProductChecked_InnerDiameter_ID ;
+                                 DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierID_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierID_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_InnerDiameter_ID
+:ProductChecked_InnerDiameter_ID rdf:type owl:NamedIndividual ,
+                                          DINEN61360:Instance_Description ;
+                                 DINEN61360:Expression_Goal "Actual_Value" ;
+                                 DINEN61360:Logic_Interpretation "=" .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierID_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierID_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_LotSize_DE
+:ProductChecked_LotSize_DE rdf:type owl:NamedIndividual ,
+                                    DINEN61360:Data_Element ;
+                           DINEN61360:has_Instance_Description :ProductChecked_LotSize_ID ;
+                           DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierSlot_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_LotSize_ID
+:ProductChecked_LotSize_ID rdf:type owl:NamedIndividual ,
+                                    DINEN61360:Instance_Description ;
+                           DINEN61360:Expression_Goal "Actual_Value" ;
+                           DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierSlot_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierSlot_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_OuterDiameter_DE
+:ProductChecked_OuterDiameter_DE rdf:type owl:NamedIndividual ,
+                                          DINEN61360:Data_Element ;
+                                 DINEN61360:has_Instance_Description :ProductChecked_OuterDiameter_ID ;
+                                 DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierSlot_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_CarrierSlot_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_OuterDiameter_ID
+:ProductChecked_OuterDiameter_ID rdf:type owl:NamedIndividual ,
+                                          DINEN61360:Instance_Description ;
+                                 DINEN61360:Expression_Goal "Actual_Value" ;
+                                 DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_Color_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierID_DE
+:Product_CarrierID_DE rdf:type owl:NamedIndividual ,
+                               DINEN61360:Data_Element ;
+                      DINEN61360:has_Instance_Description :Product_CarrierID_ID ;
+                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD> .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_Color_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_Color_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierID_ID
+:Product_CarrierID_ID rdf:type owl:NamedIndividual ,
+                               DINEN61360:Instance_Description ;
+                      DINEN61360:Expression_Goal "Actual_Value" ;
+                      DINEN61360:Logic_Interpretation "=" .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_Color_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_Color_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierSlot_DE
+:Product_CarrierSlot_DE rdf:type owl:NamedIndividual ,
+                                 DINEN61360:Data_Element ;
+                        DINEN61360:has_Instance_Description :Product_CarrierSlot_ID ;
+                        DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_InnerDiameter_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierSlot_ID
+:Product_CarrierSlot_ID rdf:type owl:NamedIndividual ,
+                                 DINEN61360:Instance_Description ;
+                        DINEN61360:Expression_Goal "Actual_Value" ;
+                        DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_InnerDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_InnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_Color_DE
+:Product_Color_DE rdf:type owl:NamedIndividual ,
+                           DINEN61360:Data_Element ;
+                  DINEN61360:has_Instance_Description :Product_Color_ID ;
+                  DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_InnerDiameter_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_InnerDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_Color_ID
+:Product_Color_ID rdf:type owl:NamedIndividual ,
+                           DINEN61360:Instance_Description ;
+                  DINEN61360:Expression_Goal "Actual_Value" ;
+                  DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_LotSize_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_InnerDiameter_DE
+:Product_InnerDiameter_DE rdf:type owl:NamedIndividual ,
+                                   DINEN61360:Data_Element ;
+                          DINEN61360:has_Instance_Description :Product_InnerDiameter_ID ;
+                          DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_LotSize_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_LotSize_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_InnerDiameter_ID
+:Product_InnerDiameter_ID rdf:type owl:NamedIndividual ,
+                                   DINEN61360:Instance_Description ;
+                          DINEN61360:Expression_Goal "Actual_Value" ;
+                          DINEN61360:Logic_Interpretation "=" .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_LotSize_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_LotSize_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_LotSize_DE
+:Product_LotSize_DE rdf:type owl:NamedIndividual ,
+                             DINEN61360:Data_Element ;
+                    DINEN61360:has_Instance_Description :Product_LotSize_ID ;
+                    DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_OuterDiameter_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_LotSize_ID
+:Product_LotSize_ID rdf:type owl:NamedIndividual ,
+                             DINEN61360:Instance_Description ;
+                    DINEN61360:Expression_Goal "Actual_Value" ;
+                    DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_OuterDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_OuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_OuterDiameter_DE
+:Product_OuterDiameter_DE rdf:type owl:NamedIndividual ,
+                                   DINEN61360:Data_Element ;
+                          DINEN61360:has_Instance_Description :Product_OuterDiameter_ID ;
+                          DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_OuterDiameter_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#ProductChecked_OuterDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_OuterDiameter_ID
+:Product_OuterDiameter_ID rdf:type owl:NamedIndividual ,
+                                   DINEN61360:Instance_Description ;
+                          DINEN61360:Expression_Goal "Actual_Value" ;
+                          DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierID_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#RequiredTargetImage
+:RequiredTargetImage rdf:type owl:NamedIndividual ,
+                              VDI3682:Information ;
+                     DINEN61360:has_Data_Element :RequiredTargetImage_DE .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierID_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierID_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#RequiredTargetImage_DE
+:RequiredTargetImage_DE rdf:type owl:NamedIndividual ,
+                                 DINEN61360:Data_Element ;
+                        DINEN61360:has_Instance_Description :RequiredTargetImage_ID1 ,
+                                                            :RequiredTargetImage_ID2 ;
+                        DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Image_TD> .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierID_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierID_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#RequiredTargetImage_ID1
+:RequiredTargetImage_ID1 rdf:type owl:NamedIndividual ,
+                                  DINEN61360:Instance_Description ;
+                         DINEN61360:Expression_Goal "Requirement" ;
+                         DINEN61360:Logic_Interpretation "=" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierSlot_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#RequiredTargetImage_ID2
+:RequiredTargetImage_ID2 rdf:type owl:NamedIndividual ,
+                                  DINEN61360:Instance_Description ;
+                         DINEN61360:Expression_Goal "Actual_Value" ;
+                         DINEN61360:Logic_Interpretation "=" .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierSlot_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierSlot_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD
+<http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD> rdf:type owl:NamedIndividual .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierSlot_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_CarrierSlot_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD
+<http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD> rdf:type owl:NamedIndividual .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_Color_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD
+<http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> rdf:type owl:NamedIndividual .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_Color_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_Color_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
-    </owl:NamedIndividual>
-    
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD
+<http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> rdf:type owl:NamedIndividual .
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_Color_ID -->
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_Color_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Image_TD
+<http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Image_TD> rdf:type owl:NamedIndividual .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_InnerDiameter_DE -->
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD
+<http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> rdf:type owl:NamedIndividual .
 
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_InnerDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_InnerDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
 
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_InnerDiameter_ID -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_InnerDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_LotSize_DE -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_LotSize_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_LotSize_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_LotSize_ID -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_LotSize_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_OuterDiameter_DE -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_OuterDiameter_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_OuterDiameter_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_OuterDiameter_ID -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#Product_OuterDiameter_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Actual_Value</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#RequiredTargetImage -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#RequiredTargetImage">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#Information"/>
-        <DINEN61360:has_Data_Element rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#RequiredTargetImage_DE"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#RequiredTargetImage_DE -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#RequiredTargetImage_DE">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
-        <DINEN61360:has_Instance_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#RequiredTargetImage_ID"/>
-        <DINEN61360:has_Type_Description rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Image_TD"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#RequiredTargetImage_ID -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/CameraModule#RequiredTargetImage_ID">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description"/>
-        <DINEN61360:Expression_Goal>Requirement</DINEN61360:Expression_Goal>
-        <DINEN61360:Logic_Interpretation>=</DINEN61360:Logic_Interpretation>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD"/>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD"/>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD"/>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD"/>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Image_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Image_TD"/>
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD"/>
-</rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
-
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
