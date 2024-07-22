@@ -1,144 +1,99 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/köcher/ontologies/2022/2/untitled-ontology-286#"
-     xml:base="http://www.semanticweb.org/köcher/ontologies/2022/2/untitled-ontology-286"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
-     xmlns:DINEN61360="http://www.hsu-ifa.de/ontologies/DINEN61360#">
-    <owl:Ontology rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types">
-        <owl:imports rdf:resource="http://www.w3id.org/hsu-aut/DINEN61360/2.0.1"/>
-        <rdfs:comment>A little ontology that contains all property type definitions used for MPS500</rdfs:comment>
-    </owl:Ontology>
-    
+@prefix : <http://www.semanticweb.org/köcher/ontologies/2022/2/untitled-ontology-286#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix DINEN61360: <http://www.w3id.org/hsu-aut/DINEN61360#> .
+@base <http://www.semanticweb.org/köcher/ontologies/2022/2/untitled-ontology-286#> .
+
+<http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> rdf:type owl:Ontology ;
+                                                                 owl:imports <http://www.w3id.org/hsu-aut/DINEN61360/2.0.1> ;
+                                                                 rdfs:comment "A little ontology that contains all property type definitions used for MPS500" .
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+#################################################################
+#    Individuals
+#################################################################
 
-    
-
-
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>carrierId</DINEN61360:Code>
-        <DINEN61360:Definition>The unique ID of a carrier, given as an integer number.</DINEN61360:Definition>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD
+:CarrierID_TD rdf:type owl:NamedIndividual ,
+                       DINEN61360:Type_Description ;
+              DINEN61360:Code "carrierId" ;
+              DINEN61360:Definition "The unique ID of a carrier, given as an integer number." .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>carrierSlot</DINEN61360:Code>
-        <DINEN61360:Definition>Defines the slot of a carrier on which a workpiece is placed.</DINEN61360:Definition>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD
+:CarrierSlot_TD rdf:type owl:NamedIndividual ,
+                         DINEN61360:Type_Description ;
+                DINEN61360:Code "carrierSlot" ;
+                DINEN61360:Definition "Defines the slot of a carrier on which a workpiece is placed." .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>The exterior color of an object.</DINEN61360:Code>
-        <DINEN61360:Code>color</DINEN61360:Code>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD
+:Color_TD rdf:type owl:NamedIndividual ,
+                   DINEN61360:Type_Description ;
+          DINEN61360:Code "The exterior color of an object." ,
+                          "color" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Depth_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Depth_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>depth</DINEN61360:Code>
-        <DINEN61360:Definition>Defines the expansion vertical down of an object.</DINEN61360:Definition>
-        <DINEN61360:Unit_of_Measure>mm</DINEN61360:Unit_of_Measure>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Depth_TD
+:Depth_TD rdf:type owl:NamedIndividual ,
+                   DINEN61360:Type_Description ;
+          DINEN61360:Code "depth" ;
+          DINEN61360:Definition "Defines the expansion vertical down of an object." ;
+          DINEN61360:Unit_of_Measure "mm" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>diameter</DINEN61360:Code>
-        <DINEN61360:Definition>Defines the diameter of a cylindrical body.</DINEN61360:Definition>
-        <DINEN61360:Unit_of_Measure>mm</DINEN61360:Unit_of_Measure>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD
+:Diameter_TD rdf:type owl:NamedIndividual ,
+                      DINEN61360:Type_Description ;
+             DINEN61360:Code "diameter" ;
+             DINEN61360:Definition "Defines the diameter of a cylindrical body." ;
+             DINEN61360:Unit_of_Measure "mm" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Image_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Image_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>image</DINEN61360:Code>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Image_TD
+:Image_TD rdf:type owl:NamedIndividual ,
+                   DINEN61360:Type_Description ;
+          DINEN61360:Code "image" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Length_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Length_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>length</DINEN61360:Code>
-        <DINEN61360:Definition>A measure of the most extended dimension of an object.</DINEN61360:Definition>
-        <DINEN61360:Unit_of_Measure>mm</DINEN61360:Unit_of_Measure>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Length_TD
+:Length_TD rdf:type owl:NamedIndividual ,
+                    DINEN61360:Type_Description ;
+           DINEN61360:Code "length" ;
+           DINEN61360:Definition "A measure of the most extended dimension of an object." ;
+           DINEN61360:Unit_of_Measure "mm" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>lotSize</DINEN61360:Code>
-        <DINEN61360:Definition>The amount of a good produced at the one time / in one batch.</DINEN61360:Definition>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD
+:LotSize_TD rdf:type owl:NamedIndividual ,
+                     DINEN61360:Type_Description ;
+            DINEN61360:Code "lotSize" ;
+            DINEN61360:Definition "The amount of a good produced at the one time / in one batch." .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#ShippingBayID_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#ShippingBayID_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>shippingBayId</DINEN61360:Code>
-        <DINEN61360:Definition>Unique ID for each of the shipping bays of the shipping module</DINEN61360:Definition>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#ShippingBayID_TD
+:ShippingBayID_TD rdf:type owl:NamedIndividual ,
+                           DINEN61360:Type_Description ;
+                  DINEN61360:Code "shippingBayId" ;
+                  DINEN61360:Definition "Unique ID for each of the shipping bays of the shipping module" .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>stationId</DINEN61360:Code>
-        <DINEN61360:Definition>The integer ID of every station at the tranport system.</DINEN61360:Definition>
-        <DINEN61360:Note>These are not some module numbers. These IDs refer to the fixed stations at the transport systen that the modules may be docked to.</DINEN61360:Note>
-    </owl:NamedIndividual>
-    
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD
+:StationID_TD rdf:type owl:NamedIndividual ,
+                       DINEN61360:Type_Description ;
+              DINEN61360:Code "stationId" ;
+              DINEN61360:Definition "The integer ID of every station at the tranport system." ;
+              DINEN61360:Note "These are not some module numbers. These IDs refer to the fixed stations at the transport systen that the modules may be docked to." .
 
 
-    <!-- http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StorageID_TD -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StorageID_TD">
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Type_Description"/>
-        <DINEN61360:Code>storageID</DINEN61360:Code>
-        <DINEN61360:Definition>Unique ID of each of the storage bays of the storage module.</DINEN61360:Definition>
-    </owl:NamedIndividual>
-</rdf:RDF>
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StorageID_TD
+:StorageID_TD rdf:type owl:NamedIndividual ,
+                       DINEN61360:Type_Description ;
+              DINEN61360:Code "storageID" ;
+              DINEN61360:Definition "Unique ID of each of the storage bays of the storage module." .
 
 
-
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
-
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
