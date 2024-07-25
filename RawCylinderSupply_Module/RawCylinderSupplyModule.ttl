@@ -9,7 +9,7 @@
 @prefix VDI3682: <http://www.w3id.org/hsu-aut/VDI3682#> .
 @prefix DINEN61360: <http://www.w3id.org/hsu-aut/DINEN61360#> .
 @prefix CSS: <http://www.w3id.org/hsu-aut/css#> .
-@prefix CaSk: <http://www.w3id.org/hsu-aut/cask> .
+@prefix CaSk: <http://www.w3id.org/hsu-aut/cask#> .
 @prefix openmath: <http://openmath.org/vocab/math#> .
 @base <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#> .
 
@@ -21,27 +21,38 @@
 #    Individuals
 #################################################################
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RawCylinderSelector
+:RawCylinderSelector rdf:type owl:NamedIndividual ,
+							VDI2206:Module,
+							CSS:Resource ;
+					CSS:providesCapability :PrepareRawPart ;
+					VDI3682:isAssignedTo :PrepareRawPart .
+
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PrepareRawPart
 :PrepareRawPart rdf:type owl:NamedIndividual ,
                          VDI2860:Abteilen ,
-                         <http://www.w3id.org/hsu-aut/cask#ProvidedCapability> ;
-                VDI2206:hasInput :ProductStack1 ,
+                         VDI3682:ProcessOperator ;
+                VDI3682:hasInput :ProductStack1 ,
                                  :ProductStack2 ,
                                  :ProductStack3 ,
                                  :RequiredColor ,
                                  :RequiredInnerDiameter ,
                                  :RequiredLotSize ,
                                  :RequiredOuterDiameter ;
-                VDI2206:hasOutput :PreparedRawPart .
+                VDI3682:hasOutput :PreparedRawPart .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PreparedRawPart
 :PreparedRawPart rdf:type owl:NamedIndividual ,
                           VDI3682:Product ;
-                 DINEN61360:has_Data_Element :PreparedRawPartColor_DE ,
-                                             :PreparedRawPartInnerDiameter_DE ,
-                                             :PreparedRawPartLotSize_DE ,
-                                             :PreparedRawPartOuterDiameter_DE .
+				DINEN61360:has_Data_Element :PreparedRawPartColor_DE ,
+											:PreparedRawPartInnerDiameter_DE ,
+											:PreparedRawPartLotSize_DE ,
+											:PreparedRawPartOuterDiameter_DE ;
+				VDI3682:isCharacterizedBy :PreparedRawPartColor_ID ,
+											:PreparedRawPartInnerDiameter_ID ,
+											:PreparedRawPartLotSize_ID ,
+											:PreparedRawPartOuterDiameter_ID .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PreparedRawPartColor_DE
@@ -62,7 +73,7 @@
 :PreparedRawPartInnerDiameter_DE rdf:type owl:NamedIndividual ,
                                           DINEN61360:Data_Element ;
                                  DINEN61360:has_Instance_Description :PreparedRawPartInnerDiameter_ID ;
-                                 DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                 DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PreparedRawPartInnerDiameter_ID
@@ -90,7 +101,7 @@
 :PreparedRawPartOuterDiameter_DE rdf:type owl:NamedIndividual ,
                                           DINEN61360:Data_Element ;
                                  DINEN61360:has_Instance_Description :PreparedRawPartOuterDiameter_ID ;
-                                 DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                 DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PreparedRawPartOuterDiameter_ID
@@ -103,10 +114,14 @@
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1
 :ProductStack1 rdf:type owl:NamedIndividual ,
                         VDI3682:Product ;
-               DINEN61360:has_Data_Element :ProductStack1CurrentColor_DE ,
-                                           :ProductStack1CurrentInnerDiameter_DE ,
-                                           :ProductStack1CurrentOuterDiameter_DE ,
-                                           :ProductStack1CurrentStackSize_DE .
+			DINEN61360:has_Data_Element :ProductStack1CurrentColor_DE ,
+										:ProductStack1CurrentInnerDiameter_DE ,
+										:ProductStack1CurrentOuterDiameter_DE ,
+										:ProductStack1CurrentStackSize_DE ;
+			VDI3682:isCharacterizedBy :ProductStack1CurrentColor_ID ,
+										:ProductStack1CurrentInnerDiameter_ID ,
+										:ProductStack1CurrentOuterDiameter_ID ,
+										:ProductStack1CurrentStackSize_ID .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentColor_DE
@@ -127,7 +142,7 @@
 :ProductStack1CurrentInnerDiameter_DE rdf:type owl:NamedIndividual ,
                                                DINEN61360:Data_Element ;
                                       DINEN61360:has_Instance_Description :ProductStack1CurrentInnerDiameter_ID ;
-                                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentInnerDiameter_ID
@@ -141,7 +156,7 @@
 :ProductStack1CurrentOuterDiameter_DE rdf:type owl:NamedIndividual ,
                                                DINEN61360:Data_Element ;
                                       DINEN61360:has_Instance_Description :ProductStack1CurrentOuterDiameter_ID ;
-                                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentOuterDiameter_ID
@@ -168,10 +183,14 @@
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2
 :ProductStack2 rdf:type owl:NamedIndividual ,
                         VDI3682:Product ;
-               DINEN61360:has_Data_Element :ProductStack2CurrentColor_DE ,
-                                           :ProductStack2CurrentInnerDiameter_DE ,
-                                           :ProductStack2CurrentOuterDiameter_DE ,
-                                           :ProductStack2CurrentStackSize_DE .
+			DINEN61360:has_Data_Element :ProductStack2CurrentColor_DE ,
+										:ProductStack2CurrentInnerDiameter_DE ,
+										:ProductStack2CurrentOuterDiameter_DE ,
+										:ProductStack2CurrentStackSize_DE ;
+			VDI3682:isCharacterizedBy :ProductStack2CurrentColor_DE ,
+										:ProductStack2CurrentInnerDiameter_DE ,
+										:ProductStack2CurrentOuterDiameter_DE ,
+										:ProductStack2CurrentStackSize_DE .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentColor_DE
@@ -192,7 +211,7 @@
 :ProductStack2CurrentInnerDiameter_DE rdf:type owl:NamedIndividual ,
                                                DINEN61360:Data_Element ;
                                       DINEN61360:has_Instance_Description :ProductStack2CurrentInnerDiameter_ID ;
-                                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentInnerDiameter_ID
@@ -206,7 +225,7 @@
 :ProductStack2CurrentOuterDiameter_DE rdf:type owl:NamedIndividual ,
                                                DINEN61360:Data_Element ;
                                       DINEN61360:has_Instance_Description :ProductStack2CurrentOuterDiameter_ID ;
-                                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentOuterDiameter_ID
@@ -257,7 +276,7 @@
 :ProductStack3CurrentInnerDiameter_DE rdf:type owl:NamedIndividual ,
                                                DINEN61360:Data_Element ;
                                       DINEN61360:has_Instance_Description :ProductStack3CurrentInnerDiameter_ID ;
-                                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentInnerDiameter_ID
@@ -271,7 +290,7 @@
 :ProductStack3CurrentOuterDiameter_DE rdf:type owl:NamedIndividual ,
                                                DINEN61360:Data_Element ;
                                       DINEN61360:has_Instance_Description :ProductStack3CurrentInnerDiameter_ID ;
-                                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentOuterDiameter_ID
@@ -295,14 +314,22 @@
                                   DINEN61360:Logic_Interpretation "=" .
 
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RawCylinderSlide
+:RawCylinderSlide rdf:type owl:NamedIndividual ,
+							VDI2206:Module,
+							CSS:Resource ;
+					CSS:providesCapability :PutOnCarrier ;
+					VDI3682:isAssignedTo :PutOnCarrier .
+
+
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PutOnCarrier
 :PutOnCarrier rdf:type owl:NamedIndividual ,
                        VDI2860:Fuehren ,
-                       <http://www.w3id.org/hsu-aut/cask#ProvidedCapability> ;
-              VDI2206:hasInput :PreparedRawPart ,
+                       VDI3682:ProcessOperator;
+              VDI3682:hasInput :PreparedRawPart ,
                                :RequiredCarrierId ,
                                :RequiredCarrierSlot ;
-              VDI2206:hasOutput :RawCylinder .
+              VDI3682:hasOutput :RawCylinder .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinder
@@ -362,7 +389,7 @@
 :RawCylinderInnerDiameter_DE rdf:type owl:NamedIndividual ,
                                       DINEN61360:Data_Element ;
                              DINEN61360:has_Instance_Description :RawCylinderInnerDiameter_ID ;
-                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderInnerDiameter_ID
@@ -390,7 +417,7 @@
 :RawCylinderOuterDiameter_DE rdf:type owl:NamedIndividual ,
                                       DINEN61360:Data_Element ;
                              DINEN61360:has_Instance_Description :RawCylinderOuterDiameter_ID ;
-                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderOuterDiameter_ID
@@ -526,7 +553,7 @@
                           DINEN61360:has_Instance_Description :RequiredInnerDiameter_ID1 ,
                                                               :RequiredInnerDiameter_ID2 ,
 															  :RequiredInnerDiameter_ID3 ;
-                          DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                          DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredInnerDiameter_ID1
@@ -590,7 +617,7 @@
                           DINEN61360:has_Instance_Description :RequiredOuterDiameter_ID1 ,
                                                               :RequiredOuterDiameter_ID2 ,
 															  :RequiredOuterDiameter_ID3 ;
-                          DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                          DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredOuterDiameter_ID1
@@ -617,8 +644,8 @@
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#SupplyRawCylinder
 :SupplyRawCylinder rdf:type owl:NamedIndividual ,
                             VDI2860:Zuteilen ,
-                            <http://www.w3id.org/hsu-aut/cask#ProvidedCapability> ;
-                   VDI2206:hasInput :ProductStack1 ,
+                            CaSk:ProvidedCapability ;
+                   VDI3682:hasInput :ProductStack1 ,
                                     :ProductStack2 ,
                                     :ProductStack3 ,
                                     :RequiredCarrierId ,
@@ -626,7 +653,7 @@
                                     :RequiredColor ,
                                     :RequiredLotSize ,
                                     :RequiredOuterDiameter ;
-                   VDI2206:hasOutput :RawCylinder ;
+                   VDI3682:hasOutput :RawCylinder ;
                    VDI3682:isComposedOf :PrepareRawPart ,
                                         :PutOnCarrier .
 
