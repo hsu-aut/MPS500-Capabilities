@@ -1,11 +1,11 @@
-@prefix : <http://www.semanticweb.org/köcher/ontologies/2022/2/untitled-ontology-286#> .
+@prefix : <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix DINEN61360: <http://www.w3id.org/hsu-aut/DINEN61360#> .
-@base <http://www.semanticweb.org/köcher/ontologies/2022/2/untitled-ontology-286#> .
+@base <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#> .
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> rdf:type owl:Ontology ;
                                                                  owl:imports <http://www.w3id.org/hsu-aut/DINEN61360/2.0.1> ;
@@ -33,8 +33,8 @@
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD
 :Color_TD rdf:type owl:NamedIndividual ,
                    DINEN61360:Type_Description ;
-          DINEN61360:Code "The exterior color of an object." ,
-                          "color" .
+          DINEN61360:Definition "The exterior color of an object." ;
+		  DINEN61360:Code "color" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Depth_TD
@@ -45,11 +45,19 @@
           DINEN61360:Unit_of_Measure "mm" .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD
-:Diameter_TD rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD
+:InnerDiameter_TD rdf:type owl:NamedIndividual ,
                       DINEN61360:Type_Description ;
-             DINEN61360:Code "diameter" ;
-             DINEN61360:Definition "Defines the diameter of a cylindrical body." ;
+             DINEN61360:Code "innerDiameter" ;
+             DINEN61360:Definition "Defines the inner diameter of a cylindrical body." ;
+             DINEN61360:Unit_of_Measure "mm" .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD
+:OuterDiameter_TD rdf:type owl:NamedIndividual ,
+                      DINEN61360:Type_Description ;
+             DINEN61360:Code "outerDiameter" ;
+             DINEN61360:Definition "Defines the outer diameter of a cylindrical body." ;
              DINEN61360:Unit_of_Measure "mm" .
 
 
