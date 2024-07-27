@@ -790,7 +790,7 @@
                             VDI2860:Zuteilen ,
 							VDI3682:ProcessOperator ,
                             CaSk:ProvidedCapability ;
-					VDI3682:requiresCapability :SupplyRawCylinder ;
+					CSS:requiresCapability :SupplyRawCylinder ;
 					CSS:isRestrictedBy :ColorConstraint ,
 						:ColorStackConstraint ,
 						:LotSizeConstraint ,
