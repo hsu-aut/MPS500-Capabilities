@@ -7,7 +7,7 @@
 @prefix openmath: <http://openmath.org/vocab/math#> .
 @prefix VDI2206: <http://www.w3id.org/hsu-aut/VDI2206#> .
 @prefix CSS: <http://www.w3id.org/hsu-aut/css#> .
-@prefix CaSk: <http://www.w3id.org/hsu-aut/cask> .
+@prefix CaSk: <http://www.w3id.org/hsu-aut/cask#> .
 @prefix VDI3682: <http://www.w3id.org/hsu-aut/VDI3682#> .
 @prefix DINEN61360: <http://www.w3id.org/hsu-aut/DINEN61360#> .
 @base <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#> .
@@ -20,21 +20,30 @@
 #    Individuals
 #################################################################
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssemblyModule
+:AssemblyModule rdf:type owl:NamedIndividual ,
+							VDI2206:Module,
+							CSS:Resource ;
+					CSS:providesCapability :AssembleCylinder ;
+					VDI3682:isAssignedTo :AssembleCylinder .
+
+
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinder
 :AssembleCylinder rdf:type owl:NamedIndividual ,
                            VDI3682:ProcessOperator ,
-                           <http://www.w3id.org/hsu-aut/cask#ProvidedCapability> ;
-                  VDI2206:hasOutput :AssembledCylinderOnCarrier ;
-                  VDI3682:hasInput :CapStack ,
-                                   :DrilledCylinder ,
-                                   :RequiredCarrierId ,
-                                   :RequiredCarrierSlot ,
-                                   :SpringStack ;
-                  VDI3682:isComposedOf :EjectCap ,
-                                       :InsertSpring ,
-                                       :PlaceCylinderInFixture ,
-                                       :PutOnCarrier ,
-                                       :ScrewOnCap .
+                           CaSk:ProvidedCapability ;
+				CSS:requiresCapability :AssembleCylinder;
+				VDI3682:hasOutput :AssembledCylinderOnCarrier ;
+				VDI3682:hasInput :CapStack ,
+								:DrilledCylinder ,
+								:RequiredCarrierId ,
+								:RequiredCarrierSlot ,
+								:SpringStack ;
+				VDI3682:isComposedOf :EjectCap ,
+									:InsertSpring ,
+									:PlaceCylinderInFixture ,
+									:PutOnCarrier ,
+									:ScrewOnCap .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinderProcess
@@ -131,7 +140,7 @@
 :AssembledCylinderOnCarrier_CylinderInnerDiameter_DE rdf:type owl:NamedIndividual ,
                                                               DINEN61360:Data_Element ;
                                                      DINEN61360:has_Instance_Description :AssembledCylinderOnCarrier_CylinderInnerDiameter_ID ;
-                                                     DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                                     DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderInnerDiameter_ID
@@ -145,7 +154,7 @@
 :AssembledCylinderOnCarrier_CylinderOuterDiameter_DE rdf:type owl:NamedIndividual ,
                                                               DINEN61360:Data_Element ;
                                                      DINEN61360:has_Instance_Description :AssembledCylinderOnCarrier_CylinderOuterDiameter_ID ;
-                                                     DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                                     DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderOuterDiameter_ID
@@ -187,7 +196,7 @@
 :AssembledCylinder_CylinderInnerDiameter_DE rdf:type owl:NamedIndividual ,
                                                      DINEN61360:Data_Element ;
                                             DINEN61360:has_Instance_Description :AssembledCylinder_CylinderInnerDiameter_ID ;
-                                            DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                            DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderInnerDiameter_ID
@@ -201,7 +210,7 @@
 :AssembledCylinder_CylinderOuterDiameter_DE rdf:type owl:NamedIndividual ,
                                                      DINEN61360:Data_Element ;
                                             DINEN61360:has_Instance_Description :AssembledCylinder_CylinderOuterDiameter_ID ;
-                                            DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                            DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderOuterDiameter_ID
@@ -253,7 +262,7 @@
 :CapDiameter_DE rdf:type owl:NamedIndividual ,
                          DINEN61360:Data_Element ;
                 DINEN61360:has_Instance_Description :CapDiameter_ID ;
-                DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapDiameter_ID
@@ -300,7 +309,7 @@
 :CapStackCapDiameter_DE rdf:type owl:NamedIndividual ,
                                  DINEN61360:Data_Element ;
                         DINEN61360:has_Instance_Description :CapStackCapDiameter_ID ;
-                        DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                        DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapDiameter_ID
@@ -346,7 +355,7 @@
 :CylinderInAssemblyFixture_CylinderInnerDiameter_DE rdf:type owl:NamedIndividual ,
                                                              DINEN61360:Data_Element ;
                                                     DINEN61360:has_Instance_Description :CylinderInAssemblyFixture_CylinderInnerDiameter_ID ;
-                                                    DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                                    DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderInnerDiameter_ID
@@ -360,7 +369,7 @@
 :CylinderInAssemblyFixture_CylinderOuterDiameter_DE rdf:type owl:NamedIndividual ,
                                                              DINEN61360:Data_Element ;
                                                     DINEN61360:has_Instance_Description :CylinderInAssemblyFixture_CylinderOuterDiameter_ID ;
-                                                    DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                                    DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderOuterDiameter_ID
@@ -407,7 +416,7 @@
 :CylinderWithSpring_CylinderInnerDiameter_DE rdf:type owl:NamedIndividual ,
                                                       DINEN61360:Data_Element ;
                                              DINEN61360:has_Instance_Description :CylinderWithSpring_CylinderInnerDiameter_ID ;
-                                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderInnerDiameter_ID
@@ -421,7 +430,7 @@
 :CylinderWithSpring_CylinderOuterDiameter_DE rdf:type owl:NamedIndividual ,
                                                       DINEN61360:Data_Element ;
                                              DINEN61360:has_Instance_Description :CylinderWithSpring_CylinderOuterDiameter_ID ;
-                                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderOuterDiameter_ID
@@ -496,7 +505,7 @@
 :DrilledCylinderInnerDiameter_DE rdf:type owl:NamedIndividual ,
                                           DINEN61360:Data_Element ;
                                  DINEN61360:has_Instance_Description :DrilledCylinderInnerDiameter_ID ;
-                                 DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                 DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderInnerDiameter_ID
@@ -533,7 +542,7 @@
 :DrilledCylinderOuterDiameter_DE rdf:type owl:NamedIndividual ,
                                           DINEN61360:Data_Element ;
                                  DINEN61360:has_Instance_Description :DrilledCylinderOuterDiameter_ID ;
-                                 DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
+                                 DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderOuterDiameter_ID
@@ -637,7 +646,7 @@
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#ScrewOnCap
 :ScrewOnCap rdf:type owl:NamedIndividual ,
                      VDI3682:ProcessOperator ;
-            VDI2206:hasOutput :AssembledCylinder ;
+            VDI3682:hasOutput :AssembledCylinder ;
             VDI3682:hasInput :Cap ,
                              :CylinderWithSpring .
 
