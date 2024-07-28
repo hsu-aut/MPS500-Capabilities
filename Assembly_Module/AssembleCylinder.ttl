@@ -63,18 +63,18 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembleCylinderSubProcess
 :AssembleCylinderSubProcess rdf:type owl:NamedIndividual ,
-                                     VDI3682:Process ;
-                            VDI3682:consistsOf :AssembleCylinderSystemLimit ,
-                                               :EjectCap ,
-                                               :InsertSpring ,
-                                               :PlaceCylinderInFixture ,
-                                               :PutOnCarrier ,
-                                               :ScrewOnCap ;
-                            VDI3682:hasInput :CapStack ,
-                                             :DrilledCylinder ,
-                                             :RequiredCarrierId ,
-                                             :RequiredCarrierSlot ,
-                                             :SpringStack ;
+										VDI3682:Process ;
+							VDI3682:consistsOf :AssembleCylinderSystemLimit ,
+												:EjectCap ,
+												:InsertSpring ,
+												:PlaceCylinderInFixture ,
+												:PutOnCarrier ,
+												:ScrewOnCap ;
+							VDI3682:hasInput :CapStack ,
+												:DrilledCylinder ,
+												:RequiredCarrierId ,
+												:RequiredCarrierSlot ,
+												:SpringStack ;
                             VDI3682:hasOutput :AssembledCylinderOnCarrier .
 
 
@@ -337,7 +337,13 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStack
 :CapStack rdf:type owl:NamedIndividual ,
-                   VDI3682:Product .
+				VDI3682:Product ;
+				DINEN61360:has_Data_Element :CapStackCapColor_DE ,
+											:CapStackCapDiameter_DE ,
+											:CapStackStackSize_DE ;
+				VDI3682:isCharacterizedBy :CapStackCapColor_ID ,
+											:CapStackCapDiameter_ID ,
+											:CapStackStackSize_ID .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapColor_DE
@@ -376,8 +382,9 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackStackSize_DE
 :CapStackStackSize_DE rdf:type owl:NamedIndividual ,
-                               DINEN61360:Data_Element ;
-                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
+							DINEN61360:Data_Element ;
+					DINEN61360:has_Instance_Description :CapStackStackSize_ID;
+					DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackStackSize_ID
@@ -538,7 +545,20 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinder
 :DrilledCylinder rdf:type owl:NamedIndividual ,
-                          VDI3682:Product .
+						VDI3682:Product ;
+						DINEN61360:has_Data_Element :DrilledCylinderColor_DE ,
+													:DrilledCylinderOuterDiameter_DE ,
+													:DrilledCylinderInnerDiameter_DE ,
+													:DrilledCylinderLotSize_DE ,
+													:DrilledCylinderCarrierID_DE ,
+													:DrilledCylinderCarrierSlot_DE ;
+						VDI3682:isCharacterizedBy :DrilledCylinderColor_ID ,
+													:DrilledCylinderOuterDiameter_ID ,
+													:DrilledCylinderInnerDiameter_ID ,
+													:DrilledCylinderLotSize_ID1 ,
+													:DrilledCylinderLotSize_ID2 ,
+													:DrilledCylinderCarrierID_ID ,
+													:DrilledCylinderCarrierSlot_ID .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierID_DE
@@ -772,7 +792,11 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStack
 :SpringStack rdf:type owl:NamedIndividual ,
-                      VDI3682:Product .
+					VDI3682:Product ;
+					DINEN61360:has_Data_Element :SpringStackSpringLength_DE ,
+												:SpringStackStackSize_DE ;
+					VDI3682:isCharacterizedBy :SpringStackSpringLength_ID ,
+												:SpringStackStackSize_ID .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackSpringLength_DE
@@ -834,7 +858,7 @@
                                        CSS:references :DrilledCylinderLotSize_ID1 ,
                                                       :AssembledCylinderOnCarrier_LotSize_ID  .
 
-###  Cap stack size must be greater than or equal to lot size
+###  Cap stack size must be greater than or equal to lot size, otherwise not all parts of the lot can be manufactured
 :CapStackSizeConstraint rdf:type owl:NamedIndividual ,
                                                 openmath:Application ,
                                                 CSS:CapabilityConstraint ;
@@ -842,9 +866,8 @@
                                        openmath:operator <http://www.openmath.org/cd/relation1#geq> ;
                                        CSS:references :CapStackStackSize_ID ,
                                                       :DrilledCylinderLotSize_ID  .
-													  
-													  
-###  Spring stack size must be greater than or equal to lot size
+
+###  Spring stack size must be greater than or equal to lot size, otherwise not all parts of the lot can be manufactured
 :SpringStackSizeConstraint rdf:type owl:NamedIndividual ,
                                                 openmath:Application ,
                                                 CSS:CapabilityConstraint ;
