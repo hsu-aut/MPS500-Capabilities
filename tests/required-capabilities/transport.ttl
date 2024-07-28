@@ -1,0 +1,62 @@
+@prefix : <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/Transport#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix VDI2206: <http://www.w3id.org/hsu-aut/VDI2206#> .
+@prefix VDI2860: <http://www.w3id.org/hsu-aut/VDI2860#> .
+@prefix VDI3682: <http://www.w3id.org/hsu-aut/VDI3682#> .
+@prefix DINEN61360: <http://www.w3id.org/hsu-aut/DINEN61360#> .
+@prefix CSS: <http://www.w3id.org/hsu-aut/css#> .
+@prefix CaSk: <http://www.w3id.org/hsu-aut/cask#> .
+@prefix openmath: <http://openmath.org/vocab/math#> .
+@base <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/Transport#> .
+
+<http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/Transport#> rdf:type owl:Ontology ;
+                                                                          owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
+                                                                                      <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/Transport#Transport
+:Transport rdf:type owl:NamedIndividual ,
+						VDI3682:ProcessOperator ,
+						CaSk:RequiredCapability ;
+				CSS:requiresCapability :Transport;
+                VDI3682:hasInput :TargetStation ;
+                VDI3682:hasOutput :ProductAtTargetStation .
+
+:TargetStation rdf:type owl:NamedIndividual ,
+		VDI3682:Product ;
+	DINEN61360:has_Data_Element :TargetStation_StationID_DE ;
+	VDI3682:isCharacterizedBy :TargetStation_StationID_ID.
+
+:TargetStation_StationID_DE rdf:type owl:NamedIndividual ,
+		DINEN61360:Data_Element ;
+	DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> ;
+	DINEN61360:has_Instance_Description :TargetStation_StationID_ID.
+
+:TargetStation_StationID_ID rdf:type owl:NamedIndividual ,
+									DINEN61360:Instance_Description ,
+									DINEN61360:Integer ;
+                            DINEN61360:Expression_Goal "Requirement" ;
+                            DINEN61360:Logic_Interpretation "=" ;
+							DINEN61360:Value 1 .
+
+
+:ProductAtTargetStation rdf:type owl:NamedIndividual ,
+		VDI3682:Product ;
+	DINEN61360:has_Data_Element :ProductAtTargetStation_StationID_DE ;
+	VDI3682:isCharacterizedBy :ProductAtTargetStation_StationID_ID.
+
+:ProductAtTargetStation_StationID_DE rdf:type owl:NamedIndividual ,
+		DINEN61360:Data_Element ;
+	DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> ;
+	DINEN61360:has_Instance_Description :ProductAtTargetStation_StationID_ID.
+
+:ProductAtTargetStation_StationID_ID rdf:type owl:NamedIndividual ,
+									DINEN61360:Instance_Description ,
+									DINEN61360:Integer ;
+                            DINEN61360:Expression_Goal "Requirement" ;
+                            DINEN61360:Logic_Interpretation "=" ;
+							DINEN61360:Value 2 .
+
