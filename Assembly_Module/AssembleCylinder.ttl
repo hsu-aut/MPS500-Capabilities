@@ -33,6 +33,10 @@
                            VDI3682:ProcessOperator ,
                            CaSk:ProvidedCapability ;
 				CSS:requiresCapability :AssembleCylinder;
+				CSS:isRestrictedBy :OverallColorConstraint ,
+								:OverallLotSizeConstraint ,
+								:CapStackSizeConstraint ,
+								:SpringStackSizeConstraint ;
 				VDI3682:hasOutput :AssembledCylinderOnCarrier ;
 				VDI3682:hasInput :CapStack ,
 								:DrilledCylinder ,
@@ -92,7 +96,13 @@
                                                         :AssembledCylinderOnCarrier_CylinderColor_DE ,
                                                         :AssembledCylinderOnCarrier_CylinderInnerDiameter_DE ,
                                                         :AssembledCylinderOnCarrier_CylinderOuterDiameter_DE ,
-                                                        :AssembledCylinderOnCarrier_LotSize_DE .
+                                                        :AssembledCylinderOnCarrier_LotSize_DE ;
+							VDI3682:isCharacterizedBy :AssembledCylinderOnCarrier_CarrierID_ID ,
+                                                        :AssembledCylinderOnCarrier_CarrierSlot_ID ,
+                                                        :AssembledCylinderOnCarrier_CylinderColor_ID ,
+                                                        :AssembledCylinderOnCarrier_CylinderInnerDiameter_ID ,
+                                                        :AssembledCylinderOnCarrier_CylinderOuterDiameter_ID ,
+                                                        :AssembledCylinderOnCarrier_LotSize_ID .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierID_DE
@@ -103,7 +113,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierID_ID
 :AssembledCylinderOnCarrier_CarrierID_ID rdf:type owl:NamedIndividual ,
-                                                  DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "AssembledCylinderOnCarrier_CarrierID_ID" ;
                                          DINEN61360:Expression_Goal "Assurance" ;
                                          DINEN61360:Logic_Interpretation "=" .
 
@@ -117,7 +130,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CarrierSlot_ID
 :AssembledCylinderOnCarrier_CarrierSlot_ID rdf:type owl:NamedIndividual ,
-                                                    DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "AssembledCylinderOnCarrier_CarrierSlot_ID" ;
                                            DINEN61360:Expression_Goal "Assurance" ;
                                            DINEN61360:Logic_Interpretation "=" .
 
@@ -131,7 +147,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderColor_ID
 :AssembledCylinderOnCarrier_CylinderColor_ID rdf:type owl:NamedIndividual ,
-                                                      DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "AssembledCylinderOnCarrier_CylinderColor_ID" ;
                                              DINEN61360:Expression_Goal "Assurance" ;
                                              DINEN61360:Logic_Interpretation "=" .
 
@@ -145,7 +164,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderInnerDiameter_ID
 :AssembledCylinderOnCarrier_CylinderInnerDiameter_ID rdf:type owl:NamedIndividual ,
-                                                              DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "AssembledCylinderOnCarrier_CylinderInnerDiameter_ID" ;
                                                      DINEN61360:Expression_Goal "Assurance" ;
                                                      DINEN61360:Logic_Interpretation "=" .
 
@@ -159,7 +181,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_CylinderOuterDiameter_ID
 :AssembledCylinderOnCarrier_CylinderOuterDiameter_ID rdf:type owl:NamedIndividual ,
-                                                              DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "AssembledCylinderOnCarrier_CylinderOuterDiameter_ID" ;
                                                      DINEN61360:Expression_Goal "Assurance" ;
                                                      DINEN61360:Logic_Interpretation "=" .
 
@@ -173,7 +198,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier_LotSize_ID
 :AssembledCylinderOnCarrier_LotSize_ID rdf:type owl:NamedIndividual ,
-                                                DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "AssembledCylinderOnCarrier_LotSize_ID" ;
                                        DINEN61360:Expression_Goal "Assurance" ;
                                        DINEN61360:Logic_Interpretation "=" .
 
@@ -187,7 +215,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderColor_ID
 :AssembledCylinder_CylinderColor_ID rdf:type owl:NamedIndividual ,
-                                             DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "AssembledCylinder_CylinderColor_ID" ;
                                     DINEN61360:Expression_Goal "Assurance" ;
                                     DINEN61360:Logic_Interpretation "=" .
 
@@ -201,7 +232,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderInnerDiameter_ID
 :AssembledCylinder_CylinderInnerDiameter_ID rdf:type owl:NamedIndividual ,
-                                                     DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "AssembledCylinder_CylinderInnerDiameter_ID" ;
                                             DINEN61360:Expression_Goal "Assurance" ;
                                             DINEN61360:Logic_Interpretation "=" .
 
@@ -215,7 +249,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_CylinderOuterDiameter_ID
 :AssembledCylinder_CylinderOuterDiameter_ID rdf:type owl:NamedIndividual ,
-                                                     DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "AssembledCylinder_CylinderOuterDiameter_ID" ;
                                             DINEN61360:Expression_Goal "Assurance" ;
                                             DINEN61360:Logic_Interpretation "=" .
 
@@ -229,7 +266,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinder_LotSize_ID
 :AssembledCylinder_LotSize_ID rdf:type owl:NamedIndividual ,
-                                       DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "AssembledCylinder_LotSize_ID" ;
                               DINEN61360:Expression_Goal "Assurance" ;
                               DINEN61360:Logic_Interpretation "=" .
 
@@ -253,7 +293,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapColor_ID
 :CapColor_ID rdf:type owl:NamedIndividual ,
-                      DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "CapColor_ID" ;
              DINEN61360:Expression_Goal "Assurance" ;
              DINEN61360:Logic_Interpretation "=" .
 
@@ -267,7 +310,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapDiameter_ID
 :CapDiameter_ID rdf:type owl:NamedIndividual ,
-                         DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "CapDiameter_ID" ;
                 DINEN61360:Expression_Goal "Assurance" ;
                 DINEN61360:Logic_Interpretation "=" .
 
@@ -281,7 +327,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapLotSize_ID
 :CapLotSize_ID rdf:type owl:NamedIndividual ,
-                        DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "CapLotSize_ID" ;
                DINEN61360:Expression_Goal "Assurance" ;
                DINEN61360:Logic_Interpretation "=" .
 
@@ -300,7 +349,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapColor_ID
 :CapStackCapColor_ID rdf:type owl:NamedIndividual ,
-                              DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "CapStackCapColor_ID" ;
                      DINEN61360:Expression_Goal "Actual_Value" ;
                      DINEN61360:Logic_Interpretation "=" .
 
@@ -314,7 +366,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackCapDiameter_ID
 :CapStackCapDiameter_ID rdf:type owl:NamedIndividual ,
-                                 DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "CapStackCapDiameter_ID" ;
                         DINEN61360:Expression_Goal "Actual_Value" ;
                         DINEN61360:Logic_Interpretation "=" .
 
@@ -327,7 +382,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStackStackSize_ID
 :CapStackStackSize_ID rdf:type owl:NamedIndividual ,
-                               DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "CapStackStackSize_ID" ;
                       DINEN61360:Expression_Goal "Actual_Value" ;
                       DINEN61360:Logic_Interpretation "=" .
 
@@ -346,7 +404,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderColor_ID
 :CylinderInAssemblyFixture_CylinderColor_ID rdf:type owl:NamedIndividual ,
-                                                     DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "CylinderInAssemblyFixture_CylinderColor_ID" ;
                                             DINEN61360:Expression_Goal "Assurance" ;
                                             DINEN61360:Logic_Interpretation "=" .
 
@@ -360,7 +421,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderInnerDiameter_ID
 :CylinderInAssemblyFixture_CylinderInnerDiameter_ID rdf:type owl:NamedIndividual ,
-                                                             DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "CylinderInAssemblyFixture_CylinderInnerDiameter_ID" ;
                                                     DINEN61360:Expression_Goal "Assurance" ;
                                                     DINEN61360:Logic_Interpretation "=" .
 
@@ -374,7 +438,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_CylinderOuterDiameter_ID
 :CylinderInAssemblyFixture_CylinderOuterDiameter_ID rdf:type owl:NamedIndividual ,
-                                                             DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "CylinderInAssemblyFixture_CylinderOuterDiameter_ID" ;
                                                     DINEN61360:Expression_Goal "Assurance" ;
                                                     DINEN61360:Logic_Interpretation "=" .
 
@@ -388,7 +455,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderInAssemblyFixture_LotSize_ID
 :CylinderInAssemblyFixture_LotSize_ID rdf:type owl:NamedIndividual ,
-                                               DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "CylinderInAssemblyFixture_LotSize_ID" ;
                                       DINEN61360:Expression_Goal "Assurance" ;
                                       DINEN61360:Logic_Interpretation "=" .
 
@@ -407,7 +477,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderColor_ID
 :CylinderWithSpring_CylinderColor_ID rdf:type owl:NamedIndividual ,
-                                              DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "CylinderWithSpring_CylinderColor_ID" ;
                                      DINEN61360:Expression_Goal "Assurance" ;
                                      DINEN61360:Logic_Interpretation "=" .
 
@@ -421,7 +494,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderInnerDiameter_ID
 :CylinderWithSpring_CylinderInnerDiameter_ID rdf:type owl:NamedIndividual ,
-                                                      DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "CylinderWithSpring_CylinderInnerDiameter_ID" ;
                                              DINEN61360:Expression_Goal "Assurance" ;
                                              DINEN61360:Logic_Interpretation "=" .
 
@@ -435,7 +511,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_CylinderOuterDiameter_ID
 :CylinderWithSpring_CylinderOuterDiameter_ID rdf:type owl:NamedIndividual ,
-                                                      DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "CylinderWithSpring_CylinderOuterDiameter_ID" ;
                                              DINEN61360:Expression_Goal "Assurance" ;
                                              DINEN61360:Logic_Interpretation "=" .
 
@@ -449,7 +528,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CylinderWithSpring_LotSize_ID
 :CylinderWithSpring_LotSize_ID rdf:type owl:NamedIndividual ,
-                                        DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "CylinderWithSpring_LotSize_ID" ;
                                DINEN61360:Expression_Goal "Assurance" ;
                                DINEN61360:Logic_Interpretation "=" .
 
@@ -468,7 +550,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierID_ID
 :DrilledCylinderCarrierID_ID rdf:type owl:NamedIndividual ,
-                                      DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "DrilledCylinderCarrierID_ID" ;
                              DINEN61360:Expression_Goal "Actual_Value" ;
                              DINEN61360:Logic_Interpretation "=" .
 
@@ -482,7 +567,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderCarrierSlot_ID
 :DrilledCylinderCarrierSlot_ID rdf:type owl:NamedIndividual ,
-                                        DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "DrilledCylinderCarrierSlot_ID" ;
                                DINEN61360:Expression_Goal "Actual_Value" ;
                                DINEN61360:Logic_Interpretation "=" .
 
@@ -496,7 +584,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderColor_ID
 :DrilledCylinderColor_ID rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "DrilledCylinderColor_ID" ;
                          DINEN61360:Expression_Goal "Actual_Value" ;
                          DINEN61360:Logic_Interpretation "=" .
 
@@ -510,7 +601,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderInnerDiameter_ID
 :DrilledCylinderInnerDiameter_ID rdf:type owl:NamedIndividual ,
-                                          DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "DrilledCylinderInnerDiameter_ID" ;
                                  DINEN61360:Expression_Goal "Actual_Value" ;
                                  DINEN61360:Logic_Interpretation "=" .
 
@@ -525,14 +619,20 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderLotSize_ID1
 :DrilledCylinderLotSize_ID1 rdf:type owl:NamedIndividual ,
-                                    DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "DrilledCylinderLotSize_ID1" ;
                            DINEN61360:Expression_Goal "Actual_Value" ;
                            DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderLotSize_ID2
 :DrilledCylinderLotSize_ID2 rdf:type owl:NamedIndividual ,
-                                    DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "DrilledCylinderLotSize_ID2" ;
                            DINEN61360:Expression_Goal "Requirement" ;
                            DINEN61360:Logic_Interpretation "<=" ;
 						   DINEN61360:Value 4 .
@@ -547,7 +647,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderOuterDiameter_ID
 :DrilledCylinderOuterDiameter_ID rdf:type owl:NamedIndividual ,
-                                          DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "DrilledCylinderOuterDiameter_ID" ;
                                  DINEN61360:Expression_Goal "Actual_Value" ;
                                  DINEN61360:Logic_Interpretation "=" .
 
@@ -577,7 +680,7 @@
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#PutOnCarrier
 :PutOnCarrier rdf:type owl:NamedIndividual ,
                        VDI3682:ProcessOperator ;
-              VDI2206:hasInput :AssembledCylinder ;
+              VDI3682:hasInput :AssembledCylinder ;
               VDI3682:hasInput :RequiredCarrierId ,
                                :RequiredCarrierSlot ;
               VDI3682:hasOutput :AssembledCylinderOnCarrier .
@@ -586,7 +689,9 @@
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId
 :RequiredCarrierId rdf:type owl:NamedIndividual ,
                             VDI3682:Information ;
-                   DINEN61360:has_Data_Element :RequiredCarrierId_DE .
+				DINEN61360:has_Data_Element :RequiredCarrierId_DE ;
+				VDI3682:isCharacterizedBy :RequiredCarrierId_ID1 ,
+										:RequiredCarrierId_ID2 .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId_DE
@@ -599,7 +704,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId_ID1
 :RequiredCarrierId_ID1 rdf:type owl:NamedIndividual ,
-                                DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "RequiredCarrierId_ID1" ;
                        DINEN61360:Expression_Goal "Requirement" ;
                        DINEN61360:Logic_Interpretation ">=" ;
                        DINEN61360:Value 1 .
@@ -607,7 +715,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierId_ID2
 :RequiredCarrierId_ID2 rdf:type owl:NamedIndividual ,
-                                DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "RequiredCarrierId_ID2" ;
                        DINEN61360:Expression_Goal "Requirement" ;
                        DINEN61360:Logic_Interpretation "<=" ;
                        DINEN61360:Value 8 .
@@ -615,8 +726,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot
 :RequiredCarrierSlot rdf:type owl:NamedIndividual ,
-                              VDI3682:Information ;
-                     DINEN61360:has_Data_Element :RequiredCarrierSlot_DE .
+							VDI3682:Information ;
+					DINEN61360:has_Data_Element :RequiredCarrierSlot_DE ;
+					VDI3682:isCharacterizedBy :RequiredCarrierSlot_ID1 ,
+											:RequiredCarrierSlot_ID2 .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot_DE
@@ -629,7 +742,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot_ID1
 :RequiredCarrierSlot_ID1 rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "RequiredCarrierSlot_ID1" ;
                          DINEN61360:Expression_Goal "Requirement" ;
                          DINEN61360:Logic_Interpretation ">=" ;
                          DINEN61360:Value 1 .
@@ -637,7 +753,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#RequiredCarrierSlot_ID2
 :RequiredCarrierSlot_ID2 rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "RequiredCarrierSlot_ID2" ;
                          DINEN61360:Expression_Goal "Requirement" ;
                          DINEN61360:Logic_Interpretation "<=" ;
                          DINEN61360:Value 4 .
@@ -665,7 +784,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackSpringLength_ID
 :SpringStackSpringLength_ID rdf:type owl:NamedIndividual ,
-                                     DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "SpringStackSpringLength_ID" ;
                             DINEN61360:Expression_Goal "Actual_Value" ;
                             DINEN61360:Logic_Interpretation "=" .
 
@@ -678,7 +800,10 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackStackSize_ID
 :SpringStackStackSize_ID rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Instance_Description ;
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "SpringStackStackSize_ID" ;
                          DINEN61360:Expression_Goal "Actual_Value" ;
                          DINEN61360:Logic_Interpretation "=" .
 
