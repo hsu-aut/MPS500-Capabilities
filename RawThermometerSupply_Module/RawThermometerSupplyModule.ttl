@@ -17,64 +17,12 @@
                                                                                          <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
 
 #################################################################
-#    Classes
-#################################################################
-
-###  http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element
-<http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> rdf:type owl:Class .
-
-
-###  http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description
-<http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> rdf:type owl:Class .
-
-
-###  http://www.hsu-ifa.de/ontologies/VDI2206#Information
-<http://www.hsu-ifa.de/ontologies/VDI2206#Information> rdf:type owl:Class .
-
-
-###  http://www.hsu-ifa.de/ontologies/VDI2206#Module
-<http://www.hsu-ifa.de/ontologies/VDI2206#Module> rdf:type owl:Class .
-
-
-###  http://www.hsu-ifa.de/ontologies/VDI2206#System
-<http://www.hsu-ifa.de/ontologies/VDI2206#System> rdf:type owl:Class .
-
-
-###  http://www.hsu-ifa.de/ontologies/VDI2860#Abteilen
-<http://www.hsu-ifa.de/ontologies/VDI2860#Abteilen> rdf:type owl:Class .
-
-
-###  http://www.hsu-ifa.de/ontologies/VDI2860#Fuehren
-<http://www.hsu-ifa.de/ontologies/VDI2860#Fuehren> rdf:type owl:Class .
-
-
-###  http://www.hsu-ifa.de/ontologies/VDI2860#Zuteilen
-<http://www.hsu-ifa.de/ontologies/VDI2860#Zuteilen> rdf:type owl:Class .
-
-
-###  http://www.hsu-ifa.de/ontologies/VDI3682#Information
-<http://www.hsu-ifa.de/ontologies/VDI3682#Information> rdf:type owl:Class .
-
-
-###  http://www.hsu-ifa.de/ontologies/VDI3682#Process
-<http://www.hsu-ifa.de/ontologies/VDI3682#Process> rdf:type owl:Class .
-
-
-###  http://www.hsu-ifa.de/ontologies/VDI3682#Product
-<http://www.hsu-ifa.de/ontologies/VDI3682#Product> rdf:type owl:Class .
-
-
-###  http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit
-<http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit> rdf:type owl:Class .
-
-
-#################################################################
 #    Individuals
 #################################################################
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#PrepareRawPart
 :PrepareRawPart rdf:type owl:NamedIndividual ,
-                         <http://www.hsu-ifa.de/ontologies/VDI2860#Abteilen> ,
+                         <http://www.w3id.org/hsu-aut/VDI2860#Abteilen> ,
                          CaSk:ProvidedCapability ;
                 VDI2206:hasInput :ProductStack1 ,
                                  :ProductStack2 ,
@@ -87,7 +35,7 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#PreparedRawPart
 :PreparedRawPart rdf:type owl:NamedIndividual ,
-                          <http://www.hsu-ifa.de/ontologies/VDI3682#Product> ;
+                          VDI3682:Product ;
                  DINEN61360:has_Data_Element :PreparedRawPartColor_DE ,
                                              :PreparedRawPartDiameter_DE ,
                                              :PreparedRawPartLotSize_DE .
@@ -95,49 +43,49 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#PreparedRawPartColor_DE
 :PreparedRawPartColor_DE rdf:type owl:NamedIndividual ,
-                                  <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                  DINEN61360:Data_Element ;
                          DINEN61360:has_Instance_Description :PreparedRawPartColor_ID ;
                          DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#PreparedRawPartColor_ID
 :PreparedRawPartColor_ID rdf:type owl:NamedIndividual ,
-                                  <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                  DINEN61360:Instance_Description ;
                          DINEN61360:Expression_Goal "Actual_Value" ;
                          DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#PreparedRawPartDiameter_DE
 :PreparedRawPartDiameter_DE rdf:type owl:NamedIndividual ,
-                                     <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                     DINEN61360:Data_Element ;
                             DINEN61360:has_Instance_Description :PreparedRawPartDiameter_ID ;
                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#PreparedRawPartDiameter_ID
 :PreparedRawPartDiameter_ID rdf:type owl:NamedIndividual ,
-                                     <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                     DINEN61360:Instance_Description ;
                             DINEN61360:Expression_Goal "Actual_Value" ;
                             DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#PreparedRawPartLotSize_DE
 :PreparedRawPartLotSize_DE rdf:type owl:NamedIndividual ,
-                                    <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                    DINEN61360:Data_Element ;
                            DINEN61360:has_Instance_Description :PreparedRawPartLotSize_ID ;
                            DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#PreparedRawPartLotSize_ID
 :PreparedRawPartLotSize_ID rdf:type owl:NamedIndividual ,
-                                    <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                    DINEN61360:Instance_Description ;
                            DINEN61360:Expression_Goal "Actual_Value" ;
                            DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack1
 :ProductStack1 rdf:type owl:NamedIndividual ,
-                        <http://www.hsu-ifa.de/ontologies/VDI3682#Product> ;
+                        VDI3682:Product ;
                DINEN61360:has_Data_Element :ProductStack1CurrentColor_DE ,
                                            :ProductStack1CurrentDiameter_DE ,
                                            :ProductStack1CurrentStackSize_DE .
@@ -145,49 +93,49 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack1CurrentColor_DE
 :ProductStack1CurrentColor_DE rdf:type owl:NamedIndividual ,
-                                       <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                       DINEN61360:Data_Element ;
                               DINEN61360:has_Instance_Description :ProductStack1CurrentColor_ID ;
                               DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack1CurrentColor_ID
 :ProductStack1CurrentColor_ID rdf:type owl:NamedIndividual ,
-                                       <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                       DINEN61360:Instance_Description ;
                               DINEN61360:Expression_Goal "Actual_Value" ;
                               DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack1CurrentDiameter_DE
 :ProductStack1CurrentDiameter_DE rdf:type owl:NamedIndividual ,
-                                          <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                          DINEN61360:Data_Element ;
                                  DINEN61360:has_Instance_Description :ProductStack1CurrentDiameter_ID ;
                                  DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack1CurrentDiameter_ID
 :ProductStack1CurrentDiameter_ID rdf:type owl:NamedIndividual ,
-                                          <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                          DINEN61360:Instance_Description ;
                                  DINEN61360:Expression_Goal "Actual_Value" ;
                                  DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack1CurrentStackSize_DE
 :ProductStack1CurrentStackSize_DE rdf:type owl:NamedIndividual ,
-                                           <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                           DINEN61360:Data_Element ;
                                   DINEN61360:has_Instance_Description :ProductStack1CurrentStackSize_ID ;
                                   DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack1CurrentStackSize_ID
 :ProductStack1CurrentStackSize_ID rdf:type owl:NamedIndividual ,
-                                           <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                           DINEN61360:Instance_Description ;
                                   DINEN61360:Expression_Goal "Actual_Value" ;
                                   DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack2
 :ProductStack2 rdf:type owl:NamedIndividual ,
-                        <http://www.hsu-ifa.de/ontologies/VDI3682#Product> ;
+                        VDI3682:Product ;
                DINEN61360:has_Data_Element :ProductStack2CurrentColor_DE ,
                                            :ProductStack2CurrentDiameter_DE ,
                                            :ProductStack2CurrentStackSize_DE .
@@ -195,49 +143,49 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack2CurrentColor_DE
 :ProductStack2CurrentColor_DE rdf:type owl:NamedIndividual ,
-                                       <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                       DINEN61360:Data_Element ;
                               DINEN61360:has_Instance_Description :ProductStack2CurrentColor_ID ;
                               DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack2CurrentColor_ID
 :ProductStack2CurrentColor_ID rdf:type owl:NamedIndividual ,
-                                       <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                       DINEN61360:Instance_Description ;
                               DINEN61360:Expression_Goal "Actual_Value" ;
                               DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack2CurrentDiameter_DE
 :ProductStack2CurrentDiameter_DE rdf:type owl:NamedIndividual ,
-                                          <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                          DINEN61360:Data_Element ;
                                  DINEN61360:has_Instance_Description :ProductStack2CurrentDiameter_ID ;
                                  DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack2CurrentDiameter_ID
 :ProductStack2CurrentDiameter_ID rdf:type owl:NamedIndividual ,
-                                          <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                          DINEN61360:Instance_Description ;
                                  DINEN61360:Expression_Goal "Actual_Value" ;
                                  DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack2CurrentStackSize_DE
 :ProductStack2CurrentStackSize_DE rdf:type owl:NamedIndividual ,
-                                           <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                           DINEN61360:Data_Element ;
                                   DINEN61360:has_Instance_Description :ProductStack2CurrentStackSize_ID ;
                                   DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack2CurrentStackSize_ID
 :ProductStack2CurrentStackSize_ID rdf:type owl:NamedIndividual ,
-                                           <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                           DINEN61360:Instance_Description ;
                                   DINEN61360:Expression_Goal "Actual_Value" ;
                                   DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack3
 :ProductStack3 rdf:type owl:NamedIndividual ,
-                        <http://www.hsu-ifa.de/ontologies/VDI3682#Product> ;
+                        VDI3682:Product ;
                DINEN61360:has_Data_Element :ProductStack3CurrentColor_DE ,
                                            :ProductStack3CurrentDiameter_DE ,
                                            :ProductStack3CurrentStackSize_DE .
@@ -245,49 +193,49 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack3CurrentColor_DE
 :ProductStack3CurrentColor_DE rdf:type owl:NamedIndividual ,
-                                       <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                       DINEN61360:Data_Element ;
                               DINEN61360:has_Instance_Description :ProductStack3CurrentColor_ID ;
                               DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack3CurrentColor_ID
 :ProductStack3CurrentColor_ID rdf:type owl:NamedIndividual ,
-                                       <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                       DINEN61360:Instance_Description ;
                               DINEN61360:Expression_Goal "Actual_Value" ;
                               DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack3CurrentDiameter_DE
 :ProductStack3CurrentDiameter_DE rdf:type owl:NamedIndividual ,
-                                          <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                          DINEN61360:Data_Element ;
                                  DINEN61360:has_Instance_Description :ProductStack3CurrentDiameter_ID ;
                                  DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack3CurrentDiameter_ID
 :ProductStack3CurrentDiameter_ID rdf:type owl:NamedIndividual ,
-                                          <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                          DINEN61360:Instance_Description ;
                                  DINEN61360:Expression_Goal "Actual_Value" ;
                                  DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack3CurrentStackSize_DE
 :ProductStack3CurrentStackSize_DE rdf:type owl:NamedIndividual ,
-                                           <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                           DINEN61360:Data_Element ;
                                   DINEN61360:has_Instance_Description :ProductStack3CurrentStackSize_ID ;
                                   DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#ProductStack3CurrentStackSize_ID
 :ProductStack3CurrentStackSize_ID rdf:type owl:NamedIndividual ,
-                                           <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                           DINEN61360:Instance_Description ;
                                   DINEN61360:Expression_Goal "Actual_Value" ;
                                   DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#PutOnCarrier
 :PutOnCarrier rdf:type owl:NamedIndividual ,
-                       <http://www.hsu-ifa.de/ontologies/VDI2860#Fuehren> ,
+                       <http://www.w3id.org/hsu-aut/VDI2860#Fuehren> ,
                        CaSk:ProvidedCapability ;
               VDI2206:hasInput :PreparedRawPart ,
                                :RequiredCarrierId ,
@@ -297,7 +245,7 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RawCylinder
 :RawCylinder rdf:type owl:NamedIndividual ,
-                      <http://www.hsu-ifa.de/ontologies/VDI3682#Product> ;
+                      VDI3682:Product ;
              DINEN61360:has_Data_Element :RawCylinderCarrierId_DE ,
                                          :RawCylinderCarrierSlot_DE ,
                                          :RawCylinderColor_DE ,
@@ -307,89 +255,89 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RawCylinderCarrierId_DE
 :RawCylinderCarrierId_DE rdf:type owl:NamedIndividual ,
-                                  <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                  DINEN61360:Data_Element ;
                          DINEN61360:has_Instance_Description :RawCylinderCarrierId_ID ;
                          DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RawCylinderCarrierId_ID
 :RawCylinderCarrierId_ID rdf:type owl:NamedIndividual ,
-                                  <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                  DINEN61360:Instance_Description ;
                          DINEN61360:Expression_Goal "Actual_Value" ;
                          DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RawCylinderCarrierSlot_DE
 :RawCylinderCarrierSlot_DE rdf:type owl:NamedIndividual ,
-                                    <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                    DINEN61360:Data_Element ;
                            DINEN61360:has_Instance_Description :RawCylinderCarrierSlot_ID ;
                            DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RawCylinderCarrierSlot_ID
 :RawCylinderCarrierSlot_ID rdf:type owl:NamedIndividual ,
-                                    <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                    DINEN61360:Instance_Description ;
                            DINEN61360:Expression_Goal "Actual_Value" ;
                            DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RawCylinderColor_DE
 :RawCylinderColor_DE rdf:type owl:NamedIndividual ,
-                              <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                              DINEN61360:Data_Element ;
                      DINEN61360:has_Instance_Description :RawCylinderColor_ID ;
                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RawCylinderColor_ID
 :RawCylinderColor_ID rdf:type owl:NamedIndividual ,
-                              <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                              DINEN61360:Instance_Description ;
                      DINEN61360:Expression_Goal "Actual_Value" ;
                      DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RawCylinderCrane
 :RawCylinderCrane rdf:type owl:NamedIndividual ,
-                           <http://www.hsu-ifa.de/ontologies/VDI2206#Module> ;
+                           VDI2206:Module ;
                   VDI3682:isAssignedTo :PutOnCarrier .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RawCylinderDiameter_DE
 :RawCylinderDiameter_DE rdf:type owl:NamedIndividual ,
-                                 <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                 DINEN61360:Data_Element ;
                         DINEN61360:has_Instance_Description :RawCylinderDiameter_ID ;
                         DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RawCylinderDiameter_ID
 :RawCylinderDiameter_ID rdf:type owl:NamedIndividual ,
-                                 <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                 DINEN61360:Instance_Description ;
                         DINEN61360:Expression_Goal "=" ;
                         DINEN61360:Logic_Interpretation "Actual_Value" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RawCylinderLotSize_DE
 :RawCylinderLotSize_DE rdf:type owl:NamedIndividual ,
-                                <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                DINEN61360:Data_Element ;
                        DINEN61360:has_Instance_Description :RawCylinderLotSize_ID ;
                        DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RawCylinderLotSize_ID
 :RawCylinderLotSize_ID rdf:type owl:NamedIndividual ,
-                                <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                DINEN61360:Instance_Description ;
                        DINEN61360:Expression_Goal "Actual_Value" ;
                        DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RawCylinderSelector
 :RawCylinderSelector rdf:type owl:NamedIndividual ,
-                              <http://www.hsu-ifa.de/ontologies/VDI2206#Module> ;
+                              VDI2206:Module ;
                      VDI3682:isAssignedTo :PrepareRawPart .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RawCylinderSupplyUnit
 :RawCylinderSupplyUnit rdf:type owl:NamedIndividual ,
-                                <http://www.hsu-ifa.de/ontologies/VDI2206#System> ;
+                                VDI2206:System ;
                        VDI2206:SystemConsistsOfModule :RawCylinderCrane ,
                                                       :RawCylinderSelector ;
                        VDI3682:isAssignedTo :SupplyRawCylinder .
@@ -397,13 +345,13 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredCarrierId
 :RequiredCarrierId rdf:type owl:NamedIndividual ,
-                            <http://www.hsu-ifa.de/ontologies/VDI2206#Information> ;
+                            VDI2206:Information ;
                    DINEN61360:has_Data_Element :RequiredCarrierId_DE .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredCarrierId_DE
 :RequiredCarrierId_DE rdf:type owl:NamedIndividual ,
-                               <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                               DINEN61360:Data_Element ;
                       DINEN61360:has_Instance_Description :RequiredCarrierId_ID1 ,
                                                           :RequiredCarrierSlot_ID2 ;
                       DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD> .
@@ -411,7 +359,7 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredCarrierId_ID1
 :RequiredCarrierId_ID1 rdf:type owl:NamedIndividual ,
-                                <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                DINEN61360:Instance_Description ;
                        DINEN61360:Expression_Goal "Requirement" ;
                        DINEN61360:Logic_Interpretation ">=" ;
                        DINEN61360:Value 1 .
@@ -419,7 +367,7 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredCarrierId_ID2
 :RequiredCarrierId_ID2 rdf:type owl:NamedIndividual ,
-                                <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                DINEN61360:Instance_Description ;
                        DINEN61360:Expression_Goal "Requirement" ;
                        DINEN61360:Logic_Interpretation "<=" ;
                        DINEN61360:Value 8 .
@@ -427,13 +375,13 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredCarrierSlot
 :RequiredCarrierSlot rdf:type owl:NamedIndividual ,
-                              <http://www.hsu-ifa.de/ontologies/VDI2206#Information> ;
+                              VDI2206:Information ;
                      DINEN61360:has_Data_Element :RequiredCarrierSlot_DE .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredCarrierSlot_DE
 :RequiredCarrierSlot_DE rdf:type owl:NamedIndividual ,
-                                 <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                                 DINEN61360:Data_Element ;
                         DINEN61360:has_Instance_Description :RequiredCarrierSlot_ID1 ,
                                                             :RequiredCarrierSlot_ID2 ;
                         DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD> .
@@ -441,7 +389,7 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredCarrierSlot_ID1
 :RequiredCarrierSlot_ID1 rdf:type owl:NamedIndividual ,
-                                  <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                  DINEN61360:Instance_Description ;
                          DINEN61360:Expression_Goal "Requirement" ;
                          DINEN61360:Logic_Interpretation ">=" ;
                          DINEN61360:Value 1 .
@@ -449,7 +397,7 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredCarrierSlot_ID2
 :RequiredCarrierSlot_ID2 rdf:type owl:NamedIndividual ,
-                                  <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                                  DINEN61360:Instance_Description ;
                          DINEN61360:Expression_Goal "<=" ;
                          DINEN61360:Logic_Interpretation "Requirement" ;
                          DINEN61360:Value 4 .
@@ -457,20 +405,20 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredColor
 :RequiredColor rdf:type owl:NamedIndividual ,
-                        <http://www.hsu-ifa.de/ontologies/VDI3682#Information> ;
+                        VDI3682:Information ;
                DINEN61360:has_Data_Element :RequiredColor_DE .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredColor_DE
 :RequiredColor_DE rdf:type owl:NamedIndividual ,
-                           <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                           DINEN61360:Data_Element ;
                   DINEN61360:has_Instance_Description :RequiredColor_ID ;
                   DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredColor_ID
 :RequiredColor_ID rdf:type owl:NamedIndividual ,
-                           <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                           DINEN61360:Instance_Description ;
                   DINEN61360:Expression_Goal "Requirement" ;
                   DINEN61360:Logic_Interpretation "" ;
                   DINEN61360:Value "" .
@@ -478,13 +426,13 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredDiameter
 :RequiredDiameter rdf:type owl:NamedIndividual ,
-                           <http://www.hsu-ifa.de/ontologies/VDI3682#Information> ;
+                           VDI3682:Information ;
                   DINEN61360:has_Data_Element :RequiredDiameter_DE .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredDiameter_DE
 :RequiredDiameter_DE rdf:type owl:NamedIndividual ,
-                              <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                              DINEN61360:Data_Element ;
                      DINEN61360:has_Instance_Description :RequiredDiameter_ID1 ,
                                                          :RequiredDiameter_ID2 ;
                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Diameter_TD> .
@@ -492,7 +440,7 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredDiameter_ID1
 :RequiredDiameter_ID1 rdf:type owl:NamedIndividual ,
-                               <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                               DINEN61360:Instance_Description ;
                       DINEN61360:Expression_Goal "Requirement" ;
                       DINEN61360:Logic_Interpretation ">=" ;
                       DINEN61360:Value 50 .
@@ -500,7 +448,7 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredDiameter_ID2
 :RequiredDiameter_ID2 rdf:type owl:NamedIndividual ,
-                               <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                               DINEN61360:Instance_Description ;
                       DINEN61360:Expression_Goal "Requirement" ;
                       DINEN61360:Logic_Interpretation "<=" ;
                       DINEN61360:Value 60 .
@@ -508,20 +456,20 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredLotSize
 :RequiredLotSize rdf:type owl:NamedIndividual ,
-                          <http://www.hsu-ifa.de/ontologies/VDI3682#Information> ;
+                          VDI3682:Information ;
                  DINEN61360:has_Data_Element :RequiredLotSize_DE .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredLotSize_DE
 :RequiredLotSize_DE rdf:type owl:NamedIndividual ,
-                             <http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element> ;
+                             DINEN61360:Data_Element ;
                     DINEN61360:has_Instance_Description :RequiredLotSize_ID ;
                     DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredLotSize_ID
 :RequiredLotSize_ID rdf:type owl:NamedIndividual ,
-                             <http://www.hsu-ifa.de/ontologies/DINEN61360#Instance_Description> ;
+                             DINEN61360:Instance_Description ;
                     DINEN61360:Expression_Goal "\"Requirement\"" ;
                     DINEN61360:Logic_Interpretation "<=" ;
                     DINEN61360:Value 4 .
@@ -529,7 +477,7 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#SupplyRawCylinder
 :SupplyRawCylinder rdf:type owl:NamedIndividual ,
-                            <http://www.hsu-ifa.de/ontologies/VDI2860#Zuteilen> ,
+                            <http://www.w3id.org/hsu-aut/VDI2860#Zuteilen> ,
                             CaSk:ProvidedCapability ;
                    VDI2206:hasInput :ProductStack1 ,
                                     :ProductStack2 ,
@@ -546,7 +494,7 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#SupplyRawCylinderProcess
 :SupplyRawCylinderProcess rdf:type owl:NamedIndividual ,
-                                   <http://www.hsu-ifa.de/ontologies/VDI3682#Process> ;
+                                   VDI3682:Process ;
                           VDI3682:consistsOf :ProductStack1 ,
                                              :ProductStack2 ,
                                              :ProductStack3 ,
@@ -562,7 +510,7 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#SupplyRawCylinderSystemLimit
 :SupplyRawCylinderSystemLimit rdf:type owl:NamedIndividual ,
-                                       <http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit> .
+                                       VDI3682:SystemLimit .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD
