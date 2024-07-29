@@ -25,7 +25,6 @@
 :RawCylinderSelector rdf:type owl:NamedIndividual ,
 							VDI2206:Module,
 							CSS:Resource ;
-					CSS:providesCapability :PrepareRawPart ;
 					VDI3682:isAssignedTo :PrepareRawPart .
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PrepareRawPart
@@ -370,7 +369,6 @@
 :RawCylinderSlide rdf:type owl:NamedIndividual ,
 							VDI2206:Module,
 							CSS:Resource ;
-					CSS:providesCapability :PutOnCarrier ;
 					VDI3682:isAssignedTo :PutOnCarrier .
 
 
@@ -392,13 +390,15 @@
 										:RawCylinderColor_DE ,
 										:RawCylinderInnerDiameter_DE ,
 										:RawCylinderLotSize_DE ,
-										:RawCylinderOuterDiameter_DE ;
+										:RawCylinderOuterDiameter_DE ,
+										:RawCylinderStationID_DE ;
 			VDI3682:isCharacterizedBy :RawCylinderCarrierId_ID ,
 										:RawCylinderCarrierSlot_ID ,
 										:RawCylinderColor_ID ,
 										:RawCylinderInnerDiameter_ID ,
 										:RawCylinderLotSize_ID ,
-										:RawCylinderOuterDiameter_ID .
+										:RawCylinderOuterDiameter_ID ,
+										:RawCylinderStationID_ID .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderCarrierId_DE
@@ -499,6 +499,23 @@
                                   DINEN61360:Instance_Description ,
                                   openmath:Variable ;
                 openmath:name "RawCylinderOuterDiameter_ID" ;
+                             DINEN61360:Expression_Goal "Assurance" ;
+                             DINEN61360:Logic_Interpretation "=" .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderStationID_DE
+:RawCylinderStationID_DE rdf:type owl:NamedIndividual ,
+                                      DINEN61360:Data_Element ;
+                             DINEN61360:has_Instance_Description :RawCylinderStationID_ID ;
+                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderStationID_ID
+:RawCylinderStationID_ID rdf:type owl:NamedIndividual ,
+                                  DINEN61360:Integer,
+                                  DINEN61360:Instance_Description ,
+                                  openmath:Variable ;
+                openmath:name "RawCylinderStationID_ID" ;
                              DINEN61360:Expression_Goal "Assurance" ;
                              DINEN61360:Logic_Interpretation "=" .
 
@@ -696,7 +713,7 @@
                 openmath:name "RequiredInnerDiameter_ID1" ;
                            DINEN61360:Expression_Goal "Requirement" ;
                            DINEN61360:Logic_Interpretation ">=" ;
-                           DINEN61360:Value 45 .
+                           DINEN61360:Value 0 .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredInnerDiameter_ID2
@@ -780,7 +797,7 @@
                 openmath:name "RequiredOuterDiameter_ID1" ;
                            DINEN61360:Expression_Goal "Requirement" ;
                            DINEN61360:Logic_Interpretation ">=" ;
-                           DINEN61360:Value 50 .
+                           DINEN61360:Value 0 .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredOuterDiameter_ID2
@@ -807,7 +824,27 @@
 							VDI2206:Module,
 							CSS:Resource ;
 					CSS:providesCapability :SupplyRawCylinder ;
-					VDI3682:isAssignedTo :SupplyRawCylinder .
+					VDI3682:isAssignedTo :SupplyRawCylinder ;
+					DINEN61360:has_Data_Element :RawCylinderSupplyModule_StationID_DE ;
+					VDI3682:isCharacterizedBy :RawCylinderSupplyModule_StationID_ID .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderSupplyModule_StationID_DE
+:RawCylinderSupplyModule_StationID_DE rdf:type owl:NamedIndividual ,
+                                      DINEN61360:Data_Element ;
+                             DINEN61360:has_Instance_Description :RawCylinderSupplyModule_StationID_ID ;
+                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderSupplyModule_StationID_ID
+:RawCylinderSupplyModule_StationID_ID rdf:type owl:NamedIndividual ,
+								DINEN61360:Integer,
+								DINEN61360:Instance_Description ,
+								openmath:Variable ;
+			openmath:name "RawCylinderSupplyModule_StationID_ID" ;
+							DINEN61360:Expression_Goal "Actual_Value" ;
+							DINEN61360:Logic_Interpretation "=" ;
+							DINEN61360:Value 2 .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#SupplyRawCylinder
@@ -816,7 +853,8 @@
 							VDI3682:ProcessOperator ,
                             CaSk:ProvidedCapability ;
 					CSS:requiresCapability :SupplyRawCylinder ;
-					CSS:isRestrictedBy :ColorConstraint ,
+					CSS:isRestrictedBy :StationIDConstraint ,
+						:ColorConstraint ,
 						:ColorStackConstraint ,
 						:LotSizeConstraint ,
 						:LotSizeConstraint ,
@@ -865,6 +903,16 @@
 #################################################################
 #    Constraints
 #################################################################
+###  StationID of output product must be equal to current station ID
+:StationIDConstraint rdf:type owl:NamedIndividual ,
+                                                openmath:Application ,
+                                                CSS:CapabilityConstraint ;
+                                       openmath:arguments (:RawCylinderStationID_ID :RawCylinderSupplyModule_StationID_ID);
+                                       openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
+                                       CSS:references :RawCylinderStationID_ID ,
+                                                      :RawCylinderSupplyModule_StationID_ID .
+
+
 ###  Color parameter will determine the output product color
 :ColorConstraint rdf:type owl:NamedIndividual ,
                                                 openmath:Application ,
