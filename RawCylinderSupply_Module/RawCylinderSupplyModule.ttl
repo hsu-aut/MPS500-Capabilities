@@ -376,63 +376,38 @@
 :PutOnCarrier rdf:type owl:NamedIndividual ,
                        VDI2860:Fuehren ,
                        VDI3682:ProcessOperator;
-              VDI3682:hasInput :PreparedRawPart ,
-                               :RequiredCarrierId ,
-                               :RequiredCarrierSlot ;
+              VDI3682:hasInput :PreparedRawPart ;
               VDI3682:hasOutput :RawCylinder .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinder
 :RawCylinder rdf:type owl:NamedIndividual ,
                       VDI3682:Product ;
-			DINEN61360:has_Data_Element :RawCylinderCarrierId_DE ,
-										:RawCylinderCarrierSlot_DE ,
+			DINEN61360:has_Data_Element :RawCylinder_StationID_DE ,
 										:RawCylinderColor_DE ,
 										:RawCylinderInnerDiameter_DE ,
 										:RawCylinderLotSize_DE ,
-										:RawCylinderOuterDiameter_DE ,
-										:RawCylinderStationID_DE ;
-			VDI3682:isCharacterizedBy :RawCylinderCarrierId_ID ,
-										:RawCylinderCarrierSlot_ID ,
+										:RawCylinderOuterDiameter_DE ;
+			VDI3682:isCharacterizedBy :RawCylinder_StationID_ID ,
 										:RawCylinderColor_ID ,
 										:RawCylinderInnerDiameter_ID ,
 										:RawCylinderLotSize_ID ,
-										:RawCylinderOuterDiameter_ID ,
-										:RawCylinderStationID_ID .
+										:RawCylinderOuterDiameter_ID .
 
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderCarrierId_DE
-:RawCylinderCarrierId_DE rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinder_StationID_DE
+:RawCylinder_StationID_DE rdf:type owl:NamedIndividual ,
                                   DINEN61360:Data_Element ;
-                         DINEN61360:has_Instance_Description :RawCylinderCarrierId_ID ;
-                         DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD> .
+                         DINEN61360:has_Instance_Description :RawCylinder_StationID_ID ;
+                         DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> .
 
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderCarrierId_ID
-:RawCylinderCarrierId_ID rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Integer,
-                                  DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-                openmath:name "RawCylinderCarrierId_ID" ;
-                         DINEN61360:Expression_Goal "Assurance" ;
-                         DINEN61360:Logic_Interpretation "=" .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderCarrierSlot_DE
-:RawCylinderCarrierSlot_DE rdf:type owl:NamedIndividual ,
-                                    DINEN61360:Data_Element ;
-                           DINEN61360:has_Instance_Description :RawCylinderCarrierSlot_ID ;
-                           DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD> .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderCarrierSlot_ID
-:RawCylinderCarrierSlot_ID rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Integer,
-                                  DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-                openmath:name "RawCylinderCarrierSlot_ID" ;
-                           DINEN61360:Expression_Goal "Assurance" ;
-                           DINEN61360:Logic_Interpretation "=" .
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinder_StationID_ID
+:RawCylinder_StationID_ID rdf:type owl:NamedIndividual ,
+								DINEN61360:Integer,
+								DINEN61360:Instance_Description ,
+								openmath:Variable ;
+			openmath:name "RawCylinder_StationID_ID" ;
+							DINEN61360:Expression_Goal "Assurance" ;
+							DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderColor_DE
@@ -503,23 +478,6 @@
                              DINEN61360:Logic_Interpretation "=" .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderStationID_DE
-:RawCylinderStationID_DE rdf:type owl:NamedIndividual ,
-                                      DINEN61360:Data_Element ;
-                             DINEN61360:has_Instance_Description :RawCylinderStationID_ID ;
-                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderStationID_ID
-:RawCylinderStationID_ID rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Integer,
-                                  DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-                openmath:name "RawCylinderStationID_ID" ;
-                             DINEN61360:Expression_Goal "Assurance" ;
-                             DINEN61360:Logic_Interpretation "=" .
-
-
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinderSelector
 :RawCylinderSelector rdf:type owl:NamedIndividual ,
                               VDI2206:Module ;
@@ -538,104 +496,6 @@
                        VDI2206:SystemConsistsOfModule :RawCylinderSelector ,
                                                       :RawCylinderSlide ;
                        VDI3682:isAssignedTo :SupplyRawCylinder .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredCarrierId
-:RequiredCarrierId rdf:type owl:NamedIndividual ,
-                            VDI2206:Information ;
-				DINEN61360:has_Data_Element :RequiredCarrierId_DE ;
-				VDI3682:isCharacterizedBy :RequiredCarrierId_ID1 ,
-										:RequiredCarrierId_ID2 ,
-										:RequiredCarrierId_ID3 .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredCarrierId_DE
-:RequiredCarrierId_DE rdf:type owl:NamedIndividual ,
-                               DINEN61360:Data_Element ;
-                      DINEN61360:has_Instance_Description :RequiredCarrierId_ID1 ,
-                                                          :RequiredCarrierId_ID2 ,
-														  :RequiredCarrierId_ID3 ;
-                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD> .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredCarrierId_ID1
-:RequiredCarrierId_ID1 rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Integer,
-                                  DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-                openmath:name "RequiredCarrierId_ID1" ;
-                       DINEN61360:Expression_Goal "Requirement" ;
-                       DINEN61360:Logic_Interpretation ">=" ;
-                       DINEN61360:Value 1 .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredCarrierId_ID2
-:RequiredCarrierId_ID2 rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Integer,
-                                  DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-                openmath:name "RequiredCarrierId_ID2" ;
-                       DINEN61360:Expression_Goal "Requirement" ;
-                       DINEN61360:Logic_Interpretation "<=" ;
-                       DINEN61360:Value 8 .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredCarrierId_ID3
-:RequiredCarrierId_ID3 rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Integer,
-                                  DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-                openmath:name "RequiredCarrierId_ID3" ;
-                       DINEN61360:Logic_Interpretation "=" .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredCarrierSlot
-:RequiredCarrierSlot rdf:type owl:NamedIndividual ,
-                              VDI2206:Information ;
-					DINEN61360:has_Data_Element :RequiredCarrierSlot_DE ;
-					VDI3682:isCharacterizedBy :RequiredCarrierSlot_ID1 ,
-											:RequiredCarrierSlot_ID2 ,
-											:RequiredCarrierSlot_ID3 .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredCarrierSlot_DE
-:RequiredCarrierSlot_DE rdf:type owl:NamedIndividual ,
-                                 DINEN61360:Data_Element ;
-                        DINEN61360:has_Instance_Description :RequiredCarrierSlot_ID1 ,
-                                                            :RequiredCarrierSlot_ID2 ,
-															:RequiredCarrierSlot_ID3 ;
-                        DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD> .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredCarrierSlot_ID1
-:RequiredCarrierSlot_ID1 rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Integer,
-                                  DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-                openmath:name "RequiredCarrierSlot_ID1" ;
-                         DINEN61360:Expression_Goal "Requirement" ;
-                         DINEN61360:Logic_Interpretation ">=" ;
-                         DINEN61360:Value 1 .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredCarrierSlot_ID2
-:RequiredCarrierSlot_ID2 rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Integer,
-                                  DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-                openmath:name "RequiredCarrierSlot_ID2" ;
-                         DINEN61360:Expression_Goal "Requirement" ;
-                         DINEN61360:Logic_Interpretation "<=" ;
-                         DINEN61360:Value 4 .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredCarrierSlot_ID3
-:RequiredCarrierSlot_ID3 rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Integer,
-                                  DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-                openmath:name "RequiredCarrierSlot_ID3" ;
-                         DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RequiredColor
@@ -859,8 +719,6 @@
 						:LotSizeConstraint ,
 						:LotSizeConstraint ,
 						:LotSizeStackConstraint ,
-						:CarrierIdConstraint ,
-						:CarrierSlotConstraint ,
 						:OuterDiameterConstraint ,
 						:OuterDiameterStackConstraint ,
 						:InnerDiameterConstraint ,
@@ -868,8 +726,6 @@
 					VDI3682:hasInput :ProductStack1 ,
                                     :ProductStack2 ,
                                     :ProductStack3 ,
-                                    :RequiredCarrierId ,
-                                    :RequiredCarrierSlot ,
                                     :RequiredColor ,
                                     :RequiredLotSize ,
 									:RequiredInnerDiameter ,
@@ -886,8 +742,6 @@
                                              :ProductStack2 ,
                                              :ProductStack3 ,
                                              :RawCylinder ,
-                                             :RequiredCarrierId ,
-                                             :RequiredCarrierSlot ,
                                              :RequiredColor ,
                                              :RequiredLotSize ,
                                              :RequiredOuterDiameter ,
@@ -903,13 +757,13 @@
 #################################################################
 #    Constraints
 #################################################################
-###  StationID of output product must be equal to current station ID
+### StationID constraint to ensure part is at station
 :StationIDConstraint rdf:type owl:NamedIndividual ,
                                                 openmath:Application ,
                                                 CSS:CapabilityConstraint ;
-                                       openmath:arguments (:RawCylinderStationID_ID :RawCylinderSupplyModule_StationID_ID);
+                                       openmath:arguments (:RawCylinder_StationID_ID :RawCylinderSupplyModule_StationID_ID);
                                        openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
-                                       CSS:references :RawCylinderStationID_ID ,
+                                       CSS:references :RawCylinder_StationID_ID ,
                                                       :RawCylinderSupplyModule_StationID_ID .
 
 
@@ -1047,25 +901,6 @@
 														:ProductStack3CurrentStackSize_ID,
 														:RequiredColor_ID3,
 														:RequiredLotSize_ID2.
-
-
-###  Chosen carrier ID (information) will determine the output carrier ID
-:CarrierIdConstraint rdf:type owl:NamedIndividual ,
-                                                openmath:Application ,
-                                                CSS:CapabilityConstraint ;
-										openmath:arguments (:RequiredCarrierId_ID3 :RawCylinderCarrierId_ID);
-										openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
-										CSS:references :RequiredCarrierId_ID3 ,
-														:RawCylinderCarrierId_ID.
-
-###  Chosen carrier slot (information) will determine the output carrier slot
-:CarrierSlotConstraint rdf:type owl:NamedIndividual ,
-                                                openmath:Application ,
-                                                CSS:CapabilityConstraint ;
-										openmath:arguments (:RequiredCarrierSlot_ID3 :RawCylinderCarrierSlot_ID);
-										openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
-										CSS:references :RequiredCarrierSlot_ID3 ,
-														:RawCylinderCarrierSlot_ID.
 
 
 ###  Chosen outer diamter will determine the output product outer diameter
