@@ -10,6 +10,7 @@
 @prefix CSS: <http://www.w3id.org/hsu-aut/css#> .
 @prefix CaSk: <http://www.w3id.org/hsu-aut/cask#> .
 @prefix openmath: <http://openmath.org/vocab/math#> .
+@prefix MpsProduct: <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/product-types#> .
 @base <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#> .
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule> rdf:type owl:Ontology ;
@@ -21,8 +22,8 @@
 #    Individuals
 #################################################################
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#CheckAndDrilling
-:CheckAndDrilling rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrillAndCheckSubprocess
+:DrillAndCheckSubprocess rdf:type owl:NamedIndividual ,
                            VDI3682:ProcessOperator ;
                   VDI3682:hasInput :ProductAtDrilling ,
                                    :RequiredDrillingDepth ,
@@ -32,19 +33,18 @@
                                        :Drilling .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#CheckAndDrillingUnit
-:CheckAndDrillingUnit rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrillAndCheckSubprocessUnit
+:DrillAndCheckSubprocessUnit rdf:type owl:NamedIndividual ,
 							VDI2206:Module,
                             VDI3682:TechnicalResource ,
 							CSS:Resource ;
-					CSS:providesCapability :CheckAndDrilling ;
-					VDI3682:isAssignedTo :CheckAndDrilling .
+					VDI3682:isAssignedTo :DrillAndCheckSubprocess .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#CheckAndDrilling_Process
-:CheckAndDrilling_Process rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrillAndCheckSubprocess_Process
+:DrillAndCheckSubprocess_Process rdf:type owl:NamedIndividual ,
                                    VDI3682:Process ;
-                          VDI3682:consistsOf :CheckAndDrilling_SL ,
+                          VDI3682:consistsOf :DrillAndCheckSubprocess_SL ,
                                              :CheckDepth ,
                                              :Drilling ;
                           VDI3682:hasInput :ProductAtDrilling ,
@@ -53,8 +53,8 @@
                           VDI3682:hasOutput :DrilledProduct .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#CheckAndDrilling_SL
-:CheckAndDrilling_SL rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrillAndCheckSubprocess_SL
+:DrillAndCheckSubprocess_SL rdf:type owl:NamedIndividual ,
                               VDI3682:SystemLimit .
 
 
@@ -70,76 +70,79 @@
 							VDI2206:Module,
 							VDI3682:TechnicalResource ,
 							CSS:Resource ;
-					CSS:providesCapability :CheckDepth ;
 					VDI3682:isAssignedTo :CheckDepth .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#CompleteDrilling
-:CompleteDrilling rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrillAndCheck
+:DrillAndCheck rdf:type owl:NamedIndividual ,
 							CaSk:ProvidedCapability ,
                            	VDI3682:ProcessOperator ;
-				CSS:requiresCapability :CompleteDrilling ;
-				CSS:isRestrictedBy :CompleteDrilling_ColorConstraint ,
-								:CompleteDrilling_LotSizeConstraint ,
-								:CompleteDrilling_InnerDiameterConstraint ,
-								:CompleteDrilling_OuterDiameterConstraint ,
-								:CompleteDrilling_DrillingDepthConstraint ,
-								:CompleteDrilling_DrillingDiameterConstraint ,
-								:CompleteDrilling_CarrierIdConstraint ;
+				CSS:requiresCapability :DrillAndCheck ;
+				CSS:isRestrictedBy :StationIDConstraint1 ,
+								# :StationIDConstraint2 ,
+								:DrillAndCheck_ColorConstraint ,
+								:DrillAndCheck_LotSizeConstraint ,
+								:DrillAndCheck_InnerDiameterConstraint ,
+								:DrillAndCheck_OuterDiameterConstraint ,
+								:DrillAndCheck_DrillingDepthConstraint ,
+								:DrillAndCheck_DrillingDiameterConstraint ;
 				VDI3682:hasInput :InputProduct ,
-                                   :RequiredCarrierID ,
-                                   :RequiredCarrierSlot ,
                                    :RequiredDrillingDepth ,
                                    :RequiredDrillingDiameter ;
                   VDI3682:hasOutput :DrilledProductOnCarrier ;
-                  VDI3682:isComposedOf :CheckAndDrilling ,
+                  VDI3682:isComposedOf :DrillAndCheckSubprocess ,
                                        :MoveToDrilling ,
                                        :PutOnCarrier .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#CompleteDrillingUnit
-:CompleteDrillingUnit rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrillingUnit
+:DrillingUnit rdf:type owl:NamedIndividual ,
 							VDI3682:TechnicalResource ,
 							CSS:Resource ;
-					CSS:providesCapability :CompleteDrilling ;
-					VDI3682:isAssignedTo :CompleteDrilling .
+					VDI3682:isAssignedTo :Drilling .
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrillingModule
+:DrillingModule rdf:type owl:NamedIndividual ,
+						VDI2206:Module,
+                        VDI3682:TechnicalResource ,
+						CSS:Resource ;
+				CSS:providesCapability :DrillAndCheck ;
+                VDI3682:isAssignedTo :DrillAndCheck ;
+				DINEN61360:has_Data_Element :DrillingModule_StationID_DE ;
+				VDI3682:isCharacterizedBy :DrillingModule_StationID_ID .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#CompleteDrilling_Process
-:CompleteDrilling_Process rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrillAndCheck_Process
+:DrillAndCheck_Process rdf:type owl:NamedIndividual ,
                                    VDI3682:Process ;
-                          VDI3682:consistsOf :CompleteDrilling ,
-                                             :CompleteDrilling_SL ;
+                          VDI3682:consistsOf :DrillAndCheck ,
+                                             :DrillAndCheck_SL ;
                           VDI3682:hasInput :InputProduct ,
-                                           :RequiredCarrierID ,
-                                           :RequiredCarrierSlot ,
                                            :RequiredDrillingDepth ,
                                            :RequiredDrillingDiameter ;
                           VDI3682:hasOutput :DrilledProductOnCarrier .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#CompleteDrilling_SL
-:CompleteDrilling_SL rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrillAndCheck_SL
+:DrillAndCheck_SL rdf:type owl:NamedIndividual ,
                               VDI3682:SystemLimit .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#CompleteDrilling_SubProcess
-:CompleteDrilling_SubProcess rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrillAndCheck_SubProcess
+:DrillAndCheck_SubProcess rdf:type owl:NamedIndividual ,
                                       VDI3682:Process ;
-                             VDI3682:consistsOf :CheckAndDrilling ,
-                                                :CompleteDrilling_SubProcess_SL ,
+                             VDI3682:consistsOf :DrillAndCheckSubprocess ,
+                                                :DrillAndCheck_SubProcess_SL ,
                                                 :MoveToDrilling ,
                                                 :PutOnCarrier ;
                              VDI3682:hasInput :InputProduct ,
-                                              :RequiredCarrierID ,
-                                              :RequiredCarrierSlot ,
                                               :RequiredDrillingDepth ,
                                               :RequiredDrillingDiameter ;
                              VDI3682:hasOutput :DrilledProductOnCarrier .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#CompleteDrilling_SubProcess_SL
-:CompleteDrilling_SubProcess_SL rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrillAndCheck_SubProcess_SL
+:DrillAndCheck_SubProcess_SL rdf:type owl:NamedIndividual ,
                                          VDI3682:SystemLimit .
 
 
@@ -162,23 +165,22 @@
 											:DrilledProduct_StationID_ID .
 
 
+MpsProduct:DrilledProduct a owl:Class;
+	rdfs:subClassOf VDI3682:Product .
+
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier
 :DrilledProductOnCarrier rdf:type owl:NamedIndividual ,
-                                  VDI3682:Product ;
+								MpsProduct:DrilledProduct ;
                          DINEN61360:has_Data_Element :DrilledProductOnCarrier_Color_DE ,
                                                      :DrilledProductOnCarrier_DrillingDepth_DE ,
-                                                     :DrilledProductOnCarrier_DrillingDiameter_DE ,
                                                      :DrilledProductOnCarrier_InnerDiameter_DE ,
                                                      :DrilledProductOnCarrier_LotSize_DE ,
-													 :DrilledProductOnCarrier_CarrierID_DE ,
                                                      :DrilledProductOnCarrier_OuterDiameter_DE ,
 													 :DrilledProductOnCarrier_StationID_DE ;
 						VDI3682:isCharacterizedBy :DrilledProductOnCarrier_Color_ID ,
 											:DrilledProductOnCarrier_DrillingDepth_ID ,
-											:DrilledProductOnCarrier_DrillingDiameter_ID ,
 											:DrilledProductOnCarrier_InnerDiameter_ID ,
 											:DrilledProductOnCarrier_LotSize_ID ,
-											:DrilledProductOnCarrier_CarrierID_ID ,
 											:DrilledProductOnCarrier_OuterDiameter_ID ,
 											:DrilledProductOnCarrier_StationID_ID .
 
@@ -217,23 +219,6 @@
                                           DINEN61360:Logic_Interpretation "=" .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_DrillingDiameter_DE
-:DrilledProductOnCarrier_DrillingDiameter_DE rdf:type owl:NamedIndividual ,
-                                                      DINEN61360:Data_Element ;
-                                             DINEN61360:has_Instance_Description :DrilledProductOnCarrier_DrillingDiameter_ID ;
-                                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_DrillingDiameter_ID
-:DrilledProductOnCarrier_DrillingDiameter_ID rdf:type owl:NamedIndividual ,
-                                                      DINEN61360:Instance_Description ,
-								openmath:Variable ,
-								DINEN61360:Integer ;
-								openmath:name "DrilledProductOnCarrier_DrillingDiameter_ID";
-                                             DINEN61360:Expression_Goal "Assurance" ;
-                                             DINEN61360:Logic_Interpretation "=" .
-
-
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_InnerDiameter_DE
 :DrilledProductOnCarrier_InnerDiameter_DE rdf:type owl:NamedIndividual ,
                                                    DINEN61360:Data_Element ;
@@ -264,22 +249,6 @@
 								openmath:Variable ,
 								DINEN61360:Integer ;
 								openmath:name "DrilledProductOnCarrier_LotSize_ID";
-                                    DINEN61360:Expression_Goal "Assurance" ;
-                                    DINEN61360:Logic_Interpretation "=" .
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_CarrierID_DE
-:DrilledProductOnCarrier_CarrierID_DE rdf:type owl:NamedIndividual ,
-                                             DINEN61360:Data_Element ;
-                                    DINEN61360:has_Instance_Description :DrilledProductOnCarrier_CarrierID_ID ;
-                                    DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID> .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrilledProductOnCarrier_CarrierID_ID
-:DrilledProductOnCarrier_CarrierID_ID rdf:type owl:NamedIndividual ,
-                                             DINEN61360:Instance_Description ,
-								openmath:Variable ,
-								DINEN61360:Integer ;
-								openmath:name "DrilledProductOnCarrier_CarrierID_ID";
                                     DINEN61360:Expression_Goal "Assurance" ;
                                     DINEN61360:Logic_Interpretation "=" .
 
@@ -443,14 +412,23 @@ openmath:name "DrilledProduct_StationID_ID";
           VDI3682:hasOutput :DrilledProduct .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrillingModule
-:DrillingModule rdf:type owl:NamedIndividual ,
-						VDI2206:Module,
-                        VDI3682:TechnicalResource ,
-						CSS:Resource ;
-				CSS:providesCapability :Drilling ;
-                VDI3682:isAssignedTo :Drilling .
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrillingModule_StationID_DE
+:DrillingModule_StationID_DE rdf:type owl:NamedIndividual ,
+                                      DINEN61360:Data_Element ;
+                             DINEN61360:has_Instance_Description :DrillingModule_StationID_ID ;
+                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#DrillingModule_StationID_ID
+:DrillingModule_StationID_ID rdf:type owl:NamedIndividual ,
+								DINEN61360:Integer,
+								DINEN61360:Instance_Description ,
+								openmath:Variable ;
+			openmath:name "DrillingModule_StationID_ID" ;
+							DINEN61360:Expression_Goal "Actual_Value" ;
+							DINEN61360:Logic_Interpretation "=" ;
+							DINEN61360:Value 3 .
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#InputProduct
 :InputProduct rdf:type owl:NamedIndividual ,
@@ -478,7 +456,6 @@ openmath:name "DrilledProduct_StationID_ID";
 								VDI2206:Module ,
 								VDI3682:TechnicalResource ,
 								CSS:Resource ;
-					CSS:providesCapability :MoveToDrilling ;
                     VDI3682:isAssignedTo :MoveToDrilling .
 
 
@@ -781,7 +758,8 @@ openmath:name "InputProduct_LotSize_ID";
 								openmath:Variable ,
 								DINEN61360:Integer ;
 openmath:name "InputProduct_OuterDiameter_ID";
-                          DINEN61360:Logic_Interpretation "=" .
+				DINEN61360:Expression_Goal "Actual_Value";
+				DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#InputProduct_StationID_DE
@@ -803,9 +781,7 @@ openmath:name "InputProduct_StationID_ID";
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#PutOnCarrier
 :PutOnCarrier rdf:type owl:NamedIndividual ,
 						VDI3682:ProcessOperator ;
-              VDI3682:hasInput :DrilledProduct ,
-                               :RequiredCarrierID ,
-                               :RequiredCarrierSlot ;
+              VDI3682:hasInput :DrilledProduct ;
               VDI3682:hasOutput :DrilledProductOnCarrier .
 
 
@@ -814,94 +790,8 @@ openmath:name "InputProduct_StationID_ID";
 							VDI2206:Module,
                             VDI3682:TechnicalResource ,
 							CSS:Resource ;
-					CSS:providesCapability :PutOnCarrier ;
                     VDI3682:isAssignedTo :PutOnCarrier .
 
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierID
-:RequiredCarrierID rdf:type owl:NamedIndividual ,
-                            VDI3682:Information ;
-				DINEN61360:has_Data_Element :RequiredCarrierID_DE ;
-				VDI3682:isCharacterizedBy :RequiredCarrierID_ID1,
-										:RequiredCarrierID_ID2 ,
-										:RequiredCarrierID_ID3 .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierID_ID1
-:RequiredCarrierID_ID1 rdf:type owl:NamedIndividual ,
-                                DINEN61360:Instance_Description ,
-								openmath:Variable ,
-								DINEN61360:Integer ;
-openmath:name "RequiredCarrierID_ID1";
-                       DINEN61360:Expression_Goal "Requirement" ;
-                       DINEN61360:Logic_Interpretation ">=" ;
-                       DINEN61360:Value 1 .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierID_ID2
-:RequiredCarrierID_ID2 rdf:type owl:NamedIndividual ,
-                                DINEN61360:Instance_Description ,
-								openmath:Variable ,
-								DINEN61360:Integer ;
-openmath:name "RequiredCarrierID_ID2";
-                       DINEN61360:Expression_Goal "Requirement" ;
-                       DINEN61360:Logic_Interpretation "<=" ;
-                       DINEN61360:Value 8 .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierID_ID3
-:RequiredCarrierID_ID3 rdf:type owl:NamedIndividual ,
-                                DINEN61360:Instance_Description ,
-								openmath:Variable ,
-								DINEN61360:Integer ;
-openmath:name "RequiredCarrierID_ID3";
-                       DINEN61360:Logic_Interpretation "=" .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierID_DE
-:RequiredCarrierID_DE rdf:type owl:NamedIndividual ,
-                               DINEN61360:Data_Element ;
-                      DINEN61360:has_Instance_Description :RequiredCarrierID_ID1 ,
-                                                          :RequiredCarrierID_ID2 ,
-														  :RequiredCarrierID_ID3 ;
-                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierID_TD> .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierSlot
-:RequiredCarrierSlot rdf:type owl:NamedIndividual ,
-							VDI3682:Information ;
-					DINEN61360:has_Data_Element :RequiredCarrierSlot_DE ;
-					VDI3682:isCharacterizedBy :RequiredCarrierSlot1_ID .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierSlot1_ID
-:RequiredCarrierSlot1_ID rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Instance_Description ,
-								openmath:Variable ,
-								DINEN61360:Integer ;
-openmath:name "RequiredCarrierSlot1_ID";
-                         DINEN61360:Expression_Goal "Requirement" ;
-                         DINEN61360:Logic_Interpretation ">=" ;
-                         DINEN61360:Value 1 .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierSlot2_ID
-:RequiredCarrierSlot2_ID rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Instance_Description ,
-								openmath:Variable ,
-								DINEN61360:Integer ;
-openmath:name "RequiredCarrierSlot2_ID";
-                         DINEN61360:Expression_Goal 4 ;
-                         DINEN61360:Logic_Interpretation "<=" ;
-                         DINEN61360:Value 4 .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredCarrierSlot_DE
-:RequiredCarrierSlot_DE rdf:type owl:NamedIndividual ,
-                                 DINEN61360:Data_Element ;
-                        DINEN61360:has_Instance_Description :RequiredCarrierSlot1_ID ,
-                                                            :RequiredCarrierSlot2_ID ;
-                        DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDepth
@@ -1005,8 +895,26 @@ openmath:name "RequiredDrillingDepth_ID3";
 #################################################################
 #    Constraints
 #################################################################
+### StationID constraint 1 to ensure input must be at station
+:StationIDConstraint1 rdf:type owl:NamedIndividual ,
+											openmath:Application ,
+											CSS:CapabilityConstraint ;
+									openmath:arguments (:DrilledProductOnCarrier_StationID_ID :DrillingModule_StationID_ID);
+									openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
+									CSS:references :DrilledProductOnCarrier_StationID_ID ,
+													:DrillingModule_StationID_ID .
+
+### StationID constraint 2 to ensure output will still be at station
+# :StationIDConstraint2 rdf:type owl:NamedIndividual ,
+# 											openmath:Application ,
+# 											CSS:CapabilityConstraint ;
+# 									openmath:arguments (:InputProduct_StationID_ID :DrillingModule_StationID_ID);
+# 									openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
+# 									CSS:references :InputProduct_StationID_ID ,
+# 													:DrillingModule_StationID_ID .
+
 ###  Color stays the same
-:CompleteDrilling_ColorConstraint rdf:type owl:NamedIndividual ,
+:DrillAndCheck_ColorConstraint rdf:type owl:NamedIndividual ,
                                                 openmath:Application ,
                                                 CSS:CapabilityConstraint ;
                                        openmath:arguments (:DrilledProductOnCarrier_Color_ID :InputProduct_Color_ID);
@@ -1015,7 +923,7 @@ openmath:name "RequiredDrillingDepth_ID3";
                                                       :InputProduct_Color_ID  .
 													  
 ###  Lot size stays the same
-:CompleteDrilling_LotSizeConstraint rdf:type owl:NamedIndividual ,
+:DrillAndCheck_LotSizeConstraint rdf:type owl:NamedIndividual ,
                                                 openmath:Application ,
                                                 CSS:CapabilityConstraint ;
                                        openmath:arguments (:DrilledProductOnCarrier_LotSize_ID :InputProduct_LotSize_ID);
@@ -1023,17 +931,8 @@ openmath:name "RequiredDrillingDepth_ID3";
                                        CSS:references :DrilledProductOnCarrier_LotSize_ID ,
                                                       :InputProduct_LotSize_ID  .
 
-###  Inner diameter stays the same
-:CompleteDrilling_InnerDiameterConstraint rdf:type owl:NamedIndividual ,
-                                                openmath:Application ,
-                                                CSS:CapabilityConstraint ;
-                                       openmath:arguments (:DrilledProductOnCarrier_InnerDiameter_ID :InputProduct_InnerDiameter_ID);
-                                       openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
-                                       CSS:references :DrilledProductOnCarrier_InnerDiameter_ID ,
-                                                      :InputProduct_InnerDiameter_ID .
-
 ###  Outer diameter stays the same
-:CompleteDrilling_OuterDiameterConstraint rdf:type owl:NamedIndividual ,
+:DrillAndCheck_OuterDiameterConstraint rdf:type owl:NamedIndividual ,
                                                 openmath:Application ,
                                                 CSS:CapabilityConstraint ;
                                        openmath:arguments (:DrilledProductOnCarrier_OuterDiameter_ID :InputProduct_OuterDiameter_ID);
@@ -1042,7 +941,7 @@ openmath:name "RequiredDrillingDepth_ID3";
                                                       :InputProduct_OuterDiameter_ID .
 
 ### Drilling depth is passed to product
-:CompleteDrilling_DrillingDepthConstraint rdf:type owl:NamedIndividual ,
+:DrillAndCheck_DrillingDepthConstraint rdf:type owl:NamedIndividual ,
                                                 openmath:Application ,
                                                 CSS:CapabilityConstraint ;
                                        openmath:arguments (:RequiredDrillingDepth_ID3 :DrilledProductOnCarrier_DrillingDepth_ID);
@@ -1051,19 +950,10 @@ openmath:name "RequiredDrillingDepth_ID3";
                                                       :DrilledProductOnCarrier_DrillingDepth_ID  .
 
 ### Drilling diameter is passed to product
-:CompleteDrilling_DrillingDiameterConstraint rdf:type owl:NamedIndividual ,
+:DrillAndCheck_DrillingDiameterConstraint rdf:type owl:NamedIndividual ,
                                                 openmath:Application ,
                                                 CSS:CapabilityConstraint ;
-                                       openmath:arguments (:RequiredDrillingDiameter_ID3 :DrilledProductOnCarrier_DrillingDiameter_ID);
+                                       openmath:arguments (:RequiredDrillingDiameter_ID3 :DrilledProductOnCarrier_InnerDiameter_ID);
                                        openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
                                        CSS:references :RequiredDrillingDiameter_ID3 ,
-                                                      :DrilledProductOnCarrier_DrillingDiameter_ID  .
-
-### CarrierID is passed to product
-:CompleteDrilling_CarrierIdConstraint rdf:type owl:NamedIndividual ,
-                                                openmath:Application ,
-                                                CSS:CapabilityConstraint ;
-                                       openmath:arguments (:RequiredCarrierID_ID3 :DrilledProductOnCarrier_CarrierID_ID);
-                                       openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
-                                       CSS:references :RequiredCarrierID_ID3 ,
-                                                      :DrilledProductOnCarrier_CarrierID_ID  .
+                                                      :DrilledProductOnCarrier_InnerDiameter_ID .
