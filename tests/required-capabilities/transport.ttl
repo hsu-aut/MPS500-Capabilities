@@ -22,23 +22,23 @@
 						VDI3682:ProcessOperator ,
 						CaSk:RequiredCapability ;
 				CSS:requiresCapability :Transport;
-                VDI3682:hasInput :TargetStation ;
+                VDI3682:hasInput :ProductAtStartStation ;
                 VDI3682:hasOutput :ProductAtTargetStation .
 
-:TargetStation rdf:type owl:NamedIndividual ,
+:ProductAtStartStation rdf:type owl:NamedIndividual ,
 		VDI3682:Product ;
-	DINEN61360:has_Data_Element :TargetStation_StationID_DE ;
-	VDI3682:isCharacterizedBy :TargetStation_StationID_ID.
+	DINEN61360:has_Data_Element :ProductAtStartStation_StationID_DE ;
+	VDI3682:isCharacterizedBy :ProductAtStartStation_StationID_ID.
 
-:TargetStation_StationID_DE rdf:type owl:NamedIndividual ,
+:ProductAtStartStation_StationID_DE rdf:type owl:NamedIndividual ,
 		DINEN61360:Data_Element ;
 	DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> ;
-	DINEN61360:has_Instance_Description :TargetStation_StationID_ID.
+	DINEN61360:has_Instance_Description :ProductAtStartStation_StationID_ID.
 
-:TargetStation_StationID_ID rdf:type owl:NamedIndividual ,
+:ProductAtStartStation_StationID_ID rdf:type owl:NamedIndividual ,
 									DINEN61360:Instance_Description ,
 									DINEN61360:Integer ;
-                            DINEN61360:Expression_Goal "Requirement" ;
+                            DINEN61360:Expression_Goal "Actual_Value" ;
                             DINEN61360:Logic_Interpretation "=" ;
 							DINEN61360:Value 1 .
 
@@ -58,5 +58,5 @@
 									DINEN61360:Integer ;
                             DINEN61360:Expression_Goal "Requirement" ;
                             DINEN61360:Logic_Interpretation "=" ;
-							DINEN61360:Value 2 .
+							DINEN61360:Value 4 .
 

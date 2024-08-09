@@ -17,6 +17,10 @@
                                                                           owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
                                                                                       <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
 
+
+MpsProduct:NullProduct a owl:Class;
+	rdfs:subClassOf VDI3682:Product .
+
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/TransportSupplyTransport#TransportSupplyTransport
 :TransportSupplyTransport rdf:type owl:NamedIndividual ,
 						VDI3682:ProcessOperator ,
@@ -64,7 +68,7 @@
 
 
 :ProductAtStation1	rdf:type owl:NamedIndividual ,
-		VDI3682:Product ;
+		MpsProduct:NullProduct ;
 	DINEN61360:has_Data_Element #:InnerDiameter_Start_DE ,
 								:ProductAtStation1_StationID_DE ,
 								:OuterDiameter_Start_DE;

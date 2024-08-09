@@ -1,4 +1,4 @@
-@prefix : <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/SupplyToDrilling#> .
+@prefix : <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/FullAssemble#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -12,31 +12,46 @@
 @prefix CaSk: <http://www.w3id.org/hsu-aut/cask#> .
 @prefix openmath: <http://openmath.org/vocab/math#> .
 @prefix MpsProduct: <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/product-types#> .
-@base <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/SupplyToDrilling#> .
+@base <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/FullAssemble#> .
 
-<http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/SupplyToDrilling#> rdf:type owl:Ontology ;
+<http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/FullAssemble#> rdf:type owl:Ontology ;
                                                                           owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
                                                                                       <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+
 
 MpsProduct:NullProduct a owl:Class;
 	rdfs:subClassOf VDI3682:Product .
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/SupplyToDrilling#SupplyToDrilling
-:SupplyToDrilling rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/FullAssemble#FullAssemble
+:FullAssemble rdf:type owl:NamedIndividual ,
 						VDI3682:ProcessOperator ,
 						CaSk:RequiredCapability ;
-				CSS:requiresCapability :SupplyToDrilling;
+				CSS:requiresCapability :FullAssemble;
                 VDI3682:hasInput :InputProduct ;
                 VDI3682:hasOutput :OutputProduct .
 
 :InputProduct rdf:type owl:NamedIndividual ,
 		MpsProduct:NullProduct ;
-	DINEN61360:has_Data_Element :InputProduct_StationID_DE ,
+	DINEN61360:has_Data_Element :InputProduct_isAssembled_DE ,
+								:InputProduct_StationID_DE ,
 								:InnerDiameter_Start_DE ,
 								:OuterDiameter_Start_DE;
-	VDI3682:isCharacterizedBy :InputProduct_StationID_ID, 
+	VDI3682:isCharacterizedBy :InputProduct_isAssembled_ID,
+							:InputProduct_StationID_ID, 
 							:InnerDiameter_Start_ID,
 							:OuterDiameter_Start_ID.
+
+:InputProduct_isAssembled_DE rdf:type owl:NamedIndividual ,
+		DINEN61360:Data_Element ;
+	DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#AssemblyStatus_TD> ;
+	DINEN61360:has_Instance_Description :InputProduct_isAssembled_ID.
+
+:InputProduct_isAssembled_ID rdf:type owl:NamedIndividual ,
+									DINEN61360:Instance_Description ,
+									DINEN61360:Boolean ;
+                            DINEN61360:Expression_Goal "Actual_Value" ;
+                            DINEN61360:Logic_Interpretation "=" ;
+							DINEN61360:Value "false" .
 
 :InputProduct_StationID_DE rdf:type owl:NamedIndividual ,
 		DINEN61360:Data_Element ;
@@ -48,7 +63,7 @@ MpsProduct:NullProduct a owl:Class;
 									DINEN61360:Integer ;
                             DINEN61360:Expression_Goal "Actual_Value" ;
                             DINEN61360:Logic_Interpretation "=" ;
-							DINEN61360:Value 2 .
+							DINEN61360:Value 1 .
 
 :InnerDiameter_Start_DE rdf:type owl:NamedIndividual ,
 								DINEN61360:Data_Element ;
@@ -76,17 +91,31 @@ MpsProduct:NullProduct a owl:Class;
 
 
 :OutputProduct rdf:type owl:NamedIndividual ,
-		MpsProduct:DrilledProduct ;
-	DINEN61360:has_Data_Element :OutputProduct_StationID_DE ,
+		MpsProduct:AssembledCylinder ;
+	DINEN61360:has_Data_Element :OutputProduct_isAssembled_DE ,
+								:OutputProduct_StationID_DE ,
 								:OutputProduct_Color_DE,
 								:OutputProduct_OuterDiameter_DE,
 								:OutputProduct_InnerDiameter_DE, 
 								:OutputProduct_DrillingDepth_DE;
-	VDI3682:isCharacterizedBy :OutputProduct_StationID_ID ,
+	VDI3682:isCharacterizedBy :OutputProduct_isAssembled_ID ,
+							:OutputProduct_StationID_ID ,
 							:OutputProduct_Color_ID ,
 							:OutputProduct_OuterDiameter_ID ,
 							:OutputProduct_InnerDiameter_ID ,
 							:OutputProduct_DrillingDepth_ID .
+
+:OutputProduct_isAssembled_DE rdf:type owl:NamedIndividual ,
+		DINEN61360:Data_Element ;
+	DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#AssemblyStatus_TD> ;
+	DINEN61360:has_Instance_Description :OutputProduct_isAssembled_ID.
+
+:OutputProduct_isAssembled_ID rdf:type owl:NamedIndividual ,
+									DINEN61360:Instance_Description ,
+									DINEN61360:Boolean ;
+                            DINEN61360:Expression_Goal "Requirement" ;
+                            DINEN61360:Logic_Interpretation "=" ;
+							DINEN61360:Value "true" .
 
 :OutputProduct_StationID_DE rdf:type owl:NamedIndividual ,
 		DINEN61360:Data_Element ;
@@ -98,7 +127,7 @@ MpsProduct:NullProduct a owl:Class;
 									DINEN61360:Integer ;
                             DINEN61360:Expression_Goal "Requirement" ;
                             DINEN61360:Logic_Interpretation "=" ;
-							DINEN61360:Value 4 .
+							DINEN61360:Value 6 .
 
 :OutputProduct_Color_DE rdf:type owl:NamedIndividual ,
 								DINEN61360:Data_Element ;
@@ -134,7 +163,7 @@ MpsProduct:NullProduct a owl:Class;
 									DINEN61360:Integer ;
                             DINEN61360:Expression_Goal "Requirement" ;
                             DINEN61360:Logic_Interpretation "=" ;
-							DINEN61360:Value 10 .
+							DINEN61360:Value 5 .
 
 :OutputProduct_DrillingDepth_DE rdf:type owl:NamedIndividual ,
 								DINEN61360:Data_Element ;
