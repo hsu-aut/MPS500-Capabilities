@@ -12,7 +12,7 @@
      xmlns:DINEN61360="http://www.hsu-ifa.de/ontologies/DINEN61360#">
     <owl:Ontology rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RetrieveFromStorage">
         <owl:imports rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types"/>
-        <owl:imports rdf:resource="https://raw.githubusercontent.com/aljoshakoecher/machine-skill-model/v3.0.1/Machine-Capability-Model.owl"/>
+        <owl:imports rdf:resource="http://www.w3id.org/hsu-aut/caskman/4.6.0"/>
     </owl:Ontology>
     
 
@@ -267,7 +267,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RetrieveFromStorage#RetrieveFromStorage">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/capability-model#ProvidedCapability"/>
+        <rdf:type rdf:resource="http://www.w3id.org/hsu-aut/cask#ProvidedCapability"/>
         <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RetrieveFromStorage#ProductInStorage"/>
         <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RetrieveFromStorage#RequiredCarrierId"/>
         <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RetrieveFromStorage#RequiredCarrierSlot"/>

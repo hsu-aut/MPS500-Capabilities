@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/StorageModule#"
-     xml:base="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/StorageModule"
+<rdf:RDF xmlns="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#"
+     xml:base="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -12,7 +12,7 @@
      xmlns:DINEN61360="http://www.hsu-ifa.de/ontologies/DINEN61360#">
     <owl:Ontology rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage">
         <owl:imports rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types"/>
-        <owl:imports rdf:resource="https://raw.githubusercontent.com/aljoshakoecher/machine-skill-model/v3.0.1/Machine-Capability-Model.owl"/>
+        <owl:imports rdf:resource="http://www.w3id.org/hsu-aut/caskman/4.6.0"/>
     </owl:Ontology>
     
 
@@ -157,7 +157,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#PutInStorage">
         <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/capability-model#ProvidedCapability"/>
+        <rdf:type rdf:resource="http://www.w3id.org/hsu-aut/cask#ProvidedCapability"/>
         <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductOnCarrier"/>
         <VDI3682:hasInput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#RequiredStorageId"/>
         <VDI3682:hasOutput rdf:resource="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PutInStorage#ProductInStorage"/>

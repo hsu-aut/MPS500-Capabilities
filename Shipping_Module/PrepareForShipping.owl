@@ -11,7 +11,7 @@
      xmlns:VDI3682="http://www.hsu-ifa.de/ontologies/VDI3682#"
      xmlns:DINEN61360="http://www.hsu-ifa.de/ontologies/DINEN61360#">
     <owl:Ontology rdf:about="http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping">
-        <owl:imports rdf:resource="https://raw.githubusercontent.com/aljoshakoecher/machine-skill-model/v3.0.1/Machine-Capability-Model.owl"/>
+        <owl:imports rdf:resource="http://www.w3id.org/hsu-aut/caskman/4.6.0"/>
         <owl:imports rdf:resource="https://raw.githubusercontent.com/hsu-aut/MPS500-Capabilities/main/MPS500-PropertyTypes.owl"/>
     </owl:Ontology>
     
