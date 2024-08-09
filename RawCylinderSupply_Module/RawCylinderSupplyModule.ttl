@@ -21,6 +21,9 @@
 #    Individuals
 #################################################################
 
+MpsProduct:RawProductStack a owl:Class;
+	rdfs:subClassOf VDI3682:Product.
+
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RawCylinderSelector
 :RawCylinderSelector rdf:type owl:NamedIndividual ,
 							VDI2206:Module,
@@ -104,7 +107,7 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1
 :ProductStack1 rdf:type owl:NamedIndividual ,
-                        VDI3682:Product ;
+                        MpsProduct:RawProductStack ;
 			DINEN61360:has_Data_Element :ProductStack1CurrentColor_DE ,
 										:ProductStack1CurrentOuterDiameter_DE ,
 										:ProductStack1CurrentStackSize_DE ;
@@ -166,7 +169,7 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2
 :ProductStack2 rdf:type owl:NamedIndividual ,
-                        VDI3682:Product ;
+                        MpsProduct:RawProductStack ;
 			DINEN61360:has_Data_Element :ProductStack2CurrentColor_DE ,
 										:ProductStack2CurrentOuterDiameter_DE ,
 										:ProductStack2CurrentStackSize_DE ;
@@ -228,7 +231,7 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3
 :ProductStack3 rdf:type owl:NamedIndividual ,
-                        VDI3682:Product ;
+                        MpsProduct:RawProductStack ;
 			DINEN61360:has_Data_Element :ProductStack3CurrentColor_DE ,
 										:ProductStack3CurrentOuterDiameter_DE ,
 										:ProductStack3CurrentStackSize_DE ;
