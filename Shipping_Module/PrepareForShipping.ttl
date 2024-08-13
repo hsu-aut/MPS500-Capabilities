@@ -1,0 +1,202 @@
+@prefix : <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix VDI3682: <http://www.w3id.org/hsu-aut/VDI3682#> .
+@prefix DINEN61360: <http://www.w3id.org/hsu-aut/DINEN61360#> .
+@prefix openmath: <http://openmath.org/vocab/math#> .
+@base <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/ShippingModule#> .
+
+<http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping> rdf:type owl:Ontology ;
+                                                                     owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
+                                                                                 <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+MpsProduct:AssembledCylinder a owl:Class;
+	rdfs:subClassOf VDI3682:Product .
+
+MpsProduct:AssembledThermometer a owl:Class;
+	rdfs:subClassOf VDI3682:Product .
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#ShippingModule
+:ShippingModule rdf:type owl:NamedIndividual ,
+							VDI2206:Module,
+							CSS:Resource ;
+					CSS:providesCapability :PrepareForShipping ;
+					VDI3682:isAssignedTo :PrepareForShipping ;
+					DINEN61360:has_Data_Element :ShippingModule_StationID_DE ;
+					VDI3682:isCharacterizedBy :ShippingModule_StationID_ID .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#ShippingModule_StationID_DE
+:ShippingModule_StationID_DE rdf:type owl:NamedIndividual ,
+									DINEN61360:Data_Element ;
+							DINEN61360:has_Instance_Description :ShippingModule_StationID_ID ;
+							DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#ShippingModule_StationID_ID
+:ShippingModule_StationID_ID rdf:type owl:NamedIndividual ,
+								DINEN61360:Instance_Description ,
+								DINEN61360:Integer,
+								openmath:Variable ;
+			openmath:name "ShippingModule_StationID_ID" ;
+							DINEN61360:Expression_Goal "Actual_Value" ;
+							DINEN61360:Logic_Interpretation "=" ;
+							DINEN61360:Value 7 .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#PrepareForShipping
+:PrepareForShipping rdf:type owl:NamedIndividual ,
+							VDI3682:ProcessOperator ,
+							CaSk:ProvidedCapability ;
+					CSS:requiresCapability :PrepareForShipping ;
+                    VDI3682:hasInput :ProductOnCarrier ,
+									:RequiredShippingSlide ;
+                    VDI3682:hasOutput :ProductOnShippingSlide ;
+					CSS:isRestrictedBy :StationIDInputConstraint ,
+										:StationIDOutputConstraint .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#PrepareForShipping_Process
+:PrepareForShipping_Process rdf:type owl:NamedIndividual ,
+									VDI3682:Process ;
+						VDI3682:consistsOf :PrepareForShipping ,
+											:PrepareForShipping_SL ;
+						VDI3682:hasInput :ProductOnCarrier ,
+											:RequiredShippingSlide ;
+						VDI3682:hasOutput :ProductOnShippingSlide .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#PrepareForShipping_SL
+:PrepareForShipping_SL rdf:type owl:NamedIndividual ,
+                                VDI3682:SystemLimit .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#ProductOnCarrier
+:ProductOnCarrier rdf:type owl:NamedIndividual ,
+						MpsProduct:AssembledCylinder ,
+						MpsProduct:AssembledThermometer ;
+				DINEN61360:has_Data_Element :ProductOnCarrier_StationID_DE ;
+				VDI3682:isCharacterizedBy :ProductOnCarrier_StationID_ID . 
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#ProductOnCarrier_StationID_DE
+:ProductOnCarrier_StationID_DE rdf:type owl:NamedIndividual ,
+								DINEN61360:Data_Element ;
+						DINEN61360:has_Instance_Description :ProductOnCarrier_StationID_ID ;
+						DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> .
+
+
+### Note: Product must be at the station at the beginning. The shipping slides are also modeled as stations
+### http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#ProductOnCarrier_StationID_ID
+:ProductOnCarrier_StationID_ID rdf:type owl:NamedIndividual ,
+								DINEN61360:Instance_Description ,
+								openmath:Variable ,
+								DINEN61360:Integer ;
+				openmath:name "ProductOnCarrier_StationID_ID";
+						DINEN61360:Logic_Interpretation "=" ;
+						DINEN61360:Expression_Goal "Requirement" .
+
+
+### Input information: Which shipping slide to use?
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#RequiredShippingSlide
+:RequiredShippingSlide rdf:type owl:NamedIndividual ,
+								VDI3682:Information ;
+					DINEN61360:has_Data_Element :RequiredShippingSlide_DE ;
+					VDI3682:isCharacterizedBy :RequiredShippingSlide_ID1 ,
+											:RequiredShippingSlide_ID2 ,
+											:RequiredShippingSlide_ID3 .
+
+
+### Note: Shipping Slide is also just modeled as a stationID. But conveyr can only transport from 1-7
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#RequiredShippingSlide_DE
+:RequiredShippingSlide_DE rdf:type owl:NamedIndividual ,
+                                    DINEN61360:Data_Element ;
+						DINEN61360:has_Instance_Description :RequiredShippingSlide_ID1 ,
+															:RequiredShippingSlide_ID2 ,
+															:RequiredShippingSlide_ID3 ;
+						DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#RequiredShippingSlide_ID1
+:RequiredShippingSlide_ID1 rdf:type owl:NamedIndividual ,
+									DINEN61360:Instance_Description ,
+									DINEN61360:Integer ;
+						openmath:name "RequiredShippingSlide_ID1" ;
+						DINEN61360:Expression_Goal "Requirement" ;
+						DINEN61360:Logic_Interpretation ">=" ;
+						DINEN61360:Value 8 .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#RequiredShippingSlide_ID2
+:RequiredShippingSlide_ID2 rdf:type owl:NamedIndividual ,
+									DINEN61360:Integer ,
+									DINEN61360:Instance_Description ;
+						openmath:name "RequiredShippingSlide_ID2" ;
+						DINEN61360:Expression_Goal "Requirement" ;
+						DINEN61360:Logic_Interpretation "<=" ;
+						DINEN61360:Value 10 .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#RequiredShippingSlide_ID3
+:RequiredShippingSlide_ID3 rdf:type owl:NamedIndividual ,
+									DINEN61360:Instance_Description ,
+									DINEN61360:Integer ,
+									openmath:Variable ;
+						openmath:name "RequiredShippingSlide_ID3" ;
+						DINEN61360:Expression_Goal "Actual_Value" ;
+						DINEN61360:Logic_Interpretation "=" .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#ProductOnShippingSlide
+:ProductOnShippingSlide rdf:type owl:NamedIndividual ,
+								VDI3682:Product ;
+					DINEN61360:has_Data_Element :ProductOnShippingSlide_ShippingSlide_DE ;
+					VDI3682:isCharacterizedBy :ProductOnShippingSlide_ShippingSlide_ID .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#ProductOnShippingSlide_ShippingSlide_DE
+:ProductOnShippingSlide_ShippingSlide_DE rdf:type owl:NamedIndividual ,
+												DINEN61360:Data_Element ;
+										DINEN61360:has_Instance_Description :ProductOnShippingSlide_ShippingSlide_ID ;
+										DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/PrepareForShipping#ProductOnShippingSlide_ShippingSlide_ID
+:ProductOnShippingSlide_ShippingSlide_ID rdf:type owl:NamedIndividual ,
+												DINEN61360:Instance_Description ,
+												DINEN61360:Integer ,
+												openmath:Variable ;
+										openmath:name "ProductOnShippingSlide_ShippingSlide_ID" ;
+										DINEN61360:Expression_Goal "Assurance" ;
+										DINEN61360:Logic_Interpretation "=" .
+
+
+#################################################################
+#    Constraints
+#################################################################
+### StationID constraint to ensure input must be at station
+:StationIDInputConstraint rdf:type owl:NamedIndividual ,
+							openmath:Application ,
+							CSS:CapabilityConstraint ;
+					openmath:arguments (:ProductOnCarrier_StationID_ID :ShippingModule_StationID_ID);
+					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
+					CSS:references :ProductOnCarrier_StationID_ID ,
+									:ShippingModule_StationID_ID .
+
+
+### StationID output constraint to ensure output is put on the selected ramp
+:StationIDOutputConstraint rdf:type owl:NamedIndividual ,
+							openmath:Application ,
+							CSS:CapabilityConstraint ;
+					openmath:arguments (:ProductOnShippingSlide_ShippingSlide_ID :RequiredShippingSlide_ID3);
+					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
+					CSS:references :ProductOnShippingSlide_ShippingSlide_ID ,
+									:RequiredShippingSlide_ID3 .
