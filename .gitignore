@@ -3,3 +3,6 @@
 
 # Just to ignore the mapping script when it gets dropped into a folder
 *.js
+
+# Ignore pptx that is used to create images
+*.pptx
