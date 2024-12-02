@@ -17,6 +17,10 @@
                                                                           owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
                                                                                       <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
 
+MpsProduct:DrilledProduct a owl:Class;
+	rdfs:subClassOf VDI3682:Product .
+
+
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/DrillAndTransport#DrillAndTransport
 :DrillAndTransport rdf:type owl:NamedIndividual ,
 						VDI3682:ProcessOperator ,
@@ -73,7 +77,7 @@
 
 
 :OutputProduct rdf:type owl:NamedIndividual ,
-		VDI3682:Product ;
+		MpsProduct:DrilledProduct ;
 	DINEN61360:has_Data_Element :OutputProduct_StationID_DE ,
 							:OutputProduct_InnerDiameter_DE ,
 							:OutputProduct_Depth_DE ;

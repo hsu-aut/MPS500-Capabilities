@@ -21,6 +21,9 @@
 #    Individuals
 #################################################################
 
+MpsProduct:RawCylinder a owl:Class;
+	rdfs:subClassOf VDI3682:Product.
+
 MpsProduct:RawProductStack a owl:Class;
 	rdfs:subClassOf VDI3682:Product.
 
@@ -45,7 +48,7 @@ MpsProduct:RawProductStack a owl:Class;
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#PreparedRawPart
 :PreparedRawPart rdf:type owl:NamedIndividual ,
-                          VDI3682:Product ;
+                          MpsProduct:RawCylinder ;
 				DINEN61360:has_Data_Element :PreparedRawPartColor_DE ,
 											:PreparedRawPartLotSize_DE ,
 											:PreparedRawPartOuterDiameter_DE ;
@@ -118,19 +121,20 @@ MpsProduct:RawProductStack a owl:Class;
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentColor_DE
 :ProductStack1CurrentColor_DE rdf:type owl:NamedIndividual ,
-                                       DINEN61360:Data_Element ;
-                              DINEN61360:has_Instance_Description :ProductStack1CurrentColor_ID ;
-                              DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
+									DINEN61360:Data_Element ;
+							DINEN61360:has_Instance_Description :ProductStack1CurrentColor_ID ;
+							DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentColor_ID
 :ProductStack1CurrentColor_ID rdf:type owl:NamedIndividual ,
-                                       DINEN61360:Integer,
-                                       DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-								  openmath:name "ProductStack1CurrentColor_ID" ;
-                              DINEN61360:Expression_Goal "Actual_Value" ;
-                              DINEN61360:Logic_Interpretation "=" .
+									DINEN61360:Integer,
+									DINEN61360:Instance_Description ,
+								openmath:Variable ;
+								openmath:name "ProductStack1CurrentColor_ID" ;
+							DINEN61360:Expression_Goal "Actual_Value" ;
+							DINEN61360:Logic_Interpretation "=" ;
+							DINEN61360:Value 1 .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentOuterDiameter_DE
@@ -142,13 +146,13 @@ MpsProduct:RawProductStack a owl:Class;
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentOuterDiameter_ID
 :ProductStack1CurrentOuterDiameter_ID rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Integer,
-                                  DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-                openmath:name "ProductStack1CurrentOuterDiameter_ID" ;
-                                      DINEN61360:Expression_Goal "Actual_Value" ;
-                                      DINEN61360:Logic_Interpretation "=" .
-
+								DINEN61360:Integer,
+								DINEN61360:Instance_Description ,
+								openmath:Variable ;
+			openmath:name "ProductStack1CurrentOuterDiameter_ID" ;
+									DINEN61360:Expression_Goal "Actual_Value" ;
+									DINEN61360:Logic_Interpretation "=" ;
+									DINEN61360:Value 40 .
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentStackSize_DE
 :ProductStack1CurrentStackSize_DE rdf:type owl:NamedIndividual ,
@@ -159,13 +163,13 @@ MpsProduct:RawProductStack a owl:Class;
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack1CurrentStackSize_ID
 :ProductStack1CurrentStackSize_ID rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Integer,
-                                  DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-                openmath:name "ProductStack1CurrentStackSize_ID" ;
-                                  DINEN61360:Expression_Goal "Actual_Value" ;
-                                  DINEN61360:Logic_Interpretation "=" .
-
+								DINEN61360:Integer,
+								DINEN61360:Instance_Description ,
+								openmath:Variable ;
+			openmath:name "ProductStack1CurrentStackSize_ID" ;
+								DINEN61360:Expression_Goal "Actual_Value" ;
+								DINEN61360:Logic_Interpretation "=" ;
+								DINEN61360:Value 8 .
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2
 :ProductStack2 rdf:type owl:NamedIndividual ,
@@ -180,36 +184,38 @@ MpsProduct:RawProductStack a owl:Class;
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentColor_DE
 :ProductStack2CurrentColor_DE rdf:type owl:NamedIndividual ,
-                                       DINEN61360:Data_Element ;
-                              DINEN61360:has_Instance_Description :ProductStack2CurrentColor_ID ;
-                              DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
+									DINEN61360:Data_Element ;
+							DINEN61360:has_Instance_Description :ProductStack2CurrentColor_ID ;
+							DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentColor_ID
 :ProductStack2CurrentColor_ID rdf:type owl:NamedIndividual ,
-                                       DINEN61360:Integer,
-                                       DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-								openmath:name "ProductStack2CurrentColor_ID" ;
-                              DINEN61360:Expression_Goal "Actual_Value" ;
-                              DINEN61360:Logic_Interpretation "=" .
+									DINEN61360:Integer,
+									DINEN61360:Instance_Description ,
+								openmath:Variable ;
+							openmath:name "ProductStack2CurrentColor_ID" ;
+							DINEN61360:Expression_Goal "Actual_Value" ;
+							DINEN61360:Logic_Interpretation "=" ;
+							DINEN61360:Value 3 .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentOuterDiameter_DE
 :ProductStack2CurrentOuterDiameter_DE rdf:type owl:NamedIndividual ,
-                                               DINEN61360:Data_Element ;
-                                      DINEN61360:has_Instance_Description :ProductStack2CurrentOuterDiameter_ID ;
-                                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
+											DINEN61360:Data_Element ;
+									DINEN61360:has_Instance_Description :ProductStack2CurrentOuterDiameter_ID ;
+									DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentOuterDiameter_ID
 :ProductStack2CurrentOuterDiameter_ID rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Integer,
-                                  DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-                openmath:name "ProductStack2CurrentOuterDiameter_ID" ;
-                                      DINEN61360:Expression_Goal "Actual_Value" ;
-                                      DINEN61360:Logic_Interpretation "=" .
+								DINEN61360:Integer,
+								DINEN61360:Instance_Description ,
+								openmath:Variable ;
+			openmath:name "ProductStack2CurrentOuterDiameter_ID" ;
+									DINEN61360:Expression_Goal "Actual_Value" ;
+									DINEN61360:Logic_Interpretation "=" ;
+									DINEN61360:Value 40 .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentStackSize_DE
@@ -221,12 +227,13 @@ MpsProduct:RawProductStack a owl:Class;
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack2CurrentStackSize_ID
 :ProductStack2CurrentStackSize_ID rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Integer,
-                                  DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-                openmath:name "ProductStack2CurrentStackSize_ID" ;
-                                  DINEN61360:Expression_Goal "Actual_Value" ;
-                                  DINEN61360:Logic_Interpretation "=" .
+								DINEN61360:Integer,
+								DINEN61360:Instance_Description ,
+								openmath:Variable ;
+			openmath:name "ProductStack2CurrentStackSize_ID" ;
+								DINEN61360:Expression_Goal "Actual_Value" ;
+								DINEN61360:Logic_Interpretation "=" ;
+								DINEN61360:Value 8 .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3
@@ -242,53 +249,56 @@ MpsProduct:RawProductStack a owl:Class;
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentColor_DE
 :ProductStack3CurrentColor_DE rdf:type owl:NamedIndividual ,
-                                       DINEN61360:Data_Element ;
-                              DINEN61360:has_Instance_Description :ProductStack3CurrentColor_ID ;
-                              DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
+									DINEN61360:Data_Element ;
+							DINEN61360:has_Instance_Description :ProductStack3CurrentColor_ID ;
+							DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#Color_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentColor_ID
 :ProductStack3CurrentColor_ID rdf:type owl:NamedIndividual ,
-                                       DINEN61360:Integer,
-                                       DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-								openmath:name "ProductStack3CurrentColor_ID" ;
-                              DINEN61360:Expression_Goal "Actual_Value" ;
-                              DINEN61360:Logic_Interpretation "=" .
+									DINEN61360:Integer,
+									DINEN61360:Instance_Description ,
+								openmath:Variable ;
+							openmath:name "ProductStack3CurrentColor_ID" ;
+							DINEN61360:Expression_Goal "Actual_Value" ;
+							DINEN61360:Logic_Interpretation "=" ;
+							DINEN61360:Value 3 .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentOuterDiameter_DE
 :ProductStack3CurrentOuterDiameter_DE rdf:type owl:NamedIndividual ,
-                                               DINEN61360:Data_Element ;
-                                      DINEN61360:has_Instance_Description :ProductStack3CurrentOuterDiameter_ID ;
-                                      DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
+									DINEN61360:Data_Element ;
+							DINEN61360:has_Instance_Description :ProductStack3CurrentOuterDiameter_ID ;
+							DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentOuterDiameter_ID
 :ProductStack3CurrentOuterDiameter_ID rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Integer,
-                                  DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-                openmath:name "ProductStack3CurrentOuterDiameter_ID" ;
-                                      DINEN61360:Expression_Goal "Actual_Value" ;
-                                      DINEN61360:Logic_Interpretation "=" .
+								DINEN61360:Integer,
+								DINEN61360:Instance_Description ,
+								openmath:Variable ;
+			openmath:name "ProductStack3CurrentOuterDiameter_ID" ;
+									DINEN61360:Expression_Goal "Actual_Value" ;
+									DINEN61360:Logic_Interpretation "=" ;
+									DINEN61360:Value 40 .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentStackSize_DE
 :ProductStack3CurrentStackSize_DE rdf:type owl:NamedIndividual ,
-                                           DINEN61360:Data_Element ;
-                                  DINEN61360:has_Instance_Description :ProductStack3CurrentStackSize_ID ;
-                                  DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
+										DINEN61360:Data_Element ;
+								DINEN61360:has_Instance_Description :ProductStack3CurrentStackSize_ID ;
+								DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#ProductStack3CurrentStackSize_ID
 :ProductStack3CurrentStackSize_ID rdf:type owl:NamedIndividual ,
-                                  DINEN61360:Integer,
-                                  DINEN61360:Instance_Description ,
-                                  openmath:Variable ;
-                openmath:name "ProductStack3CurrentStackSize_ID" ;
-                                  DINEN61360:Expression_Goal "Actual_Value" ;
-                                  DINEN61360:Logic_Interpretation "=" .
+								DINEN61360:Integer,
+								DINEN61360:Instance_Description ,
+								openmath:Variable ;
+			openmath:name "ProductStack3CurrentStackSize_ID" ;
+								DINEN61360:Expression_Goal "Actual_Value" ;
+								DINEN61360:Logic_Interpretation "=" ;
+								DINEN61360:Value 8 .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RawCylinderSlide
@@ -308,7 +318,7 @@ MpsProduct:RawProductStack a owl:Class;
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawCylinderSupplyModule#RawCylinder
 :RawCylinder rdf:type owl:NamedIndividual ,
-                      VDI3682:Product ;
+                      MpsProduct:RawCylinder ;
 			DINEN61360:has_Data_Element :RawCylinder_StationID_DE ,
 										:RawCylinderColor_DE ,
 										:RawCylinderLotSize_DE ,

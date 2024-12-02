@@ -16,6 +16,12 @@
                                                                       owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
                                                                                   <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
 
+MpsProduct:ThermometerCap a owl:Class;
+	rdfs:subClassOf VDI3682:Product.
+
+MpsProduct:AssembledThermometer a owl:Class;
+	rdfs:subClassOf VDI3682:Product.
+
 #################################################################
 #    Individuals
 #################################################################
@@ -92,7 +98,7 @@
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier
 :AssembledThermometerOnCarrier rdf:type owl:NamedIndividual ,
-                                        VDI3682:Product ;
+                                        MpsProduct:AssembledThermometer ;
 							DINEN61360:has_Data_Element :AssembledThermometerOnCarrier_BaseColor_DE ,
 														:AssembledThermometerOnCarrier_BaseInnerDiameter_DE ,
 														:AssembledThermometerOnCarrier_BaseOuterDiameter_DE ,

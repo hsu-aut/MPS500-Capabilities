@@ -23,7 +23,7 @@
 MpsProduct:DrilledProduct a owl:Class;
 	rdfs:subClassOf VDI3682:Product .
 
-MpsProduct:Cap a owl:Class;
+MpsProduct:CylinderCap a owl:Class;
 	rdfs:subClassOf VDI3682:Product .
 
 MpsProduct:Spring a owl:Class;
@@ -122,7 +122,7 @@ MpsProduct:AssembledCylinder a owl:Class;
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#AssembledCylinderOnCarrier
 :AssembledCylinderOnCarrier rdf:type owl:NamedIndividual ,
-                                     VDI3682:Product ;
+                                    MpsProduct:AssembledCylinder ;
                             DINEN61360:has_Data_Element :AssembledCylinderOnCarrier_isAssembled_DE ,
 														:AssembledCylinderOnCarrier_StationID_DE ,
 														:AssembledCylinderOnCarrier_CylinderColor_DE ,
@@ -365,7 +365,7 @@ MpsProduct:AssembledCylinder a owl:Class;
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#CapStack
 :CapStack rdf:type owl:NamedIndividual ,
-				MpsProduct:Cap ;
+				MpsProduct:CylinderCap ;
 				DINEN61360:has_Data_Element :CapStackCapColor_DE ,
 											:CapStackCapDiameter_DE ,
 											:CapStackStackSize_DE ;
@@ -587,8 +587,10 @@ MpsProduct:AssembledCylinder a owl:Class;
 													:DrilledCylinderColor_ID ,
 													:DrilledCylinderLotSize_ID ,
 													:DrilledCylider_StationID_ID ,
-													:DrilledCylinderOuterDiameter_ID ,
-													:DrilledCylinderInnerDiameter_ID ,
+													:DrilledCylinderOuterDiameter_ID1 ,
+													:DrilledCylinderOuterDiameter_ID2 ,
+													:DrilledCylinderInnerDiameter_ID1 ,
+													:DrilledCylinderInnerDiameter_ID2 ,
 													:DrilledCylinderDrillingDepth_ID .
 
 :DrilledCylinder_isAssembled_DE rdf:type owl:NamedIndividual ,
@@ -617,25 +619,37 @@ MpsProduct:AssembledCylinder a owl:Class;
                                 DINEN61360:Integer ,
                                 openmath:Variable ;
                 openmath:name "DrilledCylinderColor_ID" ;
-                         DINEN61360:Expression_Goal "Actual_Value" ;
-                         DINEN61360:Logic_Interpretation "=" .
+						DINEN61360:Expression_Goal "Actual_Value" ;
+						DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderInnerDiameter_DE
 :DrilledCylinderInnerDiameter_DE rdf:type owl:NamedIndividual ,
-                                          DINEN61360:Data_Element ;
-                                 DINEN61360:has_Instance_Description :DrilledCylinderInnerDiameter_ID ;
-                                 DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
+										DINEN61360:Data_Element ;
+								DINEN61360:has_Instance_Description :DrilledCylinderInnerDiameter_ID1 ,
+														:DrilledCylinderInnerDiameter_ID2 ;
+								DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderInnerDiameter_ID
-:DrilledCylinderInnerDiameter_ID rdf:type owl:NamedIndividual ,
+# Inner diameter must be equal to 5 for assembly
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderInnerDiameter_ID1
+:DrilledCylinderInnerDiameter_ID1 rdf:type owl:NamedIndividual ,
                                 DINEN61360:Instance_Description ,
                                 DINEN61360:Integer ,
                                 openmath:Variable ;
-                openmath:name "DrilledCylinderInnerDiameter_ID" ;
-                                 DINEN61360:Expression_Goal "Actual_Value" ;
-                                 DINEN61360:Logic_Interpretation "=" .
+                openmath:name "DrilledCylinderInnerDiameter_ID1" ;
+								DINEN61360:Expression_Goal "Requirement" ;
+								DINEN61360:Logic_Interpretation "=" ;
+								DINEN61360:Value 5 .
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderInnerDiameter_ID2
+:DrilledCylinderInnerDiameter_ID2 rdf:type owl:NamedIndividual ,
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "DrilledCylinderInnerDiameter_ID2" ;
+								DINEN61360:Expression_Goal "Actual_Value" ;
+								DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderLotSize_DE
@@ -674,19 +688,29 @@ MpsProduct:AssembledCylinder a owl:Class;
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderOuterDiameter_DE
 :DrilledCylinderOuterDiameter_DE rdf:type owl:NamedIndividual ,
-                                          DINEN61360:Data_Element ;
-                                 DINEN61360:has_Instance_Description :DrilledCylinderOuterDiameter_ID ;
-                                 DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
+										DINEN61360:Data_Element ;
+								DINEN61360:has_Instance_Description :DrilledCylinderOuterDiameter_ID1 ,
+										:DrilledCylinderOuterDiameter_ID2 ;
+								DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderOuterDiameter_ID
-:DrilledCylinderOuterDiameter_ID rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderOuterDiameter_ID1
+:DrilledCylinderOuterDiameter_ID1 rdf:type owl:NamedIndividual ,
                                 DINEN61360:Instance_Description ,
                                 DINEN61360:Integer ,
                                 openmath:Variable ;
-                openmath:name "DrilledCylinderOuterDiameter_ID" ;
-                                 DINEN61360:Expression_Goal "Actual_Value" ;
-                                 DINEN61360:Logic_Interpretation "=" .
+                openmath:name "DrilledCylinderOuterDiameter_ID1" ;
+								DINEN61360:Expression_Goal "Requirement" ;
+								DINEN61360:Logic_Interpretation "=" ;
+								DINEN61360:Value 40 .
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderOuterDiameter_ID2
+:DrilledCylinderOuterDiameter_ID2 rdf:type owl:NamedIndividual ,
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "DrilledCylinderOuterDiameter_ID2" ;
+								DINEN61360:Expression_Goal "Actual_Value" ;
+								DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#DrilledCylinderDrillingDepth_DE
@@ -846,18 +870,18 @@ MpsProduct:AssembledCylinder a owl:Class;
 :OverallOuterDiameterConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
 							CSS:CapabilityConstraint ;
-					openmath:arguments (:DrilledCylinderOuterDiameter_ID :AssembledCylinderOnCarrier_OuterDiameter_ID);
+					openmath:arguments (:DrilledCylinderOuterDiameter_ID2 :AssembledCylinderOnCarrier_OuterDiameter_ID);
 					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
-					CSS:references :DrilledCylinderOuterDiameter_ID ,
+					CSS:references :DrilledCylinderOuterDiameter_ID2 ,
 									:AssembledCylinderOnCarrier_OuterDiameter_ID  .
 
 ###  InnerDiameter stays the same
 :OverallInnerDiameterConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
 							CSS:CapabilityConstraint ;
-					openmath:arguments (:DrilledCylinderInnerDiameter_ID :AssembledCylinderOnCarrier_InnerDiameter_ID);
+					openmath:arguments (:DrilledCylinderInnerDiameter_ID2 :AssembledCylinderOnCarrier_InnerDiameter_ID);
 					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
-					CSS:references :DrilledCylinderInnerDiameter_ID ,
+					CSS:references :DrilledCylinderInnerDiameter_ID2 ,
 									:AssembledCylinderOnCarrier_InnerDiameter_ID  .
 
 ### StationID constraint to ensure input must be at station
@@ -874,19 +898,19 @@ MpsProduct:AssembledCylinder a owl:Class;
 :CapAndOuterDiameterConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
 							CSS:CapabilityConstraint ;
-					openmath:arguments (:CapStackCapDiameter_ID :DrilledCylinderOuterDiameter_ID);
+					openmath:arguments (:CapStackCapDiameter_ID :DrilledCylinderOuterDiameter_ID2);
 					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
 					CSS:references :CapStackCapDiameter_ID ,
-									:DrilledCylinderOuterDiameter_ID  .
+									:DrilledCylinderOuterDiameter_ID2  .
 
 ### Spring diameter must be equal to cylinder inner diameter to be assembled
 :SpringAndInnerDiameterConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
 							CSS:CapabilityConstraint ;
-					openmath:arguments (:SpringStackSpringDiameter_ID2 :DrilledCylinderInnerDiameter_ID);
+					openmath:arguments (:SpringStackSpringDiameter_ID2 :DrilledCylinderInnerDiameter_ID2);
 					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
 					CSS:references :SpringStackSpringDiameter_ID2 ,
-									:DrilledCylinderInnerDiameter_ID  .
+									:DrilledCylinderInnerDiameter_ID2  .
 
 ### Spring length must be equal to cylinder drilling depth to be assembled
 :SpringLengthAndDepthConstraint rdf:type owl:NamedIndividual ,
