@@ -16,10 +16,9 @@
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/SupplyToDrilling#> rdf:type owl:Ontology ;
 																		owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
-																					<http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+																					<http://www.w3id.org/hsu-aut/caskman/4.6.0> ;
+																		rdfs:comment "A required cap that should lead to a 5-step process: Transport (bringing a carrier), Supply, Transport to Drilling, Drilling and finally Transport to target station (4)" .
 
-MpsProduct:NullProduct a owl:Class;
-	rdfs:subClassOf VDI3682:Product .
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/SupplyToDrilling#SupplyToDrilling
 :SupplyToDrilling rdf:type owl:NamedIndividual ,
@@ -31,12 +30,12 @@ MpsProduct:NullProduct a owl:Class;
 
 :InputProduct rdf:type owl:NamedIndividual ,
 		VDI3682:Product ;
-	DINEN61360:has_Data_Element :InputProduct_StationID_DE ;
+	DINEN61360:has_Data_Element :InputProduct_StationID_DE ,
 								# :InnerDiameter_Start_DE ,
-								# :OuterDiameter_Start_DE;
-	VDI3682:isCharacterizedBy :InputProduct_StationID_ID . 
+								:OuterDiameter_Start_DE;
+	VDI3682:isCharacterizedBy :InputProduct_StationID_ID ,
 							# :InnerDiameter_Start_ID,
-							# :OuterDiameter_Start_ID.
+							:OuterDiameter_Start_ID.
 
 :InputProduct_StationID_DE rdf:type owl:NamedIndividual ,
 		DINEN61360:Data_Element ;
@@ -62,17 +61,17 @@ MpsProduct:NullProduct a owl:Class;
 #                             DINEN61360:Logic_Interpretation "=" ;
 # 							DINEN61360:Value 0 .
 
-# :OuterDiameter_Start_DE rdf:type owl:NamedIndividual ,
-# 								DINEN61360:Data_Element ;
-# 						DINEN61360:has_Instance_Description :OuterDiameter_Start_ID ;
-# 						DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
+:OuterDiameter_Start_DE rdf:type owl:NamedIndividual ,
+								DINEN61360:Data_Element ;
+						DINEN61360:has_Instance_Description :OuterDiameter_Start_ID ;
+						DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
-# :OuterDiameter_Start_ID rdf:type owl:NamedIndividual ,
-# 									DINEN61360:Instance_Description ,
-# 									DINEN61360:Integer ;
-#                             DINEN61360:Expression_Goal "Actual_Value" ;
-#                             DINEN61360:Logic_Interpretation "=" ;
-# 							DINEN61360:Value 0 .
+:OuterDiameter_Start_ID rdf:type owl:NamedIndividual ,
+									DINEN61360:Instance_Description ,
+									DINEN61360:Integer ;
+                            DINEN61360:Expression_Goal "Actual_Value" ;
+                            DINEN61360:Logic_Interpretation "=" ;
+							DINEN61360:Value 0 .
 
 
 :OutputProduct rdf:type owl:NamedIndividual ,
