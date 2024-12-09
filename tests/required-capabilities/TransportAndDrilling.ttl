@@ -16,7 +16,7 @@
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/TransportAndDrill#> rdf:type owl:Ontology ;
 																		owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
 																					<http://www.w3id.org/hsu-aut/caskman/4.6.0> ;
-																		rdfs:label: "A required capability for testing purposes that should yield a process of two capabilities. First transport from Station 1 to drilling and then drilling itself".
+																		rdfs:comment: "A required capability for testing purposes that should yield a process of two capabilities. First transport from Station 1 to drilling and then drilling itself".
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/TransportAndDrill#TransportAndDrill
 :TransportAndDrill rdf:type owl:NamedIndividual ,

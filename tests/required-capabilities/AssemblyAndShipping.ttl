@@ -15,12 +15,14 @@
 @base <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/AssembleAndPrepareForShipping#> .
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/AssembleAndPrepareForShipping#> rdf:type owl:Ontology ;
-                                                                          owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
-                                                                                      <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+                                                                        owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
+                                                                                <http://www.w3id.org/hsu-aut/caskman/4.6.0> ;
+																		rdfs:comment: "A required capability that should lead to the full MPS process: SupplyRawPart -> Transport -> Drilling -> Transport -> Assembly -> Transport -> PrepareForShipping" .
 
 
-MpsProduct:NullProduct a owl:Class;
+MpsProduct:AssembledCylinder a owl:Class;
 	rdfs:subClassOf VDI3682:Product .
+
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/AssembleAndPrepareForShipping#AssembleAndPrepareForShipping
 :AssembleAndPrepareForShipping rdf:type owl:NamedIndividual ,
