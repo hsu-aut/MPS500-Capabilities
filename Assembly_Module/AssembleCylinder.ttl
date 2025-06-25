@@ -801,7 +801,7 @@ MpsProduct:AssembledCylinder a owl:Class;
 :SpringStackSpringDiameter_DE rdf:type owl:NamedIndividual ,
 									DINEN61360:Data_Element ;
 						DINEN61360:has_Instance_Description :SpringStackSpringDiameter_ID ;
-						DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
+						DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#SpringDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#SpringStackSpringDiameter_ID
