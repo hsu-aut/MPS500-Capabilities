@@ -138,7 +138,7 @@ MpsProduct:AssembledCylinder a owl:Class;
 									DINEN61360:Integer ;
                             DINEN61360:Expression_Goal "Requirement" ;
                             DINEN61360:Logic_Interpretation "=" ;
-							DINEN61360:Value 10 .
+							DINEN61360:Value 5 .
 
 :OutputProduct_DrillingDepth_DE rdf:type owl:NamedIndividual ,
 								DINEN61360:Data_Element ;

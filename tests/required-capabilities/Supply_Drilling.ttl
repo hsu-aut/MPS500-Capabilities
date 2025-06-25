@@ -97,7 +97,7 @@
 									DINEN61360:Integer ;
                             DINEN61360:Expression_Goal "Requirement" ;
                             DINEN61360:Logic_Interpretation "=" ;
-							DINEN61360:Value 4 .
+							DINEN61360:Value 3 .
 
 :OutputProduct_Color_DE rdf:type owl:NamedIndividual ,
 								DINEN61360:Data_Element ;
