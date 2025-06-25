@@ -31,8 +31,26 @@ MpsProduct:AssembledThermometer a owl:Class;
 							VDI2206:Module,
 							CSS:Resource ;
 					CSS:providesCapability :AssembleThermometer ;
-					VDI3682:isAssignedTo :AssembleThermometer .
+					VDI3682:isAssignedTo :AssembleThermometer ;
+					DINEN61360:has_Data_Element :AssemblyModule_StationID_DE ;
+					VDI3682:isCharacterizedBy :AssemblyModule_StationID_ID .
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#AssemblyModule_StationID_DE
+:AssemblyModule_StationID_DE rdf:type owl:NamedIndividual ,
+                                      DINEN61360:Data_Element ;
+                             DINEN61360:has_Instance_Description :AssemblyModule_StationID_ID ;
+                             DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#AssemblyModule_StationID_ID
+:AssemblyModule_StationID_ID rdf:type owl:NamedIndividual ,
+								DINEN61360:Integer,
+								DINEN61360:Instance_Description ,
+								openmath:Variable ;
+			openmath:name "AssemblyModule_StationID_ID" ;
+							DINEN61360:Expression_Goal "Actual_Value" ;
+							DINEN61360:Logic_Interpretation "=" ;
+							DINEN61360:Value 4 .
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembleThermometer
 :AssembleThermometer rdf:type owl:NamedIndividual ,
@@ -42,11 +60,12 @@ MpsProduct:AssembledThermometer a owl:Class;
 					CSS:isRestrictedBy :OverallLotSizeConstraint ,
 								:OverallColorConstraint ,
 								:CapStackSizeConstraint ,
-								:DiameterConstraint ;
+								:OverallOuterDiameterConstraint ,
+								:OverallInnerDiameterConstraint ,
+								:StationIDConstraint ;
 					VDI3682:hasOutput :AssembledThermometerOnCarrier ;
 					VDI3682:hasInput :DrilledCylinder ,
 									:RequiredCarrierId ,
-									:RequiredCarrierSlot ,
 									:ThermometerCapStack ;
 					VDI3682:isComposedOf :PlaceThermometerInFixture ,
 										:PressInCap ,
@@ -59,8 +78,7 @@ MpsProduct:AssembledThermometer a owl:Class;
 						VDI3682:consistsOf :AssembleThermometer ,
 											:AssemblySystemLimit ;
 						VDI3682:hasInput :DrilledCylinder ,
-											:RequiredCarrierId ,
-											:RequiredCarrierSlot ;
+											:RequiredCarrierId ;
 						VDI3682:hasOutput :AssembledThermometer .
 
 
@@ -73,7 +91,6 @@ MpsProduct:AssembledThermometer a owl:Class;
                                                   :PutOnCarrier ;
                                VDI3682:hasInput :DrilledCylinder ,
                                                 :RequiredCarrierId ,
-                                                :RequiredCarrierSlot ,
                                                 :ThermometerCapStack ;
                                VDI3682:hasOutput :AssembledThermometerOnCarrier .
 
@@ -99,18 +116,50 @@ MpsProduct:AssembledThermometer a owl:Class;
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier
 :AssembledThermometerOnCarrier rdf:type owl:NamedIndividual ,
                                         MpsProduct:AssembledThermometer ;
-							DINEN61360:has_Data_Element :AssembledThermometerOnCarrier_BaseColor_DE ,
-														:AssembledThermometerOnCarrier_BaseInnerDiameter_DE ,
-														:AssembledThermometerOnCarrier_BaseOuterDiameter_DE ,
+							DINEN61360:has_Data_Element :AssembledThermometerOnCarrier_isAssembled_DE ,
+														:AssembledThermometerOnCarrier_StationID_DE ,
+														:AssembledThermometerOnCarrier_BaseColor_DE ,
+														:AssembledThermometerOnCarrier_InnerDiameter_DE ,
+														:AssembledThermometerOnCarrier_OuterDiameter_DE ,
 														:AssembledThermometerOnCarrier_CarrierID_DE ,
-														:AssembledThermometerOnCarrier_CarrierSlot_DE ,
 														:AssembledThermometerOnCarrier_LotSize_DE ;
-							VDI3682:isCharacterizedBy :AssembledThermometerOnCarrier_BaseColor_ID ,
-														:AssembledThermometerOnCarrier_BaseInnerDiameter_ID ,
-														:AssembledThermometerOnCarrier_BaseOuterDiameter_ID ,
+							VDI3682:isCharacterizedBy 	:AssembledThermometerOnCarrier_isAssembled_ID ,
+														:AssembledThermometerOnCarrier_StationID_ID ,
+														:AssembledThermometerOnCarrier_BaseColor_ID ,
+														:AssembledThermometerOnCarrier_InnerDiameter_ID ,
+														:AssembledThermometerOnCarrier_OuterDiameter_ID ,
 														:AssembledThermometerOnCarrier_CarrierID_ID ,
-														:AssembledThermometerOnCarrier_CarrierSlot_ID ,
 														:AssembledThermometerOnCarrier_LotSize_ID .
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier_isAssembled_DE
+:AssembledThermometerOnCarrier_isAssembled_DE rdf:type owl:NamedIndividual ,
+		DINEN61360:Data_Element ;
+	DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#AssemblyStatus_TD> ;
+	DINEN61360:has_Instance_Description :AssembledThermometerOnCarrier_isAssembled_ID.
+
+:AssembledThermometerOnCarrier_isAssembled_ID rdf:type owl:NamedIndividual ,
+									DINEN61360:Instance_Description ,
+									DINEN61360:Boolean ;
+                            DINEN61360:Expression_Goal "Assurance" ;
+                            DINEN61360:Logic_Interpretation "=" ;
+							DINEN61360:Value "true" .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier_StationID_DE
+:AssembledThermometerOnCarrier_StationID_DE rdf:type owl:NamedIndividual ,
+                                   DINEN61360:Data_Element ;
+                          DINEN61360:has_Instance_Description :AssembledThermometerOnCarrier_StationID_ID ;
+                          DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier_StationID_ID
+:AssembledThermometerOnCarrier_StationID_ID rdf:type owl:NamedIndividual ,
+                                   DINEN61360:Instance_Description ,
+								openmath:Variable ,
+								DINEN61360:Integer ;
+				openmath:name "AssembledThermometerOnCarrier_StationID_ID";
+						DINEN61360:Logic_Interpretation "=" ;
+						DINEN61360:Expression_Goal "Assurance" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier_BaseColor_DE
@@ -130,36 +179,36 @@ MpsProduct:AssembledThermometer a owl:Class;
                                             DINEN61360:Logic_Interpretation "=" .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier_BaseInnerDiameter_DE
-:AssembledThermometerOnCarrier_BaseInnerDiameter_DE rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier_InnerDiameter_DE
+:AssembledThermometerOnCarrier_InnerDiameter_DE rdf:type owl:NamedIndividual ,
                                                         DINEN61360:Data_Element ;
-                                               DINEN61360:has_Instance_Description :AssembledThermometerOnCarrier_BaseInnerDiameter_ID ;
+                                               DINEN61360:has_Instance_Description :AssembledThermometerOnCarrier_InnerDiameter_ID ;
                                                DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier_BaseInnerDiameter_ID
-:AssembledThermometerOnCarrier_BaseInnerDiameter_ID rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier_InnerDiameter_ID
+:AssembledThermometerOnCarrier_InnerDiameter_ID rdf:type owl:NamedIndividual ,
 								DINEN61360:Instance_Description ,
 								DINEN61360:Integer ,
 								openmath:Variable ;
-			openmath:name "AssembledThermometerOnCarrier_BaseInnerDiameter_ID" ;
+			openmath:name "AssembledThermometerOnCarrier_InnerDiameter_ID" ;
                                                DINEN61360:Expression_Goal "Assurance" ;
                                                DINEN61360:Logic_Interpretation "=" .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier_BaseOuterDiameter_DE
-:AssembledThermometerOnCarrier_BaseOuterDiameter_DE rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier_OuterDiameter_DE
+:AssembledThermometerOnCarrier_OuterDiameter_DE rdf:type owl:NamedIndividual ,
                                                         DINEN61360:Data_Element ;
-                                               DINEN61360:has_Instance_Description :AssembledThermometerOnCarrier_BaseOuterDiameter_ID ;
+                                               DINEN61360:has_Instance_Description :AssembledThermometerOnCarrier_OuterDiameter_ID ;
                                                DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier_BaseOuterDiameter_ID
-:AssembledThermometerOnCarrier_BaseOuterDiameter_ID rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier_OuterDiameter_ID
+:AssembledThermometerOnCarrier_OuterDiameter_ID rdf:type owl:NamedIndividual ,
 								DINEN61360:Instance_Description ,
 								DINEN61360:Integer ,
 								openmath:Variable ;
-			openmath:name "AssembledThermometerOnCarrier_BaseOuterDiameter_ID" ;
+			openmath:name "AssembledThermometerOnCarrier_OuterDiameter_ID" ;
                                                DINEN61360:Expression_Goal "Assurance" ;
                                                DINEN61360:Logic_Interpretation "=" .
 
@@ -179,23 +228,6 @@ MpsProduct:AssembledThermometer a owl:Class;
 			openmath:name "AssembledThermometerOnCarrier_CarrierID_ID" ;
                                             DINEN61360:Expression_Goal "Assurance" ;
                                             DINEN61360:Logic_Interpretation "=" .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier_CarrierSlot_DE
-:AssembledThermometerOnCarrier_CarrierSlot_DE rdf:type owl:NamedIndividual ,
-                                                       DINEN61360:Data_Element ;
-                                              DINEN61360:has_Instance_Description :AssembledThermometerOnCarrier_CarrierSlot_ID ;
-                                              DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD> .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier_CarrierSlot_ID
-:AssembledThermometerOnCarrier_CarrierSlot_ID rdf:type owl:NamedIndividual ,
-								DINEN61360:Instance_Description ,
-								DINEN61360:Integer ,
-								openmath:Variable ;
-			openmath:name "AssembledThermometerOnCarrier_CarrierSlot_ID" ;
-                                              DINEN61360:Expression_Goal "Assurance" ;
-                                              DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#AssembledThermometerOnCarrier_LotSize_DE
@@ -290,8 +322,36 @@ MpsProduct:AssembledThermometer a owl:Class;
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinder
 :DrilledCylinder rdf:type owl:NamedIndividual ,
-                             VDI3682:Product .
+						MpsProduct:DrilledCylinder ;
+						DINEN61360:has_Data_Element :DrilledCylinder_isAssembled_DE ,
+													:DrilledCylinderColor_DE ,
+													:DrilledCylinderLotSize_DE ,
+													:DrilledCylinder_StationID_DE ,
+													:DrilledCylinderOuterDiameter_DE ,
+													:DrilledCylinderInnerDiameter_DE ,
+													:DrilledCylinderDrillingDepth_DE ;
+						VDI3682:isCharacterizedBy :DrilledCylinder_isAssembled_ID ,
+													:DrilledCylinderColor_ID ,
+													:DrilledCylinderLotSize_ID1 ,
+													:DrilledCylinderLotSize_ID2 ,
+													:DrilledCylinder_StationID_ID ,
+													:DrilledCylinderOuterDiameter_ID1 ,
+													:DrilledCylinderOuterDiameter_ID2 ,
+													:DrilledCylinderInnerDiameter_ID1 ,
+													:DrilledCylinderInnerDiameter_ID2 ,
+													:DrilledCylinderDrillingDepth_ID .
 
+:DrilledCylinder_isAssembled_DE rdf:type owl:NamedIndividual ,
+		DINEN61360:Data_Element ;
+	DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#AssemblyStatus_TD> ;
+	DINEN61360:has_Instance_Description :DrilledCylinder_isAssembled_ID.
+
+:DrilledCylinder_isAssembled_ID rdf:type owl:NamedIndividual ,
+									DINEN61360:Instance_Description ,
+									DINEN61360:Boolean ;
+                            DINEN61360:Expression_Goal "Requirement" ;
+                            DINEN61360:Logic_Interpretation "=" ;
+							DINEN61360:Value "false" .
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinderCarrierID_DE
 :DrilledCylinderCarrierID_DE rdf:type owl:NamedIndividual ,
@@ -308,23 +368,6 @@ MpsProduct:AssembledThermometer a owl:Class;
 			openmath:name "DrilledCylinderCarrierID_ID" ;
                                 DINEN61360:Expression_Goal "Actual_Value" ;
                                 DINEN61360:Logic_Interpretation "=" .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinderCarrierSlot_DE
-:DrilledCylinderCarrierSlot_DE rdf:type owl:NamedIndividual ,
-                                           DINEN61360:Data_Element ;
-                                  DINEN61360:has_Instance_Description :DrilledCylinderCarrierSlot_ID ;
-                                  DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD> .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinderCarrierSlot_ID
-:DrilledCylinderCarrierSlot_ID rdf:type owl:NamedIndividual ,
-								DINEN61360:Instance_Description ,
-								DINEN61360:Integer ,
-								openmath:Variable ;
-			openmath:name "DrilledCylinderCarrierSlot_ID" ;
-                                  DINEN61360:Expression_Goal "Actual_Value" ;
-                                  DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinderColor_DE
@@ -347,18 +390,30 @@ MpsProduct:AssembledThermometer a owl:Class;
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinderInnerDiameter_DE
 :DrilledCylinderInnerDiameter_DE rdf:type owl:NamedIndividual ,
                                              DINEN61360:Data_Element ;
-                                    DINEN61360:has_Instance_Description :DrilledCylinderInnerDiameter_ID ;
+                                    DINEN61360:has_Instance_Description :DrilledCylinderInnerDiameter_ID1 ,
+														:DrilledCylinderInnerDiameter_ID2 ;
                                     DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#InnerDiameter_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinderInnerDiameter_ID
-:DrilledCylinderInnerDiameter_ID rdf:type owl:NamedIndividual ,
-								DINEN61360:Instance_Description ,
-								DINEN61360:Integer ,
-								openmath:Variable ;
-			openmath:name "DrilledCylinderInnerDiameter_ID" ;
-                                    DINEN61360:Expression_Goal "Actual_Value" ;
-                                    DINEN61360:Logic_Interpretation "=" .
+:DrilledCylinderInnerDiameter_ID1 rdf:type owl:NamedIndividual ,
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "DrilledCylinderInnerDiameter_ID1" ;
+								DINEN61360:Expression_Goal "Requirement" ;
+								DINEN61360:Logic_Interpretation "=" ;
+								DINEN61360:Value 5 .
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinderInnerDiameter_ID2
+:DrilledCylinderInnerDiameter_ID2 rdf:type owl:NamedIndividual ,
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "DrilledCylinderInnerDiameter_ID2" ;
+								DINEN61360:Expression_Goal "Actual_Value" ;
+								DINEN61360:Logic_Interpretation "=" .
+
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinderLotSize_DE
@@ -389,22 +444,63 @@ MpsProduct:AssembledThermometer a owl:Class;
                               DINEN61360:Logic_Interpretation "<=" ;
 							  DINEN61360:Value 4 .
 
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinder_StationID_DE
+:DrilledCylinder_StationID_DE rdf:type owl:NamedIndividual ,
+                                   DINEN61360:Data_Element ;
+                          DINEN61360:has_Instance_Description :DrilledCylinder_StationID_ID ;
+                          DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinder_StationID_ID
+:DrilledCylinder_StationID_ID rdf:type owl:NamedIndividual ,
+                                   DINEN61360:Instance_Description ,
+								openmath:Variable ,
+								DINEN61360:Integer ;
+				openmath:name "DrilledCylinder_StationID_ID";
+						DINEN61360:Logic_Interpretation "=" ;
+						DINEN61360:Expression_Goal "Actual_Value" .
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinderOuterDiameter_DE
 :DrilledCylinderOuterDiameter_DE rdf:type owl:NamedIndividual ,
-                                             DINEN61360:Data_Element ;
-                                    DINEN61360:has_Instance_Description :DrilledCylinderOuterDiameter_ID ;
-                                    DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
+										DINEN61360:Data_Element ;
+								DINEN61360:has_Instance_Description :DrilledCylinderOuterDiameter_ID1 ,
+										:DrilledCylinderOuterDiameter_ID2 ;
+								DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDiameter_TD> .
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinderOuterDiameter_ID1
+:DrilledCylinderOuterDiameter_ID1 rdf:type owl:NamedIndividual ,
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "DrilledCylinderOuterDiameter_ID1" ;
+								DINEN61360:Expression_Goal "Requirement" ;
+								DINEN61360:Logic_Interpretation "=" ;
+								DINEN61360:Value 40 .
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinderOuterDiameter_ID2
+:DrilledCylinderOuterDiameter_ID2 rdf:type owl:NamedIndividual ,
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "DrilledCylinderOuterDiameter_ID2" ;
+								DINEN61360:Expression_Goal "Actual_Value" ;
+								DINEN61360:Logic_Interpretation "=" .
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinderDrillingDepth_DE
+:DrilledCylinderDrillingDepth_DE rdf:type owl:NamedIndividual ,
+                                          DINEN61360:Data_Element ;
+                                 DINEN61360:has_Instance_Description :DrilledCylinderDrillingDepth_ID ;
+                                 DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#OuterDepth_TD> .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinderOuterDiameter_ID
-:DrilledCylinderOuterDiameter_ID rdf:type owl:NamedIndividual ,
-								DINEN61360:Instance_Description ,
-								DINEN61360:Integer ,
-								openmath:Variable ;
-			openmath:name "DrilledCylinderOuterDiameter_ID" ;
-                                    DINEN61360:Expression_Goal "Actual_Value" ;
-                                    DINEN61360:Logic_Interpretation "=" .
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#DrilledCylinderDrillingDepth_ID
+:DrilledCylinderDrillingDepth_ID rdf:type owl:NamedIndividual ,
+                                DINEN61360:Instance_Description ,
+                                DINEN61360:Integer ,
+                                openmath:Variable ;
+                openmath:name "DrilledCylinderDrillingDepth_ID" ;
+                                 DINEN61360:Expression_Goal "Actual_Value" ;
+                                 DINEN61360:Logic_Interpretation "=" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#PlaceThermometerInFixture
@@ -426,8 +522,7 @@ MpsProduct:AssembledThermometer a owl:Class;
 :PutOnCarrier rdf:type owl:NamedIndividual ,
                        VDI3682:ProcessOperator ;
               VDI3682:hasInput :AssembledThermometer ;
-              VDI3682:hasInput :RequiredCarrierId ,
-                               :RequiredCarrierSlot ;
+              VDI3682:hasInput :RequiredCarrierId ;
               VDI3682:hasOutput :AssembledThermometerOnCarrier .
 
 
@@ -469,47 +564,15 @@ MpsProduct:AssembledThermometer a owl:Class;
                        DINEN61360:Value 8 .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#RequiredCarrierSlot
-:RequiredCarrierSlot rdf:type owl:NamedIndividual ,
-							VDI3682:Information ;
-					DINEN61360:has_Data_Element :RequiredCarrierSlot_DE ;
-					VDI3682:isCharacterizedBy :RequiredCarrierSlot_ID1 ,
-											:RequiredCarrierSlot_ID2 .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#RequiredCarrierSlot_DE
-:RequiredCarrierSlot_DE rdf:type owl:NamedIndividual ,
-                                 DINEN61360:Data_Element ;
-                        DINEN61360:has_Instance_Description :RequiredCarrierSlot_ID1 ,
-                                                            :RequiredCarrierSlot_ID2 ;
-                        DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#CarrierSlot_TD> .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#RequiredCarrierSlot_ID1
-:RequiredCarrierSlot_ID1 rdf:type owl:NamedIndividual ,
-								DINEN61360:Instance_Description ,
-								DINEN61360:Integer ,
-								openmath:Variable ;
-			openmath:name "RequiredCarrierSlot_ID1" ;
-                         DINEN61360:Expression_Goal "Requirement" ;
-                         DINEN61360:Logic_Interpretation ">=" ;
-                         DINEN61360:Value 1 .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#RequiredCarrierSlot_ID2
-:RequiredCarrierSlot_ID2 rdf:type owl:NamedIndividual ,
-								DINEN61360:Instance_Description ,
-								DINEN61360:Integer ,
-								openmath:Variable ;
-			openmath:name "RequiredCarrierSlot_ID2" ;
-                         DINEN61360:Expression_Goal "Requirement" ;
-                         DINEN61360:Logic_Interpretation "<=" ;
-                         DINEN61360:Value 4 .
-
-
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#ThermometerCapStack
 :ThermometerCapStack rdf:type owl:NamedIndividual ,
-                              VDI3682:Product .
+						MpsProduct:ThermometerCap ;
+						DINEN61360:has_Data_Element :ThermometerCapStack_CapColor_DE ,
+											:ThermometerCapStack_CapDiameter_DE ,
+											:ThermometerCapStack_StackSize_DE ;
+						VDI3682:isCharacterizedBy :ThermometerCapStack_CapColor_ID ,
+											:ThermometerCapStack_CapDiameter_ID ,
+											:ThermometerCapStack_StackSize_ID .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#ThermometerCapStack_CapColor_DE
@@ -548,8 +611,9 @@ MpsProduct:AssembledThermometer a owl:Class;
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#ThermometerCapStack_StackSize_DE
 :ThermometerCapStack_StackSize_DE rdf:type owl:NamedIndividual ,
-                                           DINEN61360:Data_Element ;
-                                  DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
+										DINEN61360:Data_Element ;
+								DINEN61360:has_Instance_Description :ThermometerCapStack_StackSize_ID;
+								DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#LotSize_TD> .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#ThermometerCapStack_StackSize_ID
@@ -558,8 +622,9 @@ MpsProduct:AssembledThermometer a owl:Class;
 								DINEN61360:Integer ,
 								openmath:Variable ;
 			openmath:name "ThermometerCapStack_StackSize_ID" ;
-                                  DINEN61360:Expression_Goal "Actual_Value" ;
-                                  DINEN61360:Logic_Interpretation "=" .
+						DINEN61360:Expression_Goal "Actual_Value" ;
+						DINEN61360:Logic_Interpretation "=" ;
+						DINEN61360:Value 10 .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer#ThermometerInAssemblyFixture
@@ -666,13 +731,30 @@ MpsProduct:AssembledThermometer a owl:Class;
                                                       :DrilledCylinderLotSize_ID1  .
 
 
-###  Cylinder inner diameter must be equal to cap diameter
-:DiameterConstraint rdf:type owl:NamedIndividual ,
-                                                openmath:Application ,
-                                                CSS:CapabilityConstraint ;
-                                       openmath:arguments (::DrilledCylinderInnerDiameter_ID :ThermometerCapStack_CapDiameter_ID ) ;
-                                       openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
-                                       CSS:references :DrilledCylinderInnerDiameter_ID ,
-                                                      :ThermometerCapStack_CapDiameter_ID  .
-													  
+###  OuterDiameter stays the same
+:OverallOuterDiameterConstraint rdf:type owl:NamedIndividual ,
+							openmath:Application ,
+							CSS:CapabilityConstraint ;
+					openmath:arguments (:AssembledThermometerOnCarrier_OuterDiameter_ID :DrilledCylinderOuterDiameter_ID2);
+					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
+					CSS:references :DrilledCylinderOuterDiameter_ID2 ,
+									:AssembledThermometerOnCarrier_OuterDiameter_ID  .
 
+###  InnerDiameter stays the same
+:OverallInnerDiameterConstraint rdf:type owl:NamedIndividual ,
+							openmath:Application ,
+							CSS:CapabilityConstraint ;
+					openmath:arguments (:AssembledThermometerOnCarrier_InnerDiameter_ID :DrilledCylinderInnerDiameter_ID2);
+					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
+					CSS:references :DrilledCylinderInnerDiameter_ID2 ,
+									:AssembledThermometerOnCarrier_InnerDiameter_ID  .
+
+
+### StationID constraint to ensure input must be at station
+:StationIDConstraint rdf:type owl:NamedIndividual ,
+							openmath:Application ,
+							CSS:CapabilityConstraint ;
+					openmath:arguments (:AssembledThermometerOnCarrier_StationID_ID :AssemblyModule_StationID_ID);
+					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
+					CSS:references :AssembledThermometerOnCarrier_StationID_ID ,
+									:AssemblyModule_StationID_ID .
