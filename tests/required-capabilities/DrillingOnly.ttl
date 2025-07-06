@@ -72,7 +72,7 @@
 :OutputProduct_InnerDiameter_ID rdf:type owl:NamedIndividual ,
 									DINEN61360:Instance_Description ,
 									DINEN61360:Integer ;
-                            DINEN61360:Expression_Goal "Actual_Value" ;
+                            DINEN61360:Expression_Goal "Requirement" ;
                             DINEN61360:Logic_Interpretation "=" ;
 							DINEN61360:Value 6 .
 
@@ -84,7 +84,7 @@
 :OutputProduct_Depth_ID rdf:type owl:NamedIndividual ,
 									DINEN61360:Instance_Description ,
 									DINEN61360:Integer ;
-                            DINEN61360:Expression_Goal "Actual_Value" ;
+                            DINEN61360:Expression_Goal "Requirement" ;
                             DINEN61360:Logic_Interpretation "=" ;
 							DINEN61360:Value 6 .
 
