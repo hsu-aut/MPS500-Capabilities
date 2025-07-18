@@ -15,7 +15,7 @@
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule> rdf:type owl:Ontology ;
                                                                  owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
-                                                                             <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+                                                                             <http://www.w3id.org/hsu-aut/caskman/5.0.1> .
 
 
 MpsProduct:DrilledProduct a owl:Class;
@@ -832,7 +832,8 @@ openmath:name "RequiredDrillingDepth_ID2";
 								openmath:Variable ,
 								DINEN61360:Integer ;
 openmath:name "RequiredDrillingDepth_ID3";
-                           DINEN61360:Logic_Interpretation "=" .
+                           DINEN61360:Logic_Interpretation "=" ;
+						   DINEN61360:Expression_Goal "Variable" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDepth_DE
@@ -880,7 +881,8 @@ openmath:name "RequiredDrillingDepth_ID3";
 								openmath:Variable ,
 								DINEN61360:Integer ;
 							openmath:name "RequiredDrillingDiameter_ID3";
-                              DINEN61360:Logic_Interpretation "=" .
+                              DINEN61360:Logic_Interpretation "=" ;
+							  DINEN61360:Expression_Goal "Variable" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/DrillingModule#RequiredDrillingDiameter_DE

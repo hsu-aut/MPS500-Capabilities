@@ -15,7 +15,7 @@
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/Drilling#> rdf:type owl:Ontology ;
                                                                           owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
-                                                                                      <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+                                                                                      <http://www.w3id.org/hsu-aut/caskman/5.0.1> .
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/Drilling#Drilling_Req
 :Drilling_Req rdf:type owl:NamedIndividual ,
