@@ -14,7 +14,7 @@
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleThermometer> rdf:type owl:Ontology ;
                                                                       owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
-                                                                                  <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+                                                                                  <http://www.w3id.org/hsu-aut/caskman/5.0.1> .
 
 MpsProduct:ThermometerCap a owl:Class;
 	rdfs:subClassOf VDI3682:Product.
@@ -706,7 +706,7 @@ MpsProduct:AssembledThermometer a owl:Class;
 ###  Base Color stays the same
 :OverallColorConstraint rdf:type owl:NamedIndividual ,
                                                 openmath:Application ,
-                                                CSS:CapabilityConstraint ;
+                                                CSS:PropertyConstraint ;
                                        openmath:arguments (:DrilledCylinderColor_ID :AssembledThermometerOnCarrier_BaseColor_ID);
                                        openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
                                        CSS:references :DrilledCylinderColor_ID ,
@@ -715,7 +715,7 @@ MpsProduct:AssembledThermometer a owl:Class;
 ###  Lot size stays the same
 :OverallLotSizeConstraint rdf:type owl:NamedIndividual ,
                                                 openmath:Application ,
-                                                CSS:CapabilityConstraint ;
+                                                CSS:PropertyConstraint ;
                                        openmath:arguments (:DrilledCylinderLotSize_ID1 :AssembledThermometerOnCarrier_LotSize_ID);
                                        openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
                                        CSS:references :DrilledCylinderLotSize_ID1 ,
@@ -724,7 +724,7 @@ MpsProduct:AssembledThermometer a owl:Class;
 ###  Cap stack size must be greater than or equal to lot size
 :CapStackSizeConstraint rdf:type owl:NamedIndividual ,
                                                 openmath:Application ,
-                                                CSS:CapabilityConstraint ;
+                                                CSS:PropertyConstraint ;
                                        openmath:arguments (:ThermometerCapStack_StackSize_ID :DrilledCylinderLotSize_ID1 ) ;
                                        openmath:operator <http://www.openmath.org/cd/relation1#geq> ;
                                        CSS:references :ThermometerCapStack_StackSize_ID ,
@@ -734,7 +734,7 @@ MpsProduct:AssembledThermometer a owl:Class;
 ###  OuterDiameter stays the same
 :OverallOuterDiameterConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
-							CSS:CapabilityConstraint ;
+							CSS:PropertyConstraint ;
 					openmath:arguments (:AssembledThermometerOnCarrier_OuterDiameter_ID :DrilledCylinderOuterDiameter_ID2);
 					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
 					CSS:references :DrilledCylinderOuterDiameter_ID2 ,
@@ -743,7 +743,7 @@ MpsProduct:AssembledThermometer a owl:Class;
 ###  InnerDiameter stays the same
 :OverallInnerDiameterConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
-							CSS:CapabilityConstraint ;
+							CSS:PropertyConstraint ;
 					openmath:arguments (:AssembledThermometerOnCarrier_InnerDiameter_ID :DrilledCylinderInnerDiameter_ID2);
 					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
 					CSS:references :DrilledCylinderInnerDiameter_ID2 ,
@@ -753,7 +753,7 @@ MpsProduct:AssembledThermometer a owl:Class;
 ### StationID constraint to ensure input must be at station
 :StationIDConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
-							CSS:CapabilityConstraint ;
+							CSS:PropertyConstraint ;
 					openmath:arguments (:AssembledThermometerOnCarrier_StationID_ID :AssemblyModule_StationID_ID);
 					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
 					CSS:references :AssembledThermometerOnCarrier_StationID_ID ,

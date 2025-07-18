@@ -14,7 +14,7 @@
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder> rdf:type owl:Ontology ;
                                                                    owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
-                                                                               <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+                                                                               <http://www.w3id.org/hsu-aut/caskman/5.0.1> .
 
 #################################################################
 #    Individuals
@@ -840,7 +840,7 @@ MpsProduct:AssembledCylinder a owl:Class;
 ###  Color stays the same
 :OverallColorConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
-							CSS:CapabilityConstraint ;
+							CSS:PropertyConstraint ;
 					openmath:arguments (:AssembledCylinderOnCarrier_CylinderColor_ID :DrilledCylinderColor_ID);
 					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
 					CSS:references :DrilledCylinderColor_ID ,
@@ -848,7 +848,7 @@ MpsProduct:AssembledCylinder a owl:Class;
 ###  OuterDiameter stays the same
 :OverallOuterDiameterConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
-							CSS:CapabilityConstraint ;
+							CSS:PropertyConstraint ;
 					openmath:arguments (:AssembledCylinderOnCarrier_OuterDiameter_ID :DrilledCylinderOuterDiameter_ID2);
 					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
 					CSS:references :DrilledCylinderOuterDiameter_ID2 ,
@@ -857,7 +857,7 @@ MpsProduct:AssembledCylinder a owl:Class;
 ###  InnerDiameter stays the same
 :OverallInnerDiameterConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
-							CSS:CapabilityConstraint ;
+							CSS:PropertyConstraint ;
 					openmath:arguments (:AssembledCylinderOnCarrier_InnerDiameter_ID :DrilledCylinderInnerDiameter_ID2);
 					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
 					CSS:references :DrilledCylinderInnerDiameter_ID2 ,
@@ -866,7 +866,7 @@ MpsProduct:AssembledCylinder a owl:Class;
 ### StationID constraint to ensure input must be at station
 :StationIDConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
-							CSS:CapabilityConstraint ;
+							CSS:PropertyConstraint ;
 					openmath:arguments (:AssembledCylinderOnCarrier_StationID_ID :AssemblyModule_StationID_ID);
 					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
 					CSS:references :AssembledCylinderOnCarrier_StationID_ID ,
@@ -876,7 +876,7 @@ MpsProduct:AssembledCylinder a owl:Class;
 ### Cap diameter must be equal to outer diameter to be assembled
 :CapAndOuterDiameterConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
-							CSS:CapabilityConstraint ;
+							CSS:PropertyConstraint ;
 					openmath:arguments (:CapStackCapDiameter_ID :DrilledCylinderOuterDiameter_ID2);
 					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
 					CSS:references :CapStackCapDiameter_ID ,
@@ -885,7 +885,7 @@ MpsProduct:AssembledCylinder a owl:Class;
 ### Spring diameter must be equal to cylinder inner diameter to be assembled
 :SpringAndInnerDiameterConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
-							CSS:CapabilityConstraint ;
+							CSS:PropertyConstraint ;
 					openmath:arguments (:SpringStackSpringDiameter_ID :DrilledCylinderInnerDiameter_ID2);
 					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
 					CSS:references :SpringStackSpringDiameter_ID ,
@@ -894,7 +894,7 @@ MpsProduct:AssembledCylinder a owl:Class;
 ### Spring length must be equal to cylinder drilling depth to be assembled
 :SpringLengthAndDepthConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
-							CSS:CapabilityConstraint ;
+							CSS:PropertyConstraint ;
 					openmath:arguments (:SpringStackSpringLength_ID :DrilledCylinderDrillingDepth_ID);
 					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
 					CSS:references :SpringStackSpringLength_ID ,
@@ -903,7 +903,7 @@ MpsProduct:AssembledCylinder a owl:Class;
 ###  Lot size stays the same
 :OverallLotSizeConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
-							CSS:CapabilityConstraint ;
+							CSS:PropertyConstraint ;
 					openmath:arguments (:DrilledCylinderLotSize_ID :AssembledCylinderOnCarrier_LotSize_ID);
 					openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
 					CSS:references :DrilledCylinderLotSize_ID ,
@@ -912,7 +912,7 @@ MpsProduct:AssembledCylinder a owl:Class;
 ###  Cap stack size must be greater than or equal to lot size, otherwise not all parts of the lot can be manufactured
 :CapStackSizeConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
-							CSS:CapabilityConstraint ;
+							CSS:PropertyConstraint ;
 					openmath:arguments (:CapStackStackSize_ID :DrilledCylinderLotSize_ID ) ;
 					openmath:operator <http://www.openmath.org/cd/relation1#geq> ;
 					CSS:references :CapStackStackSize_ID ,
@@ -921,7 +921,7 @@ MpsProduct:AssembledCylinder a owl:Class;
 ###  Spring stack size must be greater than or equal to lot size, otherwise not all parts of the lot can be manufactured
 :SpringStackSizeConstraint rdf:type owl:NamedIndividual ,
 							openmath:Application ,
-							CSS:CapabilityConstraint ;
+							CSS:PropertyConstraint ;
 					openmath:arguments (:SpringStackStackSize_ID :DrilledCylinderLotSize_ID ) ;
 					openmath:operator <http://www.openmath.org/cd/relation1#geq> ;
 					CSS:references :SpringStackStackSize_ID ,

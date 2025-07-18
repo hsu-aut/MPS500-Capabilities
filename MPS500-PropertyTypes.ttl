@@ -8,7 +8,7 @@
 @base <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#> .
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> rdf:type owl:Ontology ;
-                                                                 owl:imports <http://www.w3id.org/hsu-aut/DINEN61360/2.0.1> ;
+                                                                 owl:imports <http://www.w3id.org/hsu-aut/DINEN61360/2.0.3> ;
                                                                  rdfs:comment "A little ontology that contains all property type definitions used for MPS500" .
 
 
