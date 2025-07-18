@@ -14,7 +14,7 @@
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/ConveyorModule> rdf:type owl:Ontology ;
                                                                   owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
-                                                                              <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+                                                                              <http://www.w3id.org/hsu-aut/caskman/5.0.1> .
 
 #################################################################
 #    Individuals
@@ -131,7 +131,8 @@
                                     DINEN61360:Integer ,
                                     openmath:Variable;
                     openmath:name "TargetStation_ID3" ;
-                   DINEN61360:Logic_Interpretation "=" .
+                   DINEN61360:Logic_Interpretation "=" ;
+				   DINEN61360:Expression_Goal "Variable" .
 
 
 
@@ -165,7 +166,7 @@
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/Conveyor#TargetStationConstraint
 :TargetStationConstraint rdf:type owl:NamedIndividual ,
                                   openmath:Application ,
-                                  CSS:CapabilityConstraint ;
+                                  CSS:PropertyConstraint ;
                          openmath:arguments ( :ProductAtTargetStation_StationID_ID :TargetStation_ID3) ;
 openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
 CSS:references :ProductAtTargetStation_StationID_ID ,

@@ -15,7 +15,7 @@
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/Transport#> rdf:type owl:Ontology ;
 																		owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
-																					<http://www.w3id.org/hsu-aut/caskman/4.6.0> ;
+																					<http://www.w3id.org/hsu-aut/caskman/5.0.1> ;
 																		rdfs:comment: "A required capability for testing purposes that should yield a process of only one capability. Transport from 1 to 4" .
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/Transport#Transport
