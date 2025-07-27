@@ -16,7 +16,7 @@
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/SupplyDrillingAssembly#> rdf:type owl:Ontology ;
 																		owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
-																					<http://www.w3id.org/hsu-aut/caskman/4.6.0> ;
+																					<http://www.w3id.org/hsu-aut/caskman/5.0.1> ;
 																		rdfs:comment "A required cap that should lead to a 6-step process: Transport (bringing a carrier), Supply, Transport to Drilling, Drilling, Transport to Assembly, Assembly" .
 
 MpsProduct:AssembledCylinder a owl:Class;

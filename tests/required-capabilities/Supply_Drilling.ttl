@@ -16,7 +16,7 @@
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/SupplyToDrilling#> rdf:type owl:Ontology ;
 																		owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
-																					<http://www.w3id.org/hsu-aut/caskman/4.6.0> ;
+																					<http://www.w3id.org/hsu-aut/caskman/5.0.1> ;
 																		rdfs:comment "A required cap that should lead to a 5-step process: Transport (bringing a carrier), Supply, Transport to Drilling, Drilling and finally Transport to target station (4)" .
 
 

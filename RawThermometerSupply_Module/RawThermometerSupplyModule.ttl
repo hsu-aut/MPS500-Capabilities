@@ -14,7 +14,7 @@
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule> rdf:type owl:Ontology ;
                                                                              owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
-                                                                                         <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+                                                                                         <http://www.w3id.org/hsu-aut/caskman/5.0.1> .
 
 #################################################################
 #    Individuals
@@ -510,7 +510,7 @@
                            DINEN61360:Instance_Description ;
                   DINEN61360:Expression_Goal "Requirement" ;
                   DINEN61360:Logic_Interpretation "" ;
-                  DINEN61360:Value "" .
+                  DINEN61360:Expression_Goal "Variable" .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/RawThermometerSupplyModule#RequiredDiameter

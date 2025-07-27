@@ -15,7 +15,7 @@
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/DrillAndTransport#> rdf:type owl:Ontology ;
                                                                           owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
-                                                                                      <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+                                                                                      <http://www.w3id.org/hsu-aut/caskman/5.0.1> .
 
 MpsProduct:DrilledProduct a owl:Class;
 	rdfs:subClassOf VDI3682:Product .
@@ -93,7 +93,7 @@ MpsProduct:DrilledProduct a owl:Class;
 :OutputProduct_InnerDiameter_ID rdf:type owl:NamedIndividual ,
 									DINEN61360:Instance_Description ,
 									DINEN61360:Integer ;
-                            DINEN61360:Expression_Goal "Actual_Value" ;
+                            DINEN61360:Expression_Goal "Requirement" ;
                             DINEN61360:Logic_Interpretation "=" ;
 							DINEN61360:Value 6 .
 
@@ -105,7 +105,7 @@ MpsProduct:DrilledProduct a owl:Class;
 :OutputProduct_Depth_ID rdf:type owl:NamedIndividual ,
 									DINEN61360:Instance_Description ,
 									DINEN61360:Integer ;
-                            DINEN61360:Expression_Goal "Actual_Value" ;
+                            DINEN61360:Expression_Goal "Requirement" ;
                             DINEN61360:Logic_Interpretation "=" ;
 							DINEN61360:Value 6 .
 
@@ -117,7 +117,7 @@ MpsProduct:DrilledProduct a owl:Class;
 :OutputProduct_StationID_ID rdf:type owl:NamedIndividual ,
 									DINEN61360:Instance_Description ,
 									DINEN61360:Integer ;
-                            DINEN61360:Expression_Goal "Actual_Value" ;
+                            DINEN61360:Expression_Goal "Requirement" ;
                             DINEN61360:Logic_Interpretation "=" ;
 							DINEN61360:Value 4 .
 
