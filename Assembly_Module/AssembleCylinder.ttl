@@ -10,6 +10,7 @@
 @prefix CaSk: <http://www.w3id.org/hsu-aut/cask#> .
 @prefix VDI3682: <http://www.w3id.org/hsu-aut/VDI3682#> .
 @prefix DINEN61360: <http://www.w3id.org/hsu-aut/DINEN61360#> .
+@prefix MpsProduct: <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/product-types#> .
 @base <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder#> .
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AssembleCylinder> rdf:type owl:Ontology ;
