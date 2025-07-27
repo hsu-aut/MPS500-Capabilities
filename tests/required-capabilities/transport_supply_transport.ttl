@@ -15,7 +15,7 @@
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/TransportSupplyTransport#> rdf:type owl:Ontology ;
                                                                           owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
-                                                                                      <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+                                                                                      <http://www.w3id.org/hsu-aut/caskman/5.0.1> .
 
 
 MpsProduct:NullProduct a owl:Class;
