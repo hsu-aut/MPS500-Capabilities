@@ -11,6 +11,7 @@
 @prefix CSS: <http://www.w3id.org/hsu-aut/css#> .
 @prefix CaSk: <http://www.w3id.org/hsu-aut/cask#> .
 @prefix openmath: <http://openmath.org/vocab/math#> .
+@prefix MpsProduct: <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/product-types#> .
 @base <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/DrillAndTransport#> .
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/required/DrillAndTransport#> rdf:type owl:Ontology ;
