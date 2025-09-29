@@ -1,4 +1,4 @@
-@prefix : <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AgvModule> .
+@prefix : <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AgvModule#> .
 @prefix CSS: <http://www.w3id.org/hsu-aut/css#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -10,10 +10,11 @@
 @prefix VDI3682: <http://www.w3id.org/hsu-aut/VDI3682#> .
 @prefix openmath: <http://openmath.org/vocab/math#> .
 @prefix DINEN61360: <http://www.w3id.org/hsu-aut/DINEN61360#> .
+@base <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AgvModule#> .
 
 <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AgvModule> rdf:type owl:Ontology ;
                                                                   owl:imports <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types> ,
-                                                                              <http://www.w3id.org/hsu-aut/caskman/4.6.0> .
+                                                                              <http://www.w3id.org/hsu-aut/caskman/5.0.1> .
 
 #################################################################
 #    Individuals
@@ -34,50 +35,46 @@
 :ProductAtStartStation rdf:type owl:NamedIndividual ,
                                 VDI3682:Product ;
 					DINEN61360:has_Data_Element :ProductAtStartStation_StationID_DE ;
-					VDI3682:isCharacterizedBy :ProductAtStartStation_StationID_ID1 ,
-											:ProductAtStartStation_StationID_ID2 ,
-											:ProductAtStartStation_StationID_ID3 .
+					VDI3682:isCharacterizedBy :ProductAtStartStation_StationID_ID .
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AGV#ProductAtStartStation_StationID_DE
 :ProductAtStartStation_StationID_DE rdf:type owl:NamedIndividual ,
                                              DINEN61360:Data_Element ;
-                                    DINEN61360:has_Instance_Description :ProductAtStartStation_StationID_ID1 ,
-																		:ProductAtStartStation_StationID_ID2 ,
-																		:ProductAtStartStation_StationID_ID3 ;
+                                    DINEN61360:has_Instance_Description :ProductAtStartStation_StationID_ID ;
                                     DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AGV#ProductAtStartStation_StationID_ID1
-:ProductAtStartStation_StationID_ID1 rdf:type owl:NamedIndividual ,
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AGV#ProductAtStartStation_StationID_ID
+:ProductAtStartStation_StationID_ID rdf:type owl:NamedIndividual ,
                                     DINEN61360:Instance_Description ,
                                     DINEN61360:Integer ,
                                     openmath:Variable;
-                    openmath:name "ProductAtStartStation_StationID_ID1" ;
+                    openmath:name "ProductAtStartStation_StationID_ID" ;
                                     DINEN61360:Expression_Goal "Actual_Value" ;
                                     DINEN61360:Logic_Interpretation "=" .
 
 ###  AGV can only transport from shipping module and MODVA to shipping module and MODVA
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AGV#ProductAtStartStation_StationID_ID2
-:ProductAtStartStation_StationID_ID2 rdf:type owl:NamedIndividual ,
-                                    DINEN61360:Instance_Description ,
-                                    DINEN61360:Integer ,
-                                    openmath:Variable;
-                    openmath:name "ProductAtStartStation_StationID_ID2" ;
-                   DINEN61360:Expression_Goal "Requirement" ;
-                   DINEN61360:Logic_Interpretation ">=" ;
-                   DINEN61360:Value 8 .
+# :ProductAtStartStation_StationID_ID2 rdf:type owl:NamedIndividual ,
+#                                     DINEN61360:Instance_Description ,
+#                                     DINEN61360:Integer ,
+#                                     openmath:Variable;
+#                     openmath:name "ProductAtStartStation_StationID_ID2" ;
+#                    DINEN61360:Expression_Goal "Requirement" ;
+#                    DINEN61360:Logic_Interpretation ">=" ;
+#                    DINEN61360:Value 8 .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AGV#ProductAtStartStation_StationID_ID3
-:ProductAtStartStation_StationID_ID3 rdf:type owl:NamedIndividual ,
-                                    DINEN61360:Instance_Description ,
-                                    DINEN61360:Integer ,
-                                    openmath:Variable;
-                    openmath:name "ProductAtStartStation_StationID_ID3" ;
-                   DINEN61360:Expression_Goal "Requirement" ;
-                   DINEN61360:Logic_Interpretation "<=" ;
-                   DINEN61360:Value 15 .
+# ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AGV#ProductAtStartStation_StationID_ID3
+# :ProductAtStartStation_StationID_ID3 rdf:type owl:NamedIndividual ,
+#                                     DINEN61360:Instance_Description ,
+#                                     DINEN61360:Integer ,
+#                                     openmath:Variable;
+#                     openmath:name "ProductAtStartStation_StationID_ID3" ;
+#                    DINEN61360:Expression_Goal "Requirement" ;
+#                    DINEN61360:Logic_Interpretation "<=" ;
+#                    DINEN61360:Value 15 .
 
 
 
@@ -110,50 +107,47 @@
 :TargetStation rdf:type owl:NamedIndividual ,
                         VDI3682:Information ;
 			DINEN61360:has_Data_Element :TargetStation_DE ;
-			VDI3682:isCharacterizedBy :TargetStation_ID1 ,
-				:TargetStation_ID2 ,
-				:TargetStation_ID3 .
+			VDI3682:isCharacterizedBy :TargetStation_ID .
 
 
 
 ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AGV#TargetStation_DE
 :TargetStation_DE rdf:type owl:NamedIndividual ,
                            DINEN61360:Data_Element ;
-                  DINEN61360:has_Instance_Description :TargetStation_ID1 ,
-                                                      :TargetStation_ID2 ,
-                                                      :TargetStation_ID3 ;
+                  DINEN61360:has_Instance_Description :TargetStation_ID ;
                   DINEN61360:has_Type_Description <http://www.hsu-hh.de/aut/ontologies/lab/MPS500/property-types#StationID_TD> .
 
 
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AGV#TargetStation_ID1
-:TargetStation_ID1 rdf:type owl:NamedIndividual ,
+# ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AGV#TargetStation_ID1
+# :TargetStation_ID1 rdf:type owl:NamedIndividual ,
+#                                     DINEN61360:Instance_Description ,
+#                                     DINEN61360:Integer ,
+#                                     openmath:Variable;
+#                     openmath:name "TargetStation_ID1" ;
+#                    DINEN61360:Expression_Goal "Requirement" ;
+#                    DINEN61360:Logic_Interpretation ">=" ;
+#                    DINEN61360:Value 8 .
+
+
+# ###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AGV#TargetStation_ID2
+# :TargetStation_ID2 rdf:type owl:NamedIndividual ,
+#                                     DINEN61360:Instance_Description ,
+#                                     DINEN61360:Integer ,
+#                                     openmath:Variable;
+#                     openmath:name "TargetStation_ID2" ;
+#                    DINEN61360:Expression_Goal "Requirement" ;
+#                    DINEN61360:Logic_Interpretation "<=" ;
+#                    DINEN61360:Value 15 .
+
+
+###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AGV#TargetStation_ID
+:TargetStation_ID rdf:type owl:NamedIndividual ,
                                     DINEN61360:Instance_Description ,
                                     DINEN61360:Integer ,
                                     openmath:Variable;
-                    openmath:name "TargetStation_ID1" ;
-                   DINEN61360:Expression_Goal "Requirement" ;
-                   DINEN61360:Logic_Interpretation ">=" ;
-                   DINEN61360:Value 8 .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AGV#TargetStation_ID2
-:TargetStation_ID2 rdf:type owl:NamedIndividual ,
-                                    DINEN61360:Instance_Description ,
-                                    DINEN61360:Integer ,
-                                    openmath:Variable;
-                    openmath:name "TargetStation_ID2" ;
-                   DINEN61360:Expression_Goal "Requirement" ;
-                   DINEN61360:Logic_Interpretation "<=" ;
-                   DINEN61360:Value 15 .
-
-
-###  http://www.hsu-hh.de/aut/ontologies/lab/MPS500/AGV#TargetStation_ID3
-:TargetStation_ID3 rdf:type owl:NamedIndividual ,
-                                    DINEN61360:Instance_Description ,
-                                    DINEN61360:Integer ,
-                                    openmath:Variable;
-                    openmath:name "TargetStation_ID3" ;
-                   DINEN61360:Logic_Interpretation "=" .
+                    openmath:name "TargetStation_ID" ;
+                   DINEN61360:Logic_Interpretation "=" ;
+                   DINEN61360:Expression_Goal "Variable" .
 
 
 
@@ -188,8 +182,8 @@
 :TargetStationConstraint rdf:type owl:NamedIndividual ,
                                   openmath:Application ,
                                   CSS:CapabilityConstraint ;
-                         openmath:arguments ( :ProductAtTargetStation_StationID_ID :TargetStation_ID3) ;
+                         openmath:arguments ( :ProductAtTargetStation_StationID_ID :TargetStation_ID) ;
 openmath:operator <http://www.openmath.org/cd/relation1#eq> ;
 CSS:references :ProductAtTargetStation_StationID_ID ,
-               :TargetStation_ID3 .
+               :TargetStation_ID .
 
